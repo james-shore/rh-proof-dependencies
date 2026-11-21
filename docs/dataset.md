@@ -104,5 +104,5 @@ largest universe argument it is instantiated with), `n_instantiations`.
 ## `cone-constants`, `cone-decls`: plain name lists
 
 One name per line, sorted by code point. `cone-constants` has the 1,484,729 kernel constants in the five theorems'
-closure. `cone-decls` has the 804,910 distinct names of the used project declarations (one unnamed instance's generated
-name occurs in two files). `zgrep -x NAME cone-constants.txt.gz` checks a name.
+closure. `cone-decls` has the 804,910 distinct names of the used project declarations. Two unnamed instances in different
+files got the same guessed name from the text index, so 804,911 declarations have 804,910 names. `zgrep -x NAME cone-constants.txt.gz` checks a name.
