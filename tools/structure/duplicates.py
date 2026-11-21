@@ -30,9 +30,13 @@ def main():
         join {rel(find_table(ds, 'constants'))} c on c.id = x.id""")
     con.execute(f"""create table dl as select decl, file, start_line, lines from {rel(find_table(ds, 'decls'))}
         where origin = 'project' and decl <> ''""")
+    gen_rows = not_generated(con, find_table(ds, 'decls'))
+    con.execute(f"""create table dgen as select decl, file, start_line from {rel(find_table(ds, 'decls'))}
+        where origin = 'project' and decl <> '' {'and coalesce(cast(generated as boolean), false)' if gen_rows else 'and false'}""")
     con.execute("""create table s as select d.*, coalesce(dl.lines, 0) as lines from d left join dl
         on d.decl = dl.decl and d.file = dl.file and d.start_line = dl.start_line
         where d.origin = 'project' and d.aux = 'self'""")
+    con.execute("delete from s where (decl, file, start_line) in (select decl, file, start_line from dgen)")
     S = {'dataset': os.environ.get('RHS_DATASET_VERSION', os.path.basename(os.path.normpath(ds)))}
     S['constants'] = dict(con.execute("""select kind || '/' || case when origin = 'project' then 'project' else 'other' end, count(*)
         from d group by all""").fetchall())

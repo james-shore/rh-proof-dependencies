@@ -1,0 +1,6 @@
+name = "routeb"
+defaultTargets = ["routeb"]
+
+[[lean_exe]]
+name = "routeb"
+root = "RouteB"

@@ -4,7 +4,7 @@
 # Needs Linux, Docker, git, curl, ~120 GB of disk, ~250 GB of RAM. Stage 1 downloads (network). Stage 2 runs every
 # step in a container with no network. No code from the proof runs: the export and the source are read as data.
 # Env: CPUS (default 8), MEM (default 250g), SOLUTION (an existing solution.ndjson.zst), SKIP_STRUCTURE=1,
-# SKIP_RELEVANCE=1, SKIP_DUPES=1, SKIP_UNIVERSES=1, NAME (container name prefix, default rhpd), IMG (image tag, default rhpd-tools:0.1).
+# SKIP_RELEVANCE=1, SKIP_DUPES=1, SKIP_UNIVERSES=1 (the analyses are tools/analyses.sh), NAME (container name prefix, default rhpd), IMG (image tag, default rhpd-tools:0.1).
 set -euo pipefail
 trap 'echo "reproduce.sh failed at line $LINENO; see the logs under $W"' ERR
 here=$(cd "$(dirname "$0")" && pwd)
@@ -35,7 +35,7 @@ git -C "$W/mirror" checkout -q "$MIRROR_REV"
 [ "$(git -C "$W/mirror" rev-parse HEAD)" = "$MIRROR_REV" ] || { echo "source is not at $MIRROR_REV"; exit 1; }
 log "Lean 4.33.1 and Mathlib 0df444a3 prebuilt cache"
 if [ ! -f "$W/lean/staged.ok" ]; then
-  docker run --rm --ulimit nofile=1048576:1048576 --name "$N-stage" -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" -v "$W/lean":/x \
+  docker run --rm --ulimit nofile=1048576:1048576 --cpus "$CPUS" --memory "$MEM" --name "$N-stage" -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)" -v "$W/lean":/x \
     -v "$here/origin-stage.sh":/stage.sh:ro python:3.12-slim-bookworm bash /stage.sh > "$W/lean/stage.log" 2>&1
   if grep -q "decompression(s) failed" "$W/lean/cache-get.log"; then echo "Mathlib cache unpack failed: $W/lean/cache-get.log"; exit 1; fi
   touch "$W/lean/staged.ok"
@@ -76,27 +76,7 @@ run --name "$N-dataset" "$IMG" bash -c "set -e
   python dataset.py /work /out/$V; python why.py /out/$V /out/$V/why; python content_hash.py /out/$V; python name_lists.py /out/$V" > "$W/work/dataset.log" 2>&1
 
 if [ -z "${SKIP_STRUCTURE:-}" ]; then
-  log "dominator tree and statement cone"
-  run --name "$N-structure" "$IMG" bash -c "set -e; mkdir -p /out/structure/concepts
-    python structure/dominators.py /out/$V /out/structure; python structure/concepts.py /out/$V /out/structure/concepts" \
-    > "$W/work/structure.log" 2>&1
-  if [ -z "${SKIP_RELEVANCE:-}" ]; then
-    log "unused hypotheses (parses the export again)"
-    run --name "$N-relevance" "$IMG" bash -c "set -e; cd structure; bash relevance-run.sh /out/$V /out/structure/relevance /dl/solution.ndjson.zst
-      mkdir -p /out/structure/data; python relevance_tables.py /out/structure /out/structure/data" > "$W/work/relevance.log" 2>&1
-  fi
-  if [ -z "${SKIP_DUPES:-}" ]; then
-    log "duplicate statements and definitions (parses the export again)"
-    run --name "$N-dupes" "$IMG" bash -c "set -e; cd structure; bash dupes-run.sh /out/$V /out/structure/dupes /dl/solution.ndjson.zst
-      mkdir -p /out/structure/data; python duplicates.py /out/$V /out/structure/dupes /out/structure/data /out/structure" > "$W/work/dupes.log" 2>&1
-  fi
-  log "statements labelled as published results"
-  run --name "$N-literature" -v "$here/../data/inputs":/inputs:ro "$IMG" bash -c "set -e; L=/out/literature; mkdir -p \$L
-    python literature_map.py /out/$V /inputs/rhtrim-LITERATURE-4339aac-names.txt \$L
-    python literature_dom.py /out/structure/dominators.tsv.gz \$L /inputs/jae63-BLUEPRINT-0434143d-labels.tsv \$L/literature.tsv \$L/literature-dom.json
-    python literature_groups.py \$L/literature.tsv \$L
-    for g in published jae-known jae-crux; do python structure/ownership.py /out/$V /out/structure \$L/L-\$g.txt \$L/own-\$g; done" \
-    > "$W/work/literature.log" 2>&1
+  SOLUTION="$SOL" NAME="$N" IMG="$IMG" CPUS="$CPUS" MEM="$MEM" bash "$here/analyses.sh" "$W" "$V"
 fi
 if [ -z "${SKIP_UNIVERSES:-}" ]; then
   log "universe levels (parses the export again)"

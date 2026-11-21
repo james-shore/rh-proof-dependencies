@@ -1480,6 +1480,10 @@ cluster	cluster_size	cluster_redundant_lines	mathlib_or_core_twins	twin_names	de
 1053675	3	6	0		GlobalTheory.ThK.Dbl.St.eF	src/Development/WeilBound/ThetaLifts/LatticeBasics/IsCompactOfUnits.lean	144	3
 1053675	3	6	0		PositivityTheory.ThKEst.uFin	src/Development/WeilBound/ThetaLifts/FrameEstimates/UFinMulRId.lean	47	3
 1053675	3	6	0		PositivityTheory.ThKG.Tow.Stab.eF	src/Development/WeilBound/ThetaLifts/TowerModels/StabCpt.lean	143	3
+1067894	4	6	0		PositivityTheory.SiegelWeilFormula.KTunit.instMeasurableSpaceForallAFOfFintype_development	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/ThetaParseval/ThetaKernels/SiegelWeilKTunitMeas.lean	17	2
+1067894	4	6	0		PositivityTheory.SiegelWeilFormula.KTunit.measTup	src/Development/WeilBound/CoreStatements/AutomorphicKernels/SiegelWeilFormula/UnitaryChartEquiv/CEquivApply.lean	17	2
+1067894	4	6	0		PositivityTheory.SiegelWeilFormula.Tunit.instMeasurableSpaceForallAFOfFintype_development	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/ThetaParseval/ThetaKernels/SiegelWeilTunitMain.lean	19	2
+1067894	4	6	0		PositivityTheory.SiegelWeilFormula.Tunit.measTup'	src/Development/WeilBound/CoreStatements/AutomorphicKernels/SiegelWeilFormula/DarbouxCharts/BorelTup.lean	15	2
 1075287	3	6	0		ReciprocityTheory.ChartRestriction.G.AI.I2.AllFam	src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/ArithmeticIntersection/RationalSections/IsRatSectionOn.lean	9	3
 1075287	3	6	0		ReciprocityTheory.ChartRestriction.G.ArakelovGeometry.AllFam	src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/ArakelovGeometry/IsSmoothPts.lean	92	3
 1075287	3	6	0		ReciprocityTheory.ChartRestriction.G.Geo.IntersectionSystem	src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/ArithmeticHilbertSamuelLowerBound.lean	86	3
@@ -4834,8 +4838,6 @@ cluster	cluster_size	cluster_redundant_lines	mathlib_or_core_twins	twin_names	de
 1058468	2	2	0		PI.FockWtDegWork.lw	src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/FockWeightDegree/ExistsMonomialWeight.lean	9	2
 1067305	2	2	0		GlobalTheory.CompanionTheory.SiegelFrame.bA	src/Development/AutomorphicSpectrum/Proofs/BlockDecomposition/ContinuousFrameEquivSymm.lean	54	2
 1067305	2	2	0		PositivityTheory.SiegelWeilFormula.Ldexb.incGL	src/Development/WeilBound/CoreStatements/AutomorphicKernels/SiegelWeilFormula/LocalUnitExistence/IncMInvmul.lean	16	2
-1067894	2	2	0		PositivityTheory.SiegelWeilFormula.KTunit.measTup	src/Development/WeilBound/CoreStatements/AutomorphicKernels/SiegelWeilFormula/UnitaryChartEquiv/CEquivApply.lean	17	2
-1067894	2	2	0		PositivityTheory.SiegelWeilFormula.Tunit.measTup'	src/Development/WeilBound/CoreStatements/AutomorphicKernels/SiegelWeilFormula/DarbouxCharts/BorelTup.lean	15	2
 1068228	2	2	0		PositivityTheory.SiegelWeilFormula.kunf.jw	src/Development/WeilBound/CoreStatements/AutomorphicKernels/SiegelWeilFormula/UnfoldingCompactness/IncMTranspose.lean	19	2
 1068228	2	2	0		PositivityTheory.SiegelWeilFormula.wM	src/Development/WeilBound/CoreStatements/AutomorphicKernels/SiegelWeilFormula/LocalWeilOperators/WeylCubeConjUnipotent.lean	19	1
 1074382	2	2	0		PositivityTheory.SiegelWeilFormula.Act.C1.Au	src/Development/WeilBound/CoreStatements/AutomorphicKernels/SiegelWeilFormula/SiegelWeilActions/FirstChernUniqueness.lean	15	2

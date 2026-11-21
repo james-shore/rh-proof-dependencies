@@ -1,6 +1,6 @@
 dir	decls	decls_in_cone	pct_decls	decl_lines	decl_lines_in_cone
-src/Development/AbelianVarietyTheory/Proofs	374269	297783	79.6	5602733	4506494
-src/Development/AbelianVarietyTheory/Definitions	61258	32231	52.6	367383	184656
+src/Development/AbelianVarietyTheory/Proofs	374253	297777	79.6	5602507	4506376
+src/Development/AbelianVarietyTheory/Definitions	61259	32231	52.6	367384	184660
 src/Development/AbelianVarietyTheory/BlockTheory	14148	3792	26.8	66900	18021
 src/Development/AbelianVarietyTheory/PublishedTheorems	4394	2322	52.8	40671	21180
 src/GroundTheory/ArithmeticGeometry/SchemeCohomology	2089	1675	80.2	18282	14757

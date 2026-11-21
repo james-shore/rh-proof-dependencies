@@ -44,13 +44,13 @@ with open(os.path.join(ds, 'edges.tsv'), 'w') as f:
     for a, b in E:
         f.write(f'{a}\t{b}\tvalue\t{ids[a]}\t{ids[b]}\n')
 with open(os.path.join(ds, 'decls.tsv'), 'w') as f:
-    f.write('decl\tkind\torigin\tfile\tstart_line\tend_line\tlines\tin_cone\n')
+    f.write('decl\tkind\torigin\tfile\tstart_line\tend_line\tlines\tin_cone\tgenerated\n')
     seen = set()
     for nm, k, o, d, fl, s, e in C:
         if o == 'project' and d not in seen:
             seen.add(d)
-            f.write(f'{d}\t{k}\tproject\t{fl}\t{s}\t{e}\t{e - s + 1}\t1\n')
-    f.write('unused\ttheorem\tproject\tsrc/B/b.lean\t20\t30\t11\t0\n')
+            f.write(f'{d}\t{k}\tproject\t{fl}\t{s}\t{e}\t{e - s + 1}\t1\t{"true" if d == "a2" else "false"}\n')
+    f.write('unused\ttheorem\tproject\tsrc/B/b.lean\t20\t30\t11\t0\tfalse\n')
 
 subprocess.run([sys.executable, os.path.join(HERE, 'dominators.py'), ds, out], check=True)
 rows = {}
@@ -68,10 +68,13 @@ assert rows['a1']['n_constants'] == '2' and rows['a1']['kernel_dag'] == '16', ro
 assert rows['a2']['ext_refs'] == '2' and rows['chapA']['sub_ext_refs'] == '2', rows['a2']
 assert rows['main']['sub_decls'] == '8' and rows['main']['sub_lines'] == '142', rows['main']
 assert rows['a1._proof_2']['kind'] == 'shared_aux' and rows['a1._proof_2']['lines'] == '0'
+assert rows['a2']['node_type'] == 'generated' and rows['a1']['node_type'] == 'decl', (rows['a2'], rows['a1'])
 assert 'unused' not in rows
 import json
 s = json.load(open(os.path.join(out, 'dominators-summary.json')))
 assert ', 0 failures' in s['dom_check'], s['dom_check']
 assert all(c[3] == 0 for c in s['raw_edge_check_top20'])
 assert s['per_theorem']['LFunction_eq_zero_re']['only_this_theorem_decls'] == 1
+nk = s['node_kinds']
+assert nk['source declarations'] == 12 and nk['generated declarations (made by notation, macro or elab commands)'] == 1, nk
 print('dominators.py synthetic test OK')

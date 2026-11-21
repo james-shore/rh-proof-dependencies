@@ -1,6 +1,6 @@
 theorem	kernel_constants	project_constants	mathlib_constants	core_constants	batteries_constants	aesop_constants	project_decls
-riemannHypothesis	1484705	1270161	204487	9796	258	3	804890
-riemannZeta_eq_zero_re	1484707	1270163	204487	9796	258	3	804891
-LFunction_ne_zero_of_half_lt_re	1484697	1270158	204482	9796	258	3	804888
-LFunction_eq_zero_re	1484710	1270169	204484	9796	258	3	804898
-LFunction_eq_zero_re_of_isPrimitive	1484700	1270161	204482	9796	258	3	804891
+riemannHypothesis	1484705	1270161	204487	9796	258	3	804891
+riemannZeta_eq_zero_re	1484707	1270163	204487	9796	258	3	804892
+LFunction_ne_zero_of_half_lt_re	1484697	1270158	204482	9796	258	3	804889
+LFunction_eq_zero_re	1484710	1270169	204484	9796	258	3	804899
+LFunction_eq_zero_re_of_isPrimitive	1484700	1270161	204482	9796	258	3	804892

@@ -5,7 +5,6 @@
 
 use crossbeam_channel::{bounded, Receiver, Sender};
 use rayon::prelude::*;
-use serde::de::IgnoredAny;
 use serde::Deserialize;
 use std::borrow::Cow;
 use std::io::{self, Read};
@@ -214,10 +213,10 @@ struct Line<'a> {
     #[serde(rename = "letE")]
     lete: Option<ELet>,
     proj: Option<EProj>,
-    #[serde(rename = "natVal")]
-    natval: Option<IgnoredAny>,
-    #[serde(rename = "strVal")]
-    strval: Option<IgnoredAny>,
+    #[serde(rename = "natVal", borrow)]
+    natval: Option<Cow<'a, str>>,
+    #[serde(rename = "strVal", borrow)]
+    strval: Option<Cow<'a, str>>,
     mdata: Option<EMData>,
     axiom: Option<DAxiom>,
     def: Option<OneOrMany<DDef>>,
@@ -325,13 +324,14 @@ pub const BI_INST: u8 = 3;
 
 /// Per-expression detail kept with KEEP_EXPR_DETAIL=1. `aux[i]`: binder name index for lam/forallE/letE, for const
 /// an offset into `us` where `us[off]` is the number of universe arguments followed by their level indices, for proj
-/// the field index. `bi[i]`: binder info for lam/forallE.
+/// the field index. `bi[i]`: binder info for lam/forallE. `lits[i]`: the digits of a natVal or the string of a strVal.
 #[derive(Default)]
 pub struct ExprDetail {
     pub aux: Vec<u32>,
     pub bi: Vec<u8>,
     pub us: Vec<u32>,
     pub levels: Vec<Lv>,
+    pub lits: std::collections::HashMap<u32, String>,
 }
 
 #[derive(Default)]
@@ -351,6 +351,7 @@ struct BlockOut {
     levels: Vec<(u32, Lv)>,
     xaux: Vec<(u32, u32, u8)>,
     xus: Vec<(u32, Vec<u32>)>,
+    xlits: Vec<(u32, String)>,
 }
 
 fn u32c(x: u64) -> u32 {
@@ -435,9 +436,15 @@ fn parse_line(seq: u64, line: &[u8], out: &mut BlockOut, detail: bool) -> Result
                 out.xaux.push((u32c(i), u32c(p.idx), BI_DEFAULT));
             }
             E { tag: T_PROJ, a: u32c(p.st), b: u32c(p.type_name), c: 0 }
-        } else if l.natval.is_some() {
+        } else if let Some(v) = l.natval {
+            if detail {
+                out.xlits.push((u32c(i), v.into_owned()));
+            }
             E { tag: T_NAT, ..Default::default() }
-        } else if l.strval.is_some() {
+        } else if let Some(v) = l.strval {
+            if detail {
+                out.xlits.push((u32c(i), v.into_owned()));
+            }
             E { tag: T_STR, ..Default::default() }
         } else if let Some(m) = l.mdata {
             E { tag: T_MDATA, a: u32c(m.expr), ..Default::default() }
@@ -699,6 +706,9 @@ pub fn parse_stdin(nworkers: usize, expr_cap: usize, detail: bool, log: &mut Log
                 }
                 xd.aux[i] = a;
                 xd.bi[i] = bi;
+            }
+            for (i, v) in b.xlits {
+                xd.lits.insert(i, v);
             }
             for (i, us) in b.xus {
                 if us.is_empty() {

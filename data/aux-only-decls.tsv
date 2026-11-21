@@ -5,8 +5,8 @@ CompanionTheory.D.LK.SignIneq	def	src/CompanionTheory/HarishChandraModules/LowKT
 CompanionTheory.RgDsInf.EigenNewton	def	src/CompanionTheory/RealGroups/DiscreteSeries/DiscreteSeriesClassification/InfinitesimalCharacters/DsInfCharOf.lean	11	12	2
 CompanionTheory.RgDsInf.GelfRec	def	src/CompanionTheory/RealGroups/DiscreteSeries/DiscreteSeriesClassification/InfinitesimalCharacters/DsInfCharOf.lean	17	18	1
 CompanionTheory.RgGu.NR.Compl.starF	def	src/CompanionTheory/RealGroups/GeneralUnitaryRepresentations/ArchimedeanJacquetSegments/ComplementaryOf.lean	25	28	1
-GlobalTheory.IndefiniteRowSideFullHecke.LevelStructureForms.constOver	abbrev	src/Development/AbelianVarietyTheory/BlockTheory/AbelianSchemeLaw/LevelStructureForms.lean	27	27	1
-GlobalTheory.IndefiniteRowSideFullHecke.SectionsGroupRank.instZeroSecs	instance	src/Development/AbelianVarietyTheory/BlockTheory/AbelianSchemeLaw/SectionsGroupRank.lean	77	77	2
+GlobalTheory.IndefiniteRowSideFullHecke.LevelStructureForms.constOver	def	src/Development/AbelianVarietyTheory/BlockTheory/AbelianSchemeLaw/LevelStructureForms.lean	27	27	1
+GlobalTheory.IndefiniteRowSideFullHecke.SectionsGroupRank.instZeroSecs	def	src/Development/AbelianVarietyTheory/BlockTheory/AbelianSchemeLaw/SectionsGroupRank.lean	77	77	2
 GlobalTheory.IndefiniteRowSideFullHecke.AdelicScalarSectionLift.level	def	src/Development/AbelianVarietyTheory/BlockTheory/DivisorBase/AdelicScalarSectionLift.lean	59	61	1
 GlobalTheory.IndefiniteRowSideFullHecke.BadPlacesGoodCoefficients.badPlaces	def	src/Development/AbelianVarietyTheory/BlockTheory/DivisorBase/BadPlacesGoodCoefficients.lean	19	20	1
 GlobalTheory.IndefiniteRowSideFullHecke.BadPlacesGoodCoefficients.IsReadingPlaces	def	src/Development/AbelianVarietyTheory/BlockTheory/DivisorBase/BadPlacesGoodCoefficients.lean	28	29	1
@@ -24,7 +24,7 @@ GlobalTheory.IndefiniteRowSideFullHecke.StandardDeterminantUnit.DetUnitAt	def	sr
 GlobalTheory.IndefiniteRowSideFullHecke.SubstitutionAdjoint.DetIndex	def	src/Development/AbelianVarietyTheory/BlockTheory/GlobalSignature/SubstitutionAdjoint.lean	89	95	1
 GlobalTheory.IndefiniteRowSideFullHecke.SubstitutionAdjoint.PointIntegral	def	src/Development/AbelianVarietyTheory/BlockTheory/GlobalSignature/SubstitutionAdjoint.lean	97	104	1
 GlobalTheory.IndefiniteRowSideFullHecke.TameGeneratorWindow.FixedAt	def	src/Development/AbelianVarietyTheory/BlockTheory/GlobalSignature/TameGeneratorWindow.lean	19	24	1
-GlobalTheory.IndefiniteRowSideFullHecke.SplittingKernelQuotients.Rep	abbrev	src/Development/AbelianVarietyTheory/BlockTheory/HeightDefect/OmegaUpDownForms.lean	25	25	2
+GlobalTheory.IndefiniteRowSideFullHecke.SplittingKernelQuotients.Rep	def	src/Development/AbelianVarietyTheory/BlockTheory/HeightDefect/OmegaUpDownForms.lean	25	25	2
 GlobalTheory.IndefiniteRowSideFullHecke.UnitaryVolumePairs.volBox	def	src/Development/AbelianVarietyTheory/BlockTheory/HeightDefect/UnitaryVolumePairs.lean	22	25	6
 GlobalTheory.IndefiniteRowSideFullHecke.UnitaryVolumePairs.IsProductForm	def	src/Development/AbelianVarietyTheory/BlockTheory/HeightDefect/UnitaryVolumePairs.lean	27	30	2
 GlobalTheory.IndefiniteRowSideFullHecke.HeisenbergWeilMatrices.cj	def	src/Development/AbelianVarietyTheory/BlockTheory/HeightDefect/WeilIdempotents.lean	15	15	3
@@ -37,7 +37,7 @@ GlobalTheory.IndefiniteRowSideFullHecke.ThetaWeightedNorm.phK	def	src/Developmen
 GlobalTheory.IndefiniteRowSideFullHecke.JumpMultiplicityDual.SpanCore	def	src/Development/AbelianVarietyTheory/BlockTheory/NonGaloisCusps/JumpMultiplicityDual.lean	59	62	2
 GlobalTheory.IndefiniteRowSideFullHecke.JumpMultiplicityDual.CrysDeRham	def	src/Development/AbelianVarietyTheory/BlockTheory/NonGaloisCusps/JumpMultiplicityDual.lean	142	143	10
 GlobalTheory.IndefiniteRowSideFullHecke.CurvatureFamilyNorm.rd	def	src/Development/AbelianVarietyTheory/BlockTheory/PoincareCuspForms/CurvatureFamilyNorm.lean	19	19	1
-GlobalTheory.IndefiniteRowSideFullHecke.GramMatrixBlocks.UA	abbrev	src/Development/AbelianVarietyTheory/BlockTheory/SiegelEisenstein/GramMatrixAdjoint.lean	27	27	3
+GlobalTheory.IndefiniteRowSideFullHecke.GramMatrixBlocks.UA	def	src/Development/AbelianVarietyTheory/BlockTheory/SiegelEisenstein/GramMatrixAdjoint.lean	27	27	3
 GlobalTheory.IndefiniteRowSideFullHecke.GramMatrixBlocks.mat	def	src/Development/AbelianVarietyTheory/BlockTheory/SiegelEisenstein/GramMatrixAdjoint.lean	33	34	2
 GlobalTheory.IndefiniteRowSideFullHecke.HeckeIntertwinersInert.IsInertPl	def	src/Development/AbelianVarietyTheory/BlockTheory/ThetaLiftGeometry/HeckeIntertwinersInert.lean	18	19	1
 GlobalTheory.IndefiniteRowSideFullHecke.GLVolumeIndex.unitIn	def	src/Development/AbelianVarietyTheory/BlockTheory/TorsionBlocks/GLVolumeIndex.lean	128	128	1
@@ -55,7 +55,7 @@ GlobalTheory.IndefiniteRowSideFullHecke.ExponentTerms.InjMod	def	src/Development
 GlobalTheory.IndefiniteRowSideFullHecke.FlagVolumeFiltration.flagSub	def	src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/FlagVolumeFiltration.lean	15	21	1
 GlobalTheory.IndefiniteRowSideFullHecke.FlagVolumeFiltration.DatumTranslate	def	src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/FlagVolumeFiltration.lean	81	89	2
 GlobalTheory.IndefiniteRowSideFullHecke.GeneralDiagonalMatrix.StabLat	def	src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/GeneralDiagonalMatrix.lean	18	19	4
-GlobalTheory.IndefiniteRowSideFullHecke.IwahoriMembership.Oh	abbrev	src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/OppositeColumnLifts.lean	21	23	1
+GlobalTheory.IndefiniteRowSideFullHecke.IwahoriMembership.Oh	def	src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/OppositeColumnLifts.lean	21	23	1
 GlobalTheory.IndefiniteRowSideFullHecke.IwahoriMembership.InI	def	src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/OppositeColumnLifts.lean	25	25	2
 GlobalTheory.IndefiniteRowSideFullHecke.ParameterTransferTypes.SpanAt	def	src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/ParameterTransferTypes.lean	22	27	1
 GlobalTheory.IndefiniteRowSideFullHecke.TraceKernelDecomposition.HasRows	def	src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/TraceKernelDecomposition.lean	17	18	3
@@ -63,7 +63,7 @@ GlobalTheory.IndefiniteRowSideFullHecke.TraceKernelDecomposition.IsCcInf	def	src
 GlobalTheory.AdicMaps.levMap	def	src/Development/AbelianVarietyTheory/CrystallinePeriods/AdicMaps.lean	20	22	1
 GlobalTheory.GtAnModel.model	def	src/Development/AbelianVarietyTheory/Definitions/ArchimedeanThetaValues/AnalyticTorusPointBaseEqHolUnifEx.lean	87	137	3
 GlobalTheory.Mem.Top.Has	def	src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/CmQuadraticFormEqAlternatingForm.lean	66	67	1
-GlobalTheory.CuspRep.CG.instCoeFunIsRegAlg_ℂInfCharNodupℤ	instance	src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/ExpoConjOfIsCsd.lean	598	599	2
+GlobalTheory.CuspRep.CG.instCoeFunIsRegAlgForallAndNodupComplexInfCharForallForallMemMultisetExistsIntEqHAddCastHDivHSubCastOfNat	def	src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/ExpoConjOfIsCsd.lean	598	599	2
 GlobalTheory.Mem.Base.AutomorphicRingToComplex	def	src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/FixedCoefficientFieldInComplex.lean	537	537	1
 GlobalTheory.ProjVar.Var.coneIdeal	def	src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/MemRiemannRochSpaceIffRegularAtEverywhere.lean	78	82	2
 GlobalTheory.WeilDeligne.WDRep.ofMatrix	def	src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/MonodromyZeroOfWeilDeligneRepClassIff.lean	290	305	3
@@ -72,7 +72,7 @@ GlobalTheory.Mem.R3.Tr.autFunSmB	def	src/Development/AbelianVarietyTheory/Defini
 GlobalTheory.Mem.Col2.rowKH	def	src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/RightTranslationActionApply.lean	221	222	2
 GlobalTheory.HeightCounting.AUTrue	def	src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/RingSpecNormalisedCharacterEq.lean	56	58	4
 GlobalTheory.Mem.LiteralAutomorphy.Mult0	def	src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/RowRatW.lean	51	53	6
-GlobalTheory.ProjVar.CxExt.instAlgebraℂTensor	instance	src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/T2SpaceComplexPointsOfProjVariety.lean	32	32	4
+GlobalTheory.ProjVar.CxExt.instAlgebraComplexTensor	def	src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/T2SpaceComplexPointsOfProjVariety.lean	32	32	4
 GlobalTheory.ChiGrid.Places.sigma0	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/BasePlaceNotMemChiGridBadPlaces.lean	90	90	1
 GlobalTheory.ChiGrid.Node.par0	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/BasePlaceNotMemChiGridBadPlaces.lean	225	230	1
 GlobalTheory.PD.tw	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/DlogRatioVolumeFormNeZero.lean	24	25	2
@@ -85,17 +85,17 @@ GlobalTheory.Mum.IsFactor	def	src/Development/AbelianVarietyTheory/Definitions/D
 GlobalTheory.LKGeo.RegAf	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDivPlace.lean	61	64	1
 GlobalTheory.WeilM.realClass	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/HilbertNinetyQuotientHomEqIff.lean	35	38	1
 GlobalTheory.HTLat.Point.latOm	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/HodgeTateLatticePointFinrankTateModule.lean	138	138	1
-GlobalTheory.HTLat.Point.eigOm	abbrev	src/Development/AbelianVarietyTheory/Definitions/Divisors/HodgeTateLatticePointFinrankTateModule.lean	234	234	1
+GlobalTheory.HTLat.Point.eigOm	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/HodgeTateLatticePointFinrankTateModule.lean	234	234	1
 GlobalTheory.Poinc.Sep.HasTraits	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsChartMember.lean	50	55	2
 GlobalTheory.LKTrip.simMap	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsCyclotomicExtensionQI.lean	56	71	1
 GlobalTheory.LKTrip.GQpts	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsCyclotomicExtensionQI.lean	109	110	1
 GlobalTheory.LKTrip.bc	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsCyclotomicExtensionQI.lean	114	120	2
 GlobalTheory.LKTrip.bcMap	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsCyclotomicExtensionQI.lean	122	131	1
-GlobalTheory.LKTrip.HTGroup.GR	abbrev	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsCyclotomicExtensionQI.lean	484	484	1
+GlobalTheory.LKTrip.HTGroup.GR	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsCyclotomicExtensionQI.lean	484	484	1
 GlobalTheory.LKTrip.HTGroup.placeOf	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsCyclotomicExtensionQI.lean	554	554	1
 GlobalTheory.CompHt.compIdeal	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsHomogeneousCompIdeal.lean	141	142	1
 GlobalTheory.DeRham.ringAct	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsKSValueOneOfRetraction.lean	209	221	1
-GlobalTheory.FlagTan.RulK	abbrev	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsLocalRingTrivSqZeroExt.lean	124	124	1
+GlobalTheory.FlagTan.RulK	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsLocalRingTrivSqZeroExt.lean	124	124	1
 GlobalTheory.LevDesc.algOp	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/IsRightActFunPull.lean	71	72	1
 GlobalTheory.LatJet.EisFourier	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/JetAnalytic.lean	205	210	1
 GlobalTheory.LatJet.ModelInt	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/JetAnalytic.lean	229	237	3
@@ -110,10 +110,10 @@ GlobalTheory.WpFam.pv	def	src/Development/AbelianVarietyTheory/Definitions/Divis
 GlobalTheory.WpFam.eta	def	src/Development/AbelianVarietyTheory/Definitions/Divisors/ZetaActRefl.lean	13	13	1
 GlobalTheory.K4.IsZetaB	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/ActWBOfInvariant.lean	59	65	2
 GlobalTheory.Ord2.VanishOrd	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/FinalTheorems.lean	49	51	2
-GlobalTheory.AutMult.IsFinFactorisation	abbrev	src/Development/AbelianVarietyTheory/Definitions/Foundations/ForallEventuallyFinLocIff.lean	249	251	1
+GlobalTheory.AutMult.IsFinFactorisation	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/ForallEventuallyFinLocIff.lean	249	251	1
 GlobalTheory.AutMult.IsDSTensor	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/ForallEventuallyFinLocIff.lean	273	274	1
 GlobalTheory.AutMult.finPart	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/ForallEventuallyFinLocIff.lean	312	315	3
-GlobalTheory.AutMult.finPartSm	abbrev	src/Development/AbelianVarietyTheory/Definitions/Foundations/ForallEventuallyFinLocIff.lean	317	318	1
+GlobalTheory.AutMult.finPartSm	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/ForallEventuallyFinLocIff.lean	317	318	1
 GlobalTheory.AutMult.homInEquiv	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/InnerEqZeroOfNotUEquiv.lean	68	78	1
 GlobalTheory.KummerEisensteinGalois.rowIdx	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/Integral.lean	36	38	1
 GlobalTheory.K4.wk4	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/IsPrimitiveRootTopZeta.lean	42	65	1
@@ -121,7 +121,7 @@ GlobalTheory.KZ.H3.SSBS	def	src/Development/AbelianVarietyTheory/Definitions/Fou
 GlobalTheory.K4.Adm3	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/IsZetaTW.lean	28	44	1
 GlobalTheory.AutMult.LocContains	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/MemL2OfAutomorphicEmbedding.lean	39	40	2
 GlobalTheory.AutMult.mDisc	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/MemL2OfAutomorphicEmbedding.lean	68	68	1
-GlobalTheory.Cusp.PA	abbrev	src/Development/AbelianVarietyTheory/Definitions/Foundations/MemL2OfBoundedContinuousInvariant.lean	84	84	5
+GlobalTheory.Cusp.PA	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/MemL2OfBoundedContinuousInvariant.lean	84	84	5
 GlobalTheory.SlopeRec.badPrimes	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/ThetaExponentIdentities.lean	171	174	1
 GlobalTheory.AutMult.IsTensorMap	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/ToContinuousLinearMapMemHomIn.lean	27	29	1
 GlobalTheory.AutMult.postRep	def	src/Development/AbelianVarietyTheory/Definitions/Foundations/ToContinuousLinearMapMemHomIn.lean	210	215	3
@@ -138,7 +138,7 @@ GlobalTheory.Cong.ScopeOffT	def	src/Development/AbelianVarietyTheory/Definitions
 GlobalTheory.NPin.rcAt	def	src/Development/AbelianVarietyTheory/Definitions/GaloisGeometry/ThetaMod.lean	45	47	1
 GlobalTheory.Fc.R1.H_rRows	def	src/Development/AbelianVarietyTheory/Definitions/GlobalTwisting/CountsIrreducibilityConstants.lean	193	195	1
 GlobalTheory.LvT.PtModel.WeakApprox	def	src/Development/AbelianVarietyTheory/Definitions/GlobalTwisting/FormsStable.lean	135	135	1
-GlobalTheory.EX.PtX	abbrev	src/Development/AbelianVarietyTheory/Definitions/GlobalTwisting/JoinEquivEqAtReference.lean	84	84	2
+GlobalTheory.EX.PtX	def	src/Development/AbelianVarietyTheory/Definitions/GlobalTwisting/JoinEquivEqAtReference.lean	84	84	2
 GlobalTheory.EX.rowPt	def	src/Development/AbelianVarietyTheory/Definitions/GlobalTwisting/JoinEquivEqAtReference.lean	111	111	2
 GlobalTheory.LvT.Conclusion2	def	src/Development/AbelianVarietyTheory/Definitions/GlobalTwisting/LevelChainSharpColumnValuationOwnChainIff.lean	237	263	1
 GlobalTheory.LvT.PointsLemma	def	src/Development/AbelianVarietyTheory/Definitions/GlobalTwisting/LevelChainSharpColumnValuationOwnChainIff.lean	275	286	1
@@ -153,7 +153,7 @@ GlobalTheory.Core.Rk.SW.IsEigAvg	def	src/Development/AbelianVarietyTheory/Defini
 GlobalTheory.SWC.starM	def	src/Development/AbelianVarietyTheory/Definitions/LatticeFrames/HermCoord.lean	16	16	1
 GlobalTheory.MiTop.rowAt	def	src/Development/AbelianVarietyTheory/Definitions/LatticeFrames/PairForm.lean	51	53	2
 GlobalTheory.SeeSaw.SOnCols	def	src/Development/AbelianVarietyTheory/Definitions/LatticeFrames/SOnCols.lean	32	36	1
-GlobalTheory.FinPl.Model.relAt	instance	src/Development/AbelianVarietyTheory/Definitions/LatticeFrames/SingleMemIdAt.lean	20	20	1
+GlobalTheory.FinPl.Model.relAt	def	src/Development/AbelianVarietyTheory/Definitions/LatticeFrames/SingleMemIdAt.lean	20	20	1
 GlobalTheory.FinPl.Model.secAt	def	src/Development/AbelianVarietyTheory/Definitions/LatticeFrames/SingleMemIdAt.lean	23	25	5
 GlobalTheory.FinPl.Model.prAt	def	src/Development/AbelianVarietyTheory/Definitions/LatticeFrames/SingleMemIdAt.lean	27	28	2
 GlobalTheory.FinPl.Model.splitPt	def	src/Development/AbelianVarietyTheory/Definitions/LatticeFrames/SingleMemIdAt.lean	36	57	2
@@ -208,7 +208,7 @@ GlobalTheory.CechKS.Pt.red	def	src/Development/AbelianVarietyTheory/Proofs/Divis
 GlobalTheory.USep.HasTraitsP	def	src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/HasTraitsP.lean	25	29	3
 GlobalTheory.FlatDenom.IsFrameCoord	def	src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsPreimmersionFst.lean	91	98	1
 GlobalTheory.BigOn.Exp.TupLe.PlacesSt	def	src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LatTranslateOfPrime.lean	41	55	1
-GlobalTheory.SkyMod.instModuleΓObj	instance	src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/MonoPullbackMapOfFlat.lean	23	32	6
+GlobalTheory.SkyMod.instModuleCarrierObjOppositeOpensCarrierCarrierCommRingCatPresheafOpOpensObjOfStalk	def	src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/MonoPullbackMapOfFlat.lean	23	32	6
 GlobalTheory.OneMapAllCompare.TypeCoprime	def	src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/OneMapAllComparison.lean	69	70	3
 GlobalTheory.OneForm.rowSub	def	src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/OneVectorOfMultiplicityOne.lean	337	339	1
 GlobalTheory.USep.HasTraits	def	src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SepAtBIff.lean	32	36	2
@@ -256,7 +256,7 @@ GlobalTheory.Cong.SplitAtt	def	src/Development/AbelianVarietyTheory/Statements/E
 GlobalTheory.Cong.Seed	def	src/Development/AbelianVarietyTheory/Statements/EllipticCurveLevels/ClosedAtLConclusionOfMem.lean	38	43	4
 GlobalTheory.HeckeSupSt.HkSupSized	def	src/Development/AbelianVarietyTheory/Statements/HeckeThetaIntegrals/HkSupSizedOfHkSup.lean	16	20	3
 GlobalTheory.CM.TensorObjSt	def	src/Development/AbelianVarietyTheory/Statements/PrincipalLattices/ExistsPrincipalLattice.lean	13	20	3
-UpperTheory.V.AlgebraTools.OddForm.instInhabitedOddForm	instance	src/Development/AutomorphicArithmetic/AutomorphicVarieties/AlgebraTools/InvAlg.lean	32	32	1
+UpperTheory.V.AlgebraTools.OddForm.instInhabited	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/AlgebraTools/InvAlg.lean	32	32	1
 UpperTheory.V.Cm.ofKZ	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/AutomorphicForms/CmBridge.lean	72	74	1
 UpperTheory.V.Af.CountQ	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/AutomorphicForms/CongruenceNumberRankThree.lean	86	92	1
 UpperTheory.V.Af.Gu.CompatPol	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/AutomorphicForms/GuDefs.lean	100	108	1
@@ -269,7 +269,7 @@ UpperTheory.V.Sd.EigAut	def	src/Development/AutomorphicArithmetic/AutomorphicVar
 UpperTheory.V.Sd.Wc.WtMon	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/IdeleGenerators/ShortLatticeUnitarize/Unitarize.lean	14	15	1
 UpperTheory.V.Sd.PropM	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/IdeleGenerators/WeightChange.lean	141	150	1
 UpperTheory.V.Sd.WeightChange	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/IdeleGenerators/WeightChange.lean	161	167	1
-UpperTheory.V.Lit.Dr.instInhabitedGeo	instance	src/Development/AutomorphicArithmetic/AutomorphicVarieties/LiteratureResults/DifferentialTranslates/DifferentiableAtOm.lean	30	31	1
+UpperTheory.V.Lit.Dr.instInhabitedGeo	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/LiteratureResults/DifferentialTranslates/DifferentiableAtOm.lean	30	31	1
 PositivityTheory.KB.SpectralGap.DesignMultiplication.rmul	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/LiteratureResults/KTheoryStability/ReductionBoundsTorsion/ArithmeticGapBounds/PDesign.lean	143	156	2
 UpperTheory.V.Z.Inf.LocDual	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ArchimedeanSchwartz/HodgeTateFromSandwich.lean	16	22	2
 UpperTheory.V.Z.Win.Dn.AutEnd2C	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/AutomorphyLifting/AutomorphyDescent/AutEnd2Ao.lean	9	16	4
@@ -292,13 +292,13 @@ UpperTheory.V.Z.Tf.GOne.One	def	src/Development/AutomorphicArithmetic/Automorphi
 UpperTheory.V.Z.Tf.GOne.Temp	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/TraceFormula/GL1SpectralBounds/SecondFromFirstStatement.lean	13	14	1
 _private.Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.TraceFormula.GlobalTraceComparison.AutomorphicRepresentations.PPSupp.0.UpperTheory.V.Z.Tf.GlobalTraceComparison.Pi.PS.mulFn	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/TraceFormula/GlobalTraceComparison/AutomorphicRepresentations/PPSupp.lean	56	57	2
 UpperTheory.V.Tower.normStep	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/IdealNormClassCongr.lean	63	65	1
-UpperTheory.V.Tower.pullN	abbrev	src/Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/IdealNormClassCongr.lean	85	86	1
+UpperTheory.V.Tower.pullN	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/IdealNormClassCongr.lean	85	86	1
 UpperTheory.V.Published.FormsFiniteReal	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/PublishedTheorems/CuspSemisimpleReal.lean	72	79	1
 UpperTheory.V.Th.LevAt	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/TheoremsMuLinked/OrdinaryHeckeAlgebraIntegral.lean	180	185	1
 UpperTheory.V.Th.LevelX	def	src/Development/AutomorphicArithmetic/AutomorphicVarieties/TheoremsMuLinked/OrdinaryHeckeAlgebraIntegral.lean	191	193	2
 _private.Development.AutomorphicArithmetic.CMTraceForms.DiscrCMDatumEqProdPlaces.0.UpperTheory.PlacesDiscr.sigEquiv	def	src/Development/AutomorphicArithmetic/CMTraceForms/DiscrCMDatumEqProdPlaces.lean	50	51	1
 UpperTheory.Et.prGen	def	src/Development/AutomorphicArithmetic/CommutativeAlgebra/EtaleCohomology/EtaleProperBaseChange.lean	29	32	1
-UpperTheory.Ring.Comp.Fl	abbrev	src/Development/AutomorphicArithmetic/CrystallineRing/Acris0.lean	15	15	3
+UpperTheory.Ring.Comp.Fl	def	src/Development/AutomorphicArithmetic/CrystallineRing/Acris0.lean	15	15	3
 UpperTheory.ConvolutionTheory.R.OrderAsym	def	src/Development/AutomorphicArithmetic/Foundations/Convolution/NormCharacterPowers/OrderAsym.lean	20	23	1
 UpperTheory.ConvolutionTheory.C.TwistedSum	def	src/Development/AutomorphicArithmetic/Foundations/Convolution/PowerSumTraces/CuspidalMultiplicityOneTotallyComplex.lean	78	86	2
 UpperTheory.ConvolutionTheory.C.CuspTrSum	def	src/Development/AutomorphicArithmetic/Foundations/Convolution/PowerSumTraces/DecayTraceClassAlt.lean	21	28	2
@@ -307,10 +307,10 @@ UpperTheory.PullbackConnectingMap.cube	def	src/Development/AutomorphicArithmetic
 UpperTheory.PullbackConnectingMap.cmp	def	src/Development/AutomorphicArithmetic/Foundations/EtaleClopenDescent/ExistsComparisonFamilyNatural.lean	311	314	1
 UpperTheory.GalN.V.AutPol	def	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/AdmissibleResidues/IsAutomorphicOverImagQuad.lean	32	33	1
 UpperTheory.GalN.V.PropEGN	def	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/AdmissibleResidues/SeedDefs.lean	14	17	1
-UpperTheory.GalN.V.Win.instInhabitedTrData	instance	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/AdmissibleResidues/WinDefs.lean	80	81	1
+UpperTheory.GalN.V.Win.instInhabitedTrData	def	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/AdmissibleResidues/WinDefs.lean	80	81	1
 UpperTheory.Gal.NearKilling.TypeRel	def	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/CharpolyFromTrace/GoodLiftAlt.lean	13	24	3
 UpperTheory.Gal.NearKilling.GoodLift	def	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/CharpolyFromTrace/GoodLiftAlt.lean	26	33	2
-UpperTheory.Gal.NearKilling.instInhabitedCmExt	instance	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/CharpolyFromTrace/NumberField.lean	26	27	1
+UpperTheory.Gal.NearKilling.instInhabitedCmExtOfIsCMFieldOfIsAlgClosure	def	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/CharpolyFromTrace/NumberField.lean	26	27	1
 UpperTheory.Gal.NearKilling.GoodLiftC	def	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/CharpolyFromTrace/NumberField.lean	29	36	2
 UpperTheory.Gal.NearKilling.DenseFrob	def	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/CharpolyFromTrace/UnlinkedOfType.lean	66	69	1
 UpperTheory.Gal.ClosedPhiFromClosedTrace.ClosedPhi	def	src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/ClosedPhiFunctoriality/JointApproxOfMem.lean	34	45	2
@@ -502,7 +502,7 @@ Formalism.L2.GlobalTheoryTheory.LocalLatticeBases.KernelOperatorLatticeInclusion
 Formalism.L2.GlobalTheoryTheory.HLatOps.ofForm	def	src/Formalism/LocalToGlobal/GlobalTheory/HLatOps.lean	64	66	1
 Formalism.L2.GlobalTheoryTheory.HLatOps.IsoWithL	def	src/Formalism/LocalToGlobal/GlobalTheory/HLatOps.lean	92	96	2
 Formalism.L2.G.LocalDataSystem	def	src/Formalism/LocalToGlobal/GroupLattices/AdmissibleFamilyNoKernel.lean	79	90	2
-Formalism.L2.G.Cmp.FormsJ	abbrev	src/Formalism/LocalToGlobal/GroupLattices/ComparisonMaps/SpanImageEq.lean	48	48	2
+Formalism.L2.G.Cmp.FormsJ	def	src/Formalism/LocalToGlobal/GroupLattices/ComparisonMaps/SpanImageEq.lean	48	48	2
 Formalism.L2.Forms.Forms0.fMe	def	src/Formalism/LocalToGlobal/GroupLattices/DownNaturalLevelZero.lean	45	46	2
 Formalism.L2.Forms.FormsTied.to0	def	src/Formalism/LocalToGlobal/GroupLattices/DownNaturalLevelZero.lean	71	92	1
 Formalism.L2.NTheta.KpC	def	src/Formalism/LocalToGlobal/HeckeThetaElements/IsHeckeElt.lean	18	20	9
@@ -515,7 +515,7 @@ Formalism.IndefR.principalLevelFrame.IpInv	def	src/Formalism/LocalToGlobal/Indef
 Formalism.IndefR.NX.BC.ιOf	def	src/Formalism/LocalToGlobal/IndefiniteReal/DoubleCosetOperators/CoreBC.lean	174	175	1
 Formalism.IndefR.Fin.VacEx.IsDyIdem	def	src/Formalism/LocalToGlobal/IndefiniteReal/FinitePlaces/VacExA.lean	19	21	10
 Formalism.IndefR.Seed.FrmC.IsG2	def	src/Formalism/LocalToGlobal/IndefiniteReal/FrameExistence/FramesExistOfDiagonalTypePlaces.lean	218	224	1
-Formalism.IndefR.Bridge.FamReal3	abbrev	src/Formalism/LocalToGlobal/IndefiniteReal/HeckeIndexRange.lean	68	72	1
+Formalism.IndefR.Bridge.FamReal3	def	src/Formalism/LocalToGlobal/IndefiniteReal/HeckeIndexRange.lean	68	72	1
 Formalism.IndefR.InjectiveDecompositionAction.FirstPropositionFrame	def	src/Formalism/LocalToGlobal/IndefiniteReal/InjectiveDecompositionAction.lean	14	31	7
 Formalism.IndefR.Heis.Hth	def	src/Formalism/LocalToGlobal/IndefiniteReal/IsWeilDatum.lean	133	160	2
 Formalism.IndefR.Eqv.AtTauHom	def	src/Formalism/LocalToGlobal/IndefiniteReal/LevelTypeEquivalence/BaseSt.lean	35	40	2
@@ -561,7 +561,7 @@ Formalism.L2.Pj.dmet	def	src/Formalism/LocalToGlobal/ProjectiveLattices/Equivari
 Formalism.L2.Pj.SS	def	src/Formalism/LocalToGlobal/ProjectiveLattices/EquivariantFiniteGroup.lean	68	71	4
 Formalism.L2.Pj.DictSpec	def	src/Formalism/LocalToGlobal/ProjectiveLattices/FamilyUniformisationBasePointOrthogonal.lean	172	188	2
 Formalism.L2.Pj.pmOf	def	src/Formalism/LocalToGlobal/ProjectiveLattices/FibreUniformisationLevelTwo.lean	171	180	2
-Formalism.L2.Pj.PerAt	abbrev	src/Formalism/LocalToGlobal/ProjectiveLattices/FrameEx.lean	55	56	1
+Formalism.L2.Pj.PerAt	def	src/Formalism/LocalToGlobal/ProjectiveLattices/FrameEx.lean	55	56	1
 Formalism.L2.Pj.lieOf	def	src/Formalism/LocalToGlobal/ProjectiveLattices/FrameEx.lean	58	60	1
 Formalism.L2.Pj.G0	def	src/Formalism/LocalToGlobal/ProjectiveLattices/LiftLaSpec.lean	16	30	1
 Formalism.L2.Pj.TestRd	def	src/Formalism/LocalToGlobal/ProjectiveLattices/ReadProofs.lean	14	17	2
@@ -594,7 +594,7 @@ Formalism.L2.SG.Pf.Carrier.Parts.EnergyModel	def	src/Formalism/LocalToGlobal/Sie
 Formalism.L2.SG.Pf.Carrier.EnergyPf.PlaceEnergy	def	src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CarrierEnergyPf.lean	30	34	1
 Formalism.L2.SG.Pf.Carrier.Parts.Pins	def	src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CarrierParts.lean	58	60	1
 Formalism.L2.SG.Pf.CarrierSz.ClCut	def	src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CarrierSizes.lean	76	76	1
-Formalism.L2.SG.Pf.ColDictPf.unitaryGroupRational	abbrev	src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/ColDictPf.lean	20	21	1
+Formalism.L2.SG.Pf.ColDictPf.unitaryGroupRational	def	src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/ColDictPf.lean	20	21	1
 Formalism.L2.SG.LoopsTies.aOf	def	src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LoopsFinalS.lean	35	35	2
 Formalism.L2.SG.ThmSOwn.TheoremSDifferentWords	def	src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/ThmSOwn.lean	414	419	1
 Formalism.L2.SG.VolPin.VolPinGC	def	src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/VolPinG.lean	13	21	1
@@ -664,7 +664,7 @@ Formalism.MainNotions.AdmissibleBoundsFromSource.WordPairStandingData	def	src/Fo
 Formalism.MainNotions.AdmissibleBoundsFromSource.adm5	def	src/Formalism/SharpRestriction/CuspSpanNormBounds/AdmissibleBoundsFromSource.lean	129	131	1
 Formalism.MainNotions.BigCellDensity.DensAt	def	src/Formalism/SharpRestriction/CuspSpanNormBounds/BigCellDensity.lean	25	34	1
 Formalism.MainNotions.BigCellDensity.TopLevelBesselStatement	def	src/Formalism/SharpRestriction/CuspSpanNormBounds/BigCellDensity.lean	536	547	4
-Formalism.MainNotions.BridgeCPX.instLocallyCompactSpaceMatrixFinℂ	instance	src/Formalism/SharpRestriction/CuspSpanNormBounds/BridgeCPX.lean	552	553	1
+Formalism.MainNotions.BridgeCPX.instLocallyCompactSpaceMatrixFinComplex_formalism	theorem	src/Formalism/SharpRestriction/CuspSpanNormBounds/BridgeCPX.lean	552	553	1
 Formalism.MainNotions.BridgeLemma.LocalModelsAtRemainingPrimes	def	src/Formalism/SharpRestriction/CuspSpanNormBounds/BruhatCellsKronecker/GlobalConditionOfProductFormula.lean	468	488	2
 Formalism.MainNotions.JointEigenvalueBoundsFromAnyDatum.FamilyVolumeFourth	def	src/Formalism/SharpRestriction/CuspSpanNormBounds/ChainLength.lean	130	139	1
 Formalism.MainNotions.S.UnitaryVolumeMass.stPTsum	def	src/Formalism/SharpRestriction/CuspSpanNormBounds/CongruenceAtSplitFrobeniusHolds.lean	334	344	3
@@ -687,7 +687,7 @@ Formalism.MainNotions.S.genScal	def	src/Formalism/SharpRestriction/CuspSpanNormB
 Formalism.MainNotions.TheoremBConstants.PieriShellBound	def	src/Formalism/SharpRestriction/CuspSpanNormBounds/TheoremBConstants.lean	68	87	1
 Formalism.MainNotions.ThinScalesBound.ThOK	def	src/Formalism/SharpRestriction/CuspSpanNormBounds/ThinScalesBound.lean	21	49	1
 Formalism.MainNotions.ThinScalesBound.FamilyTheoremThreePassage	def	src/Formalism/SharpRestriction/CuspSpanNormBounds/ThinScalesBound.lean	86	98	1
-Formalism.MainNotions.ModuliIntegralCharts.H1.FBIdSy.swJ	abbrev	src/Formalism/SharpRestriction/Divisibility/GeneratorPowers/FBIdSy.lean	21	24	1
+Formalism.MainNotions.ModuliIntegralCharts.H1.FBIdSy.swJ	def	src/Formalism/SharpRestriction/Divisibility/GeneratorPowers/FBIdSy.lean	21	24	1
 Formalism.MainNotions.ModuliIntegralCharts.H1.HarmInvB.qT	def	src/Formalism/SharpRestriction/Divisibility/GeneratorPowers/HarmInvB.lean	239	242	1
 Formalism.MainNotions.ModuliIntegralCharts.H1.PhiCMin.compL	def	src/Formalism/SharpRestriction/Divisibility/GeneratorPowers/PhiCMinB.lean	30	33	1
 Formalism.MainNotions.KudlaSiegelWeil.SplitsCompletely	def	src/Formalism/SharpRestriction/Divisibility/KudlaSiegelWeil.lean	39	40	1
@@ -785,8 +785,8 @@ Formalism.WeaklyAdmissibleFiltrations.quotientFiniteCohomology	def	src/Formalism
 Formalism.WindowSums.RSplit	def	src/Formalism/WindowSums/Statement.lean	128	132	2
 Formalism.YangianSpanCharacter.F.PlusFrame	def	src/Formalism/YangianSpanCharacter/StatementF.lean	14	31	1
 GroundTheory.Automorphic.AutomorphicForm.gkModuleAF	def	src/GroundTheory/AutomorphicForms/AutomorphicFormSpaces/GKStable.lean	390	395	2
-GroundTheory.Automorphic.BanachRep.instCoeFunBanachRep_Lℂ	instance	src/GroundTheory/AutomorphicForms/GKModules/SmoothVectors.lean	24	24	1
-GroundTheory.FunctionField.Place.algebraExt	abbrev	src/GroundTheory/FunctionField/PlaceSum.lean	49	50	1
+GroundTheory.Automorphic.BanachRep.instCoeFunForallContinuousLinearMapComplexId	def	src/GroundTheory/AutomorphicForms/GKModules/SmoothVectors.lean	24	24	1
+GroundTheory.FunctionField.Place.algebraExt	def	src/GroundTheory/FunctionField/PlaceSum.lean	49	50	1
 GroundTheory.Global.Elliptic.latticeHomEquiv	def	src/GroundTheory/GlobalFields/ComplexMultiplication/AnalyticAlgebraic.lean	14	21	1
 GroundTheory.Global.Cyclotomic.idealOfIsClosed	def	src/GroundTheory/GlobalFields/CyclotomicCharacters/ClosedSubgroups.lean	83	87	1
 GroundTheory.Global.RationalSymbol.cycCharacterHomeomorph	def	src/GroundTheory/GlobalFields/NormResidueSymbol/RationalContinuous.lean	32	36	1
@@ -803,7 +803,7 @@ GroundTheory.BlockD.FourierDecayAlt.GaugeExists.dZv	def	src/GroundTheory/IdeleRo
 GroundTheory.LocalField.valBallEquivMaximalIdealPow	def	src/GroundTheory/LocalFields/PadicExp.lean	117	128	1
 GroundTheory.LocalField.residueAlgHom	def	src/GroundTheory/LocalFields/Uniqueness.lean	221	222	3
 GroundTheory.LocalField.frobeniusZPowersEquiv	def	src/GroundTheory/LocalFields/WeilGroupDefs.lean	28	32	1
-GroundTheory.ProfCoh.isDiscreteRep_directSum	instance	src/GroundTheory/ProfiniteCohomology/DiscreteModules/IsDiscreteRepIffForallExistsOpenNormalSubgroup.lean	195	206	1
+GroundTheory.ProfCoh.isDiscreteRep_directSum	theorem	src/GroundTheory/ProfiniteCohomology/DiscreteModules/IsDiscreteRepIffForallExistsOpenNormalSubgroup.lean	195	206	1
 GroundTheory.ProfCoh.gsInfFamily	def	src/GroundTheory/ProfiniteCohomology/GlobalEulerCharacteristic/GlobalEulerFormulaInf.lean	22	24	2
 GroundTheory.ProfCoh.galUnitsResIso	def	src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseChangeModules.lean	67	72	2
 GroundTheory.ProfCoh.gsUnitsCohomologyIso	def	src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseChangeModules.lean	226	229	2

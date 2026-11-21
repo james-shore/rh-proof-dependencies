@@ -2,7 +2,7 @@
 top subtrees, chapter cut, per-directory breakdown, and checks.
 
 usage: dominators.py DATASET_DIR OUT_DIR
-DATASET_DIR holds cone's tables (constants, edges, decls, directories; Parquet or TSV, v0.1 schema).
+DATASET_DIR holds the dataset tables (constants, edges, decls, directories; Parquet or TSV, v0.1 schema).
 """
 import os, sys
 import numpy as np
@@ -29,7 +29,8 @@ def load(con, ds):
         coalesce(type_dag, 0) + coalesce(value_dag, 0) as ksize, block, thm_mask, {shared} as shared from {rel(pc)}
         where {in_cone_c}""")
     dorig = "and origin = 'project'" if 'origin' in dcols else ''
-    con.execute(f"""create table d0 as select decl, kind, file, start_line, end_line, lines from {rel(pd)}
+    gen = 'coalesce(cast(generated as boolean), false)' if 'generated' in dcols else 'false'
+    con.execute(f"""create table d0 as select decl, kind, file, start_line, end_line, lines, {gen} as gen from {rel(pd)}
         where cast(in_cone as int) = 1 and decl is not null and decl <> '' {dorig}""")
     con.execute("""create table cm as select c.*, d0.decl as dk from c left join d0
         on c.decl = d0.decl and c.file = d0.file and c.start_line = d0.start_line""")
@@ -41,9 +42,9 @@ def load(con, ds):
         con.execute("create or replace table cm2 as select cm.*, (cm.origin = 'project' and (cm.dk is null or cm.id in (select id from sa))) as alone from cm")
         # node 0 = virtual root; then source declarations and stand-alone constants, ordered by file and line
         con.execute("""create or replace table nodes as select row_number() over (order by file, start_line, decl) as did, * from (
-            select decl, kind, file, start_line, end_line, lines, 0 as unmapped from d0
+            select decl, kind, file, start_line, end_line, lines, 0 as unmapped, gen from d0
             union all select name, case when shared then 'shared_aux' else kind end, coalesce(file, ''), coalesce(start_line, 0),
-                coalesce(start_line, 0), 0, case when shared then 2 else 1 end from cm2 where alone)""")
+                coalesce(start_line, 0), 0, case when shared then 2 else 1 end, false from cm2 where alone)""")
         con.execute("""create or replace table cmap as
             select cm2.id, cm2.origin, cm2.ksize, cm2.block, cm2.thm_mask, n.did from cm2 join nodes n
               on n.unmapped = 0 and n.decl = cm2.dk and n.file = cm2.file and n.start_line = cm2.start_line where not cm2.alone
@@ -142,12 +143,12 @@ def build(con, C, pe, out):
 
 
 def node_table(con, C, n):
-    q = con.execute("""select did, decl, kind, file, start_line, end_line, lines, unmapped from nodes order by did""").fetchnumpy()
+    q = con.execute("""select did, decl, kind, file, start_line, end_line, lines, unmapped, cast(gen as int) as gen from nodes order by did""").fetchnumpy()
     N = {k: np.empty(n, dtype=object if q[k].dtype == object else q[k].dtype) for k in q}
     for k in q:
         N[k][1:] = q[k]
     N['decl'][0] = '(root: the five theorems)'; N['kind'][0] = ''; N['file'][0] = ''
-    for k in ('start_line', 'end_line', 'lines', 'unmapped'):
+    for k in ('start_line', 'end_line', 'lines', 'unmapped', 'gen'):
         N[k][0] = 0
     N['lines'] = N['lines'].astype(np.int64)
     qq = C['q']; k = qq['did'] >= 0
@@ -257,7 +258,7 @@ def main():
                      N['nconst'][v], N['ksize'][v], N['ext_x'][v], N['ext_xm'][v], int(N['mask'][v]),
                      idom[v] if v else -1, N['decl'][idom[v]] if v else '', depth[v], nkids[v],
                      S['decls'][v], S['lines'][v], S['ksize'][v], S['nconst'][v], S['ext'][v], tin[v], tout[v],
-                     ('root', 'decl', 'no_decl_row', 'shared_aux')[0 if v == 0 else 1 + int(N['unmapped'][v])]))
+                     'root' if v == 0 else 'generated' if N['gen'][v] else ('decl', 'no_decl_row', 'shared_aux')[int(N['unmapped'][v])]))
     hdr = ['node', 'decl', 'kind', 'file', 'start_line', 'end_line', 'lines', 'n_constants', 'kernel_dag', 'ext_refs',
            'ext_refs_mathlib', 'thm_mask', 'idom_node', 'idom', 'dom_depth', 'children', 'sub_decls', 'sub_lines',
            'sub_kernel_dag', 'sub_constants', 'sub_ext_refs', 'tin', 'tout', 'node_type']
@@ -332,9 +333,12 @@ def main():
               ['dir', 'level', 'decls_in_cone', 'lines_in_cone', 'kernel_dag_in_cone', 'chapters_touched',
                'lines_on_spine', 'top_chapters_by_lines'], dir_rows)
 
-    nkind = con.execute("select unmapped, count(*) from nodes group by all order by all").fetchall()
+    nkind = con.execute("select unmapped, cast(gen as int), count(*) from nodes group by all order by all").fetchall()
+    labels = {(0, 0): 'source declarations', (0, 1): 'generated declarations (made by notation, macro or elab commands)',
+              (1, 0): 'constants without an in-cone decl row',
+              (2, 0): 'shared aux lemmas standing alone (generator not in the cone, or used by another declaration)'}
     summary = {'dataset': os.environ.get('RHS_DATASET_VERSION', os.path.basename(os.path.normpath(ds))),
-               'node_kinds': {['source declarations', 'constants without an in-cone decl row', 'shared aux lemmas standing alone (generator not in the cone, or used by another declaration)'][k]: v for k, v in nkind},
+               'node_kinds': {labels.get((u, g), f'kind {u}/{g}'): c for u, g, c in nkind},
                'standalone_stats': C['standalone_stats'],
                'nodes': n - 1, 'decl_edges': int(len(es)),
                'block_edges': nblock, 'totals': tot, 'root_children': len(kids[0]),

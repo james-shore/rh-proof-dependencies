@@ -1,12 +1,13 @@
 part	detail	lines
-inside used declarations		10737754
-inside unused declarations		2693805
-inside commands with no kernel constant	example, notation, macros, run_cmd	19710
-outside any declaration	blank	1752631
+inside used declarations		10737690
+inside unused declarations		2692533
+inside duplicate copies of theorems	135 commands, same name and statement as a theorem in another file	1340
+inside commands with no kernel constant	example, notation, notation3, macro, infixl, elab, run_cmd, unif_hint	19710
+outside any declaration	blank	1752637
 outside any declaration	import	909822
 outside any declaration	namespace / section / end	522750
-outside any declaration	open	467581
-outside any declaration	variable / universe / include / omit	131650
-outside any declaration	set_option / attribute / export	81406
-outside any declaration	other	57106
+outside any declaration	open	467582
+outside any declaration	variable / universe / include / omit	131653
+outside any declaration	set_option / attribute / export	81402
+outside any declaration	other	57096
 total		17374215

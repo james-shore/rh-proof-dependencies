@@ -124,9 +124,13 @@ def main():
         log(nm, summ[nm])
 
     # kinds of source declarations in the project cone
+    ng = not_generated(con, pd)
     dk = con.execute(f"""select kind, count(*) filter (where cast(in_cone as int) = 1) as in_cone, count(*) as total,
         sum(lines) filter (where cast(in_cone as int) = 1) as lines_in_cone
-        from {rel(pd)} where origin = 'project' and decl <> '' group by kind order by in_cone desc""").fetchall()
+        from {rel(pd)} where origin = 'project' and decl <> '' {ng} group by kind order by in_cone desc""").fetchall()
+    if ng:
+        summ['generated_declarations'] = con.execute(f"""select count(*), count(*) filter (where cast(in_cone as int) = 1)
+            from {rel(pd)} where origin = 'project' and coalesce(cast(generated as boolean), false)""").fetchone()
     summ['decl_kinds'] = [list(r) for r in dk]
     defs = {'def', 'abbrev', 'structure', 'class', 'inductive', 'instance', 'opaque', 'class inductive'}
     summ['definitions_vs_lemmas'] = {

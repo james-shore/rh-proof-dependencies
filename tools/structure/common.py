@@ -44,6 +44,12 @@ def cols(con, path):
     return [r[0] for r in con.execute(f"describe select * from {rel(path)}").fetchall()]
 
 
+def not_generated(con, decls_path, alias=''):
+    """SQL condition that drops declarations made by notation/macro/elab commands (decls.generated, from v0.2 on)."""
+    pre = f'{alias}.' if alias else ''
+    return f' and not coalesce(cast({pre}generated as boolean), false)' if 'generated' in cols(con, decls_path) else ''
+
+
 def dir_keys(files):
     """level-1 and level-2 key of each `src/...` file path. A file directly in src/ is its own level-1 key, and a file
     directly in src/<lib>/ is its own level-2 key, so the two levels never share a key."""

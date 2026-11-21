@@ -52,5 +52,8 @@ def twin2 (m : Nat) : Nat := m + 1
 theorem tw1 : twin1 3 = 4 := rfl
 theorem tw2 : twin2 3 = 4 := rfl
 theorem natTwin (n : Nat) : n.succ ≠ 0 := Nat.succ_ne_zero n
+-- tests/test_xtwins.py: equal to Keys.bigLit (literal values must be compared); bigLitOff differs only in a digit
+theorem bigLit : (123456789012345678901234567890 : Nat) + 1 = 123456789012345678901234567891 := by decide
+theorem bigLitOff : (123456789012345678901234567890 : Nat) + 2 = 123456789012345678901234567892 := by decide
 
 end RelTest

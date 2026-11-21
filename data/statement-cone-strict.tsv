@@ -215,7 +215,7 @@ Formalism.L2.Indef.DefSide	inductive	src/Formalism/LocalToGlobal/IndefiniteForms
 Formalism.L2.Indef.IndefData	inductive	src/Formalism/LocalToGlobal/IndefiniteForms/IndefSide.lean	241	3	12
 Formalism.IndefR.Links.PrimRows3	inductive	src/Formalism/LocalToGlobal/IndefiniteReal/BaseLiftsPackageOfPrimitiveLinks.lean	199	3	3
 Formalism.L2.Pj.Core	inductive	src/Formalism/LocalToGlobal/ProjectiveLattices/CuspidalL2Subspace.lean	17	3	10
-Formalism.L2.Pj.instNumberFieldF	theorem	src/Formalism/LocalToGlobal/ProjectiveLattices/EmbKCoe.lean	25	3	1
+Formalism.L2.Pj.instNumberFieldSubtypeComplexMemIntermediateFieldRatF_formalism	theorem	src/Formalism/LocalToGlobal/ProjectiveLattices/EmbKCoe.lean	25	3	1
 Formalism.L2.Pj.CoreJ	inductive	src/Formalism/LocalToGlobal/ProjectiveLattices/FamilyUniformisationBasePointOrthogonalBis.lean	122	3	8
 Formalism.L2.Pj.instCMHost	theorem	src/Formalism/LocalToGlobal/ProjectiveLattices/PartitionExtendByZeroAntitone.lean	10	3	1
 Formalism.L2.Pj.Par	inductive	src/Formalism/LocalToGlobal/ProjectiveLattices/PartitionExtendByZeroAntitone.lean	14	3	9
@@ -714,10 +714,10 @@ Formalism.IndefR.FWT.BarTie	def	src/Formalism/LocalToGlobal/IndefiniteReal/FWExi
 Formalism.IndefR.FWT.FWTie	inductive	src/Formalism/LocalToGlobal/IndefiniteReal/FWTie.lean	13	6	3
 Formalism.IndefR.Seed.Frm.FramesExistDiagonal	def	src/Formalism/LocalToGlobal/IndefiniteReal/FrameExistence/NormalFrameClauses.lean	26	6	1
 Formalism.IndefR.Links.Tw	def	src/Formalism/LocalToGlobal/IndefiniteReal/LinksDefs.lean	40	6	1
-Formalism.IndefR.Links.Tw.instNormedAddCommGroupTw	def	src/Formalism/LocalToGlobal/IndefiniteReal/LinksDefs.lean	46	6	1
+Formalism.IndefR.Links.Tw.instNormedAddCommGroup	def	src/Formalism/LocalToGlobal/IndefiniteReal/LinksDefs.lean	46	6	1
 Formalism.IndefR.Links.Tw.out	def	src/Formalism/LocalToGlobal/IndefiniteReal/LinksDefs.lean	48	6	1
 Formalism.IndefR.Links.Tw.mk	def	src/Formalism/LocalToGlobal/IndefiniteReal/LinksDefs.lean	50	6	1
-Formalism.IndefR.Links.Tw.instModuleℂTw	def	src/Formalism/LocalToGlobal/IndefiniteReal/LinksDefs.lean	52	6	1
+Formalism.IndefR.Links.Tw.instModuleComplex	def	src/Formalism/LocalToGlobal/IndefiniteReal/LinksDefs.lean	52	6	1
 Formalism.IndefR.Links.twAt	def	src/Formalism/LocalToGlobal/IndefiniteReal/LinksDefs.lean	140	6	1
 Formalism.IndefR.Links.HMod	inductive	src/Formalism/LocalToGlobal/IndefiniteReal/LinksDefs.lean	161	6	7
 Formalism.IndefR.Links.levS	def	src/Formalism/LocalToGlobal/IndefiniteReal/LinksDefs.lean	206	6	1
@@ -1071,7 +1071,7 @@ Formalism.MainNotions.OrbitPlaces.Ent.row	def	src/Formalism/SharpRestriction/Div
 Formalism.MainNotions.OrbitPlaces.Ent.cap	def	src/Formalism/SharpRestriction/Divisibility/OrbitPlaces.lean	58	7	1
 Formalism.MainNotions.GlobalTheoryTheory.GenusMassVolumes.topTens	def	src/Formalism/SharpRestriction/GlobalSchurBounds/GeneralLinearActions/GenusMassVolumes.lean	103	7	1
 Formalism.MainNotions.GlobalTheoryTheory.GenusMassVolumes.HA	def	src/Formalism/SharpRestriction/GlobalSchurBounds/GeneralLinearActions/GenusMassVolumes.lean	109	7	1
-Formalism.MainNotions.GlobalTheoryTheory.GenusMassVolumes.instMeasurableSpaceHA	def	src/Formalism/SharpRestriction/GlobalSchurBounds/GeneralLinearActions/GenusMassVolumes.lean	118	7	1
+Formalism.MainNotions.GlobalTheoryTheory.GenusMassVolumes.instMeasurableSpaceHAOfTopologicalSpace	def	src/Formalism/SharpRestriction/GlobalSchurBounds/GeneralLinearActions/GenusMassVolumes.lean	118	7	1
 Formalism.MainNotions.G.Places.IsLatTup	def	src/Formalism/SharpRestriction/GrowthBounds/DataG.lean	64	7	1
 Formalism.MainNotions.G.Level	inductive	src/Formalism/SharpRestriction/GrowthBounds/DataG.lean	106	7	7
 Formalism.MainNotions.G.Level.smul	def	src/Formalism/SharpRestriction/GrowthBounds/DataG.lean	120	7	1
@@ -2099,4 +2099,4 @@ ReciprocityTheory.ChartRestriction.G.Semi.res	def	src/ReciprocityTheory/Reductiv
 ReciprocityTheory.ChartRestriction.G.Semi.LB.LinComb	def	src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/SemiabelianSchemes/CubicalStructures/CubeSymmetricSwapFirst.lean	68	15	1
 ReciprocityTheory.ChartRestriction.G.Semi.IsAbelianScheme	inductive	src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/SemiabelianSchemes/AbelianSchemeQuotients/IsAbelianScheme.lean	13	16	3
 ReciprocityTheory.ChartRestriction.G.Semi.splitTorus	def	src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/SemiabelianSchemes/SplitTori/SplitTorusAff.lean	36	16	1
-ReciprocityTheory.ChartRestriction.G.Semi.instGrpObjSplitTorus	def	src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/SemiabelianSchemes/SplitTori/SplitTorusAff.lean	39	16	1
+ReciprocityTheory.ChartRestriction.G.Semi.instGrpObjOverSchemeSplitTorus	def	src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/SemiabelianSchemes/SplitTori/SplitTorusAff.lean	39	16	1
