@@ -1,0 +1,102 @@
+# Dataset v0.1.2
+
+Tables in Parquet (zstd) and gzip CSV. Names are Lean names with their raw components joined by `.`: numeric
+components appear as digits and `«»` is not used, e.g. `_private.Foo.Bar.0.baz`. A tab or newline inside a component is
+written `\t` / `\n`. Paths are relative to the root of the source repository. Line numbers are 1-based and inclusive.
+Theorem bits: 1 `riemannHypothesis`, 2 `riemannZeta_eq_zero_re`, 4 `LFunction_ne_zero_of_half_lt_re`,
+8 `LFunction_eq_zero_re`, 16 `LFunction_eq_zero_re_of_isPrimitive`.
+
+## `constants`: one row per kernel constant in the export (1,484,733 rows)
+
+| column | meaning |
+|---|---|
+| `id` | row number (stable only within a release; join on `name` across releases) |
+| `name` | constant name |
+| `kind` | `axiom`, `def`, `theorem`, `opaque`, `quot`, `inductive`, `constructor`, `recursor` |
+| `origin` | `project`, `mathlib`, `core`, `batteries`, `aesop` |
+| `module` | declaring module: exact for Mathlib, core and dependencies; from the source index for project constants |
+| `nlevels` | number of universe parameters |
+| `type_dag`, `value_dag` | distinct expression nodes in the type / value (`value_dag` empty for axioms, quot, inductives, constructors) |
+| `type_tree`, `value_tree` | size with shared subterms counted at every occurrence (saturates at 2^64−1) |
+| `refs_type`, `refs_value` | distinct constants referenced from the type / value |
+| `in_cone` | in the closure of the five theorems (false only for `Nat.lor`, `Nat.xor`, `String.mk`, `String.mk._proof_1`) |
+| `in_export` | always true |
+| `depth` | shortest distance from the five theorems in constants (0 = a theorem); −1 if not reached |
+| `thm_mask` | bit set = in that theorem's closure |
+| `block` | inductive block / quotient package id: constants with the same `block` come together |
+| `record` | line of the declaration record in the export (an inductive block is one record) |
+| `decl` | the project declaration this constant folds into (empty for other origins) |
+| `aux_rule` | how it was folded: `self`, `proof`, `simp`, `abel`, `eqn`, `match`, `inductive-aux`, `ctor`, `aux`, `recursion`, `congr`, `instance-heuristic`, `attr-generated`, `to_additive`, `dep-aux` (an aid generated in the project for a Mathlib declaration), `cpt_copy`, `prefix-other`, `unmapped` |
+| `map_note` | `instance-heuristic:<score>`, `ambiguous`, `dup-resolved-by-imports`, `private-prefix-dropped` |
+| `shared_aux` | an auxiliary lemma or matcher of a kind Lean shares between declarations; it does not make `decl` used |
+| `file`, `start_line`, `end_line` | source span of `decl` |
+| `source` | `routeA-text`: file and line from the text index |
+| `info` | kind-specific details, e.g. `hints=regular:5;safety=safe`, `params=2;indices=0;ctors=1;…` |
+
+## `edges`: direct references (160,315,873 rows)
+
+| column | meaning |
+|---|---|
+| `src`, `dst` | constant names (`src_id`, `dst_id`: `constants.id`) |
+| `via` | `type` (`dst` occurs in `src`'s type), `value` (in its value or recursor rules), `lit` (a literal in `src` needs `dst`), `quot` (quotient constants → `Eq`) |
+
+Block membership is not written as edges. To compute a closure, follow `edges` and add every constant that shares a
+`block`.
+
+## `decls`: one row per top-level source command (1,068,083 rows)
+
+| column | meaning |
+|---|---|
+| `decl` | declaration name (the constant name Lean gives it) |
+| `kind` | source keyword: `theorem`, `lemma`, `def`, `abbrev`, `instance`, `structure`, `class`, `inductive`, `alias`; also `example`, `notation`, `macro`, `run_cmd`, … with no constants (6,552 rows) |
+| `origin`, `module`, `file`, `start_line`, `end_line`, `lines` | location. `start_line` includes attributes and `… in` prefixes; `end_line` stops before the next top-level command |
+| `n_constants`, `n_constants_in_cone` | kernel constants folded into it, and how many are used |
+| `type_dag`, `value_dag` | of the declaration's own constant |
+| `in_cone`, `depth` | one of its own (not shared) constants is used; the smallest depth among them |
+| `n_shared_aux_in_cone` | shared auxiliary lemmas it generated that other declarations use |
+| `source` | `routeA-text` |
+
+## `directories`: per source directory (338 rows)
+
+| column | meaning |
+|---|---|
+| `dir`, `level` | `src/<lib>` (level 1) or `src/<lib>/<sub>` (level 2) |
+| `files`, `files_in_import_closure`, `files_in_cone` | `.lean` files; files imported from `Main`; files with a used declaration |
+| `lines`, `lines_in_cone` | all lines; lines inside used declarations |
+| `decls`, `decls_in_cone`, `pct_decls_used`, `pct_lines_used` | declarations that yield constants, and the ratios ×100 |
+
+## `why-parents`: why a declaration is used (1,410,889 rows)
+
+Breadth-first search from the five theorems over declarations. Project constants merge into their declaration, except
+shared auxiliary lemmas, which are nodes of their own named `project:<constant>`. Other constants stay as they are. One
+row per node reached. Columns: `node` (`decl@file` for project declarations, `origin:name` otherwise),
+`decl_or_const`, `origin`, `decl_depth`, `parent` (the lowest-named node at depth − 1 that references it), `witness`
+(the lowest constant-level reference between parent and node, `a -> b [via]`). Following `parent` gives one shortest
+chain; `tools/why_path.py` prints it.
+
+## `keep-list`: used declarations with their spans (804,911 rows)
+
+`decl`, `kind`, `file`, `start_line`, `end_line`, `n_constants_in_cone`.
+
+## `dominators`: the dominator tree (886,172 rows, one per node plus the root)
+
+Rows in breadth-first order of the tree. Node 0 is the virtual root over the five theorems.
+
+| column | meaning |
+|---|---|
+| `node`, `decl`, `kind`, `file`, `start_line`, `end_line`, `lines` | the node and its source span |
+| `node_type` | `decl` (a used declaration), `shared_aux` (a shared auxiliary lemma used by a node other than its generator; 0 lines), `no_decl_row` |
+| `n_constants`, `kernel_dag` | kernel constants in the node; sum of their type and value DAG sizes |
+| `ext_refs`, `ext_refs_mathlib` | distinct non-project (Mathlib) constants it references |
+| `thm_mask` | theorems whose closure contains it |
+| `idom_node`, `idom`, `dom_depth`, `children` | immediate dominator (id and name), depth in the tree, number of children |
+| `sub_decls`, `sub_lines`, `sub_kernel_dag`, `sub_constants`, `sub_ext_refs` | sums over the subtree (`sub_decls` counts nodes of every type) |
+| `tin`, `tout` | v is in the subtree of r iff `tin[r] <= tin[v] < tout[r]` |
+
+Node ids are stable only within one release. Join on `decl` + `file` + `start_line`.
+
+## `universes`: universe levels per constant (1,478,243 rows)
+
+One row per constant reached with at least one concrete instantiation. Columns: `constant`, `kind`, `max_sort` (the
+largest `Sort` level in its instantiated type and value; `Sort 0` = `Prop`, `Sort 1` = `Type`), `max_level_arg` (the
+largest universe argument it is instantiated with), `n_instantiations`.

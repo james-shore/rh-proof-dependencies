@@ -1,0 +1,5 @@
+# Python 3.12, Rust 1.88
+numpy==2.3.3
+pyarrow==21.0.0
+duckdb==1.4.1
+networkx==3.5

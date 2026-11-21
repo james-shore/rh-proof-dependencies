@@ -1,0 +1,7 @@
+[workspace]
+members = ["export-parse", "structure/rs"]
+resolver = "2"
+
+[profile.release]
+opt-level = 3
+debug = false

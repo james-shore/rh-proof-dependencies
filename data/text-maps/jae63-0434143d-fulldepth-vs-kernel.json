@@ -1,0 +1,97 @@
+{
+ "label": "jae63-0434143d-fulldepth",
+ "kernel_theorem_bits": 0,
+ "kernel_cone_decls": 801175,
+ "their_cone_names": 713043,
+ "their_index_names": 1051155,
+ "both": 697594,
+ "kernel_used_but_missing_from_theirs": 103581,
+ "  of which not in their index at all": 3089,
+ "  of which indexed but not reached": 100492,
+ "in_theirs_but_not_kernel_used": 15449,
+ "  of which a name we have no declaration for": 2,
+ "  of which a real declaration the kernel does not use": 15447,
+ "missing_not_indexed_by_kind": {
+  "instance": 2591,
+  "theorem": 294,
+  "def": 193,
+  "alias": 10,
+  "structure": 1
+ },
+ "missing_not_reached_by_kind": {
+  "theorem": 74532,
+  "def": 15535,
+  "lemma": 6002,
+  "instance": 2571,
+  "abbrev": 1304,
+  "structure": 546,
+  "inductive": 2
+ },
+ "added_known_by_kind": {
+  "theorem": 11364,
+  "def": 3150,
+  "lemma": 334,
+  "structure": 308,
+  "abbrev": 284,
+  "instance": 3,
+  "class": 2,
+  "inductive": 2
+ },
+ "samples": {
+  "missing_not_indexed": [
+   "Ad3.R.instBorelSpaceGLFinQv",
+   "Ad3.R.instMeasurableSpaceGLFinQv",
+   "Ad3.instBorelSpaceQv",
+   "Ad3.instMeasurableSpaceQv",
+   "CompanionTheory.Bmu.instDecidableOuter",
+   "CompanionTheory.D.Upq.ModEx.instBorelSpaceMG",
+   "CompanionTheory.D.Upq.ModEx.instGroupMG",
+   "CompanionTheory.D.Upq.ModEx.instIsTopologicalGroupMG",
+   "CompanionTheory.D.Upq.ModEx.instLocallyCompactSpaceMG",
+   "CompanionTheory.D.Upq.ModEx.instMeasurableSpaceMG",
+   "CompanionTheory.D.Upq.ModEx.instSecondCountableTopologyMG",
+   "CompanionTheory.D.Upq.ModEx.instTopologicalSpaceMG",
+   "CompanionTheory.D.Upq.Sm.instT2SpaceMG",
+   "CompanionTheory.FamInh.instT2SpaceGab",
+   "CompanionTheory.RgGu.NR.ConjProd.instAddCommGroupCj"
+  ],
+  "missing_not_reached": [
+   "AAInvW.AlgAA",
+   "AAInvW.AlgAAv",
+   "AAInvW.EabHGl",
+   "AAInvW.EabHSmooth",
+   "AAInvW.HpkInvol",
+   "AAInvW.OpModel",
+   "AAInvW.RightAA",
+   "AAInvW.SmoothLin",
+   "AAInvW.SmoothLocal",
+   "AAInvW.algebra_aa",
+   "AAInvW.algebra_aa_vector",
+   "AAInvW.ana_EcComm",
+   "AAInvW.ana_Ec_sub",
+   "AAInvW.ana_Ec_zero",
+   "AAInvW.ana_add"
+  ],
+  "added_unknown": [
+   "OrderCertificate.of_two_le",
+   "PrincipalizationCertificate.of_two_le"
+  ],
+  "added_known": [
+   "Ad3.GA.b2M",
+   "Ad3.GA.e2",
+   "Ad3.M3",
+   "Ad3.ext",
+   "BranchingSupport.DSExist",
+   "BranchingSupport.Hyps",
+   "BranchingSupport.Zuckerman",
+   "BrauerSchur.dot",
+   "BrauerSchur.dot_conj",
+   "BrauerSchur.dot_mul_of_mem",
+   "BrauerSchur.indFun",
+   "BrauerSchur.indFun_eq_sum",
+   "BrauerSchur.indMat",
+   "BrauerSchur.indMat_mul",
+   "BrauerSchur.indMat_one"
+  ]
+ }
+}

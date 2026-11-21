@@ -1,0 +1,15 @@
+dir	decls	decls_in_cone	pct_decls	decl_lines	decl_lines_in_cone
+src/Development/AbelianVarietyTheory/Proofs	374269	297783	79.6	5602733	4506494
+src/Development/AbelianVarietyTheory/Definitions	61258	32231	52.6	367383	184656
+src/Development/AbelianVarietyTheory/BlockTheory	14148	3792	26.8	66900	18021
+src/Development/AbelianVarietyTheory/PublishedTheorems	4394	2322	52.8	40671	21180
+src/GroundTheory/ArithmeticGeometry/SchemeCohomology	2089	1675	80.2	18282	14757
+src/Development/AbelianVarietyTheory/Counterexamples	1474	582	39.5	15522	7065
+src/GroundTheory/ArithmeticGeometry/AbelianVarieties	1277	626	49.0	13286	6126
+src/Development/AbelianVarietyTheory/Statements	1146	467	40.8	9096	3514
+src/Development/AbelianVarietyTheory/CrystallinePeriods	354	268	75.7	2399	1691
+src/GroundTheory/ArithmeticGeometry/ModularCurves	222	3	1.4	1361	21
+src/GroundTheory/ArithmeticGeometry/ToricVarieties	115	7	6.1	1346	122
+src/GroundTheory/ArithmeticGeometry/EtaleCompletion	46	24	52.2	494	359
+src/GroundTheory/ArithmeticGeometry/IwasawaModules	16	0	0.0	57	0
+src/GroundTheory/ArithmeticGeometry/SelmerPairing	5	0	0.0	70	0

@@ -1,0 +1,9 @@
+[package]
+name = "proof-structure"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+
+[dependencies]
+export-parse = { path = "../../export-parse" }
+rayon = "1"

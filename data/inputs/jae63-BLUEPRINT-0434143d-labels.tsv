@@ -1,0 +1,14 @@
+label_source	label	name	proofs
+jae-63 BLUEPRINT.md §3 (0434143d)	crux (analytic)	UpperTheory.Comparison₂.level_gm_le_on_family_scales	
+jae-63 BLUEPRINT.md §3 (0434143d)	crux (analytic)	UpperTheory.Comparison₂.windowInequality_of_artinInputs	
+jae-63 BLUEPRINT.md §3 (0434143d)	crux (analytic)	Formalism.MainNotions.ChainTied	
+jae-63 BLUEPRINT.md §3 (0434143d)	crux (arithmetic)	UpperTheory.Top.VWin	UpperTheory.V.HV.DescentVanishingReductions.v_window_of_automorphy_csd_ss_mono_odd,UpperTheory.V.v_window_of_literal_automorphy_n,UpperTheory.V.HV.DescentVanishingReductions.vwin_of_hypotheses_H_E_alt
+jae-63 BLUEPRINT.md §3 (0434143d)	crux (arithmetic)	UpperTheory.One.Join.automorphic_window_of_inputs	
+jae-63 BLUEPRINT.md §3 (0434143d)	crux (construction)	GlobalTheory.Fc.HypsAlt	
+jae-63 BLUEPRINT.md §3 (0434143d)	crux (construction)	UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound	
+jae-63 BLUEPRINT.md §3 (0434143d)	crux (construction)	UpperTheory.Top.shape_closed_link_n_of_green	
+jae-63 BLUEPRINT.md §3 (0434143d)	crux (construction)	UpperTheory.Top.TopG	
+jae-63 BLUEPRINT.md §3 (0434143d)	known theorem, new route?	UpperTheory.GalStar.Row0b	
+jae-63 BLUEPRINT.md §3 (0434143d)	known theorem, new route?	UpperTheory.TP.TLiftK	UpperTheory.Gal.TP.twoUpOK_of_k,UpperTheory.TP.K.tLiftK
+jae-63 BLUEPRINT.md §3 (0434143d)	known theorem, new route?	UpperTheory.Gal.Int.Geo.geoOne_holds	
+jae-63 BLUEPRINT.md §3 (0434143d)	known theorem (library)	UpperTheory.Zero.LLC.recTExists	

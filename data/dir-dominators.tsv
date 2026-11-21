@@ -1,0 +1,320 @@
+dir	level	decls_in_cone	lines_in_cone	kernel_dag_in_cone	chapters_touched	lines_on_spine	top_chapters_by_lines
+	1	114	0	49695	0	0	
+src/CompanionTheory	1	11336	143160	31186375	1766	0	CompanionTheory.RgExh.dsExhaust 19586; CompanionTheory.WaveGrid.weighted_bound_rotated_uniform 10442; UpperTheory.LiteratureTheorems.flath_factorisation_of_literature 9150
+src/Development	1	592611	7659689	2129555822	99420	765	GlobalTheory.TorKSField.toroidalForFanKS 86847; PositivityTheory.ThKR.theoremK_head2 82383; UpperTheory.Gal.Int.galoisLocalGlobalStrong_of_geometry_lift 78364
+src/Formalism	1	190808	1900677	438767299	44051	0	GlobalTheory.CarrierGap.theoremS_leaves_of_carrierG 76662; Formalism.L2.G.linkG_concrete5 76538; GlobalTheory.CarrierGap.carrierP 60373
+src/GroundTheory	1	54295	600709	117093183	15449	0	PositivityTheory.Pf1.HilbertSamuelMoriwaki.hsChain 46599; GlobalTheory.T.model_on_hodge_from_family 26392; GlobalTheory.CompanionTheory.Ar.Branch.branchProperAtPoint 17229
+src/Lemmata	1	235	6857	687306	135	0	Formalism.TwoAdicCyclotomicDecomposition.stab_fix 281; Formalism.L2.G.linkG_concrete5 227; Formalism.MainNotions.G.GLWeightTheory.nabla_delta_comparison_field 194
+src/Main.lean	1	5	5	24	5	0	riemannHypothesis 1; riemannZeta_eq_zero_re 1; LFunction_ne_zero_of_half_lt_re 1
+src/PositivityTheory	1	3229	32327	7302690	157	0	UpperTheory.V.Z.Bc.seedIIs_alt 22792; UpperTheory.V.Hi.nonempty_unitaryHeckeData 4340; UpperTheory.V.Z.Bc.cycC_holds 879
+src/ReciprocityTheory	1	33529	394312	73665395	9513	0	GlobalTheory.T.exists_indexBoundHypothesesWithNet_allValuedPoints 44412; ReciprocityTheory.ChartRestriction.DS.Lap.TopClosed.besselNVG 21345; ReciprocityTheory.ChartRestriction.DS.Xi.xiExists 10371
+src/Statements.lean	1	5	11	508	4	0	LFunction_ne_zero_of_half_lt_re 3; LFunction_eq_zero_re 3; LFunction_eq_zero_re_of_isPrimitive 3
+src/Supplements	1	4	7	260	3	1	LFunction_eq_zero_re_of_isPrimitive 3; LFunction_eq_zero_re 2; rhOfAll 1
+	2	114	0	49695	0	0	
+src/CompanionTheory/AutomorphicTheory	2	2641	32993	9142199	434	0	CompanionTheory.WaveGrid.weighted_bound_rotated_uniform 10064; GlobalTheory.grothendieckRingPolynomial_outright 2311; Gp91.GlobalTheory.Moment.moment_first_length 947
+src/CompanionTheory/HarishChandraModules	2	1281	14614	2947070	517	0	CompanionTheory.D.gk.RF.automorphic_forms_finite_dimensional 1765; CompanionTheory.Zuck.zuckerman_ingredients 843; Formalism.L2.SG.RealObj.EnergyConvJ.BM.realObj_inInfinityX_jsz 831
+src/CompanionTheory/RealGroups	2	1160	10200	2304942	26	0	CompanionTheory.RgExh.dsExhaust 3682; CompanionTheory.RgGu.segmentRepresentation 3673; CompanionTheory.RgFd.explicit_function_square_integrable 1094
+src/CompanionTheory/SpectralGeometry	2	5976	83537	16231145	824	0	CompanionTheory.RgExh.dsExhaust 15904; UpperTheory.LiteratureTheorems.flath_factorisation_of_literature 8371; GlobalTheory.T.exists_invariant_smoothProjFan_noSelfIntersections 4969
+src/CompanionTheory/ThickeningEstimates	2	278	1816	561019	2	0	UpperTheory.LiteratureTheorems.published_results_first 1787; GlobalTheory.T.twisted_multiplicity_one 29
+src/Development/AbelianVarietyTheory	2	367076	4742621	1384217188	75230	41	GlobalTheory.TorKSField.toroidalForFanKS 86847; UpperTheory.LiteratureTheorems.siegel_toroidal_integral_of_literature 62831; GlobalTheory.RowClaim.Join.thetaLift_row_properties_conj 61010
+src/Development/AutomorphicArithmetic	2	88242	1305435	363390959	8856	609	UpperTheory.V.Z.Sym.W.unitary_three_automorphy_dense_of_prints 57909; UpperTheory.V.Pa.pFromAut 47779; UpperTheory.V.HV.DescentVanishingReductions.published_hypotheses_from_patching_alt 43882
+src/Development/AutomorphicSpectrum	2	60779	787399	178175243	6442	86	GlobalTheory.T.liftInj_and_nonVan_typeNZ_of_given 26777; UpperTheory.Lit.Sw47.weilUnitary 25960; UpperTheory.V.Z.GSp4Splitting.coreG 22122
+src/Development/DiscreteGroups	2	766	9170	1991644	110	0	DiscreteGroups.sglob.LConv.localConverseGL 5165; UpperTheory.Zero.LLC.recTExists 633; DiscreteGroups.T1.G.piInv 359
+src/Development/EtaleCohomology	2	10955	74689	16997669	419	0	UpperTheory.Gal.KunnethLefschetz.Core.inputs 16862; UpperTheory.Et.e4 11544; UpperTheory.Et.E2.main 8991
+src/Development/ResolutionOfSingularities	2	7944	117323	9129831	999	0	FunctorialResolution.EmbeddedResolution.canonicalAlgorithmRules_isCorrect 70354; FunctorialResolution.functorialResolutionCharZero 22941; FunctorialResolution.EmbeddedResolution.commutesWithClosedImmersion_of_isCorrect 1709
+src/Development/WeilBound	2	56849	623052	175653288	8880	29	PositivityTheory.ThKR.theoremK_head2 74384; UpperTheory.LiteratureTheorems.siegel_weil_std_of_literature 21060; GlobalTheory.T.family_pos_of_hodge_tate_inputs 17376
+src/Formalism/AdicCompletionExports	2	1	19	3457	1	0	GlobalTheory.T.globalLatticeIndexTheorem_of_lengthBoundAtPlaces 19
+src/Formalism/AdmissibleDesigns	2	1969	13074	8002711	12	0	GlobalTheory.T.globalLatticeIndexTheorem_of_lengthBoundAtPlaces 12904; Formalism.MainNotions.N.K.Norm.fildR_eq_comap 54; GlobalTheory.T.splitCase_bound_at_point_of_admitted_items_alt 52
+src/Formalism/AlgebraicWeights	2	24	45	23743	8	0	Formalism.AUTREP.InertDatum 12; Formalism.AUTREP.heckeFunI 8; Formalism.AUTREP.IsAlgWeight 8
+src/Formalism/ArtinHasse	2	7	86	12732	3	0	Formalism.FT.SymmetricSeries.coeff_prod_geom 44; GlobalTheory.Top.closed_family_admissible_twist_link_alt 34; Formalism.FT.SymmetricSeries.geom_mul 8
+src/Formalism/BranchSandwichDivisors	2	445	5009	833790	152	0	Formalism.L2.RowDataTransport.packageOfPrimitiveLinks 871; Formalism.BranchingDeterminantCap.xi_norm_bound 863; Formalism.BranchingDeterminantCap.capDet_central 303
+src/Formalism/CMTypeGalois	2	19	280	38388	1	0	GlobalTheory.T.expSt_of_base_change_and_crystalline_lattices 280
+src/Formalism/CharacterColumnKernels	2	328	4292	1020719	42	0	GlobalTheory.T.globalLatticeIndexTheorem_of_lengthBoundAtPlaces 2588; Formalism.NG.QuotientPowerLengths.congMod_le 476; Formalism.NG.blockDet 388
+src/Formalism/CoboundaryTransfers	2	92	637	200542	8	0	GlobalTheory.T.localConstants_from_admitted_local_Galois_statements 594; Formalism.CoboundaryTransfers.WachMod 13; Formalism.MainNotions.LiftingTheory.gen_one_crys 12
+src/Formalism/ConjugateSelfDual	2	9	17	2157	8	0	Formalism.ConjugateSelfDual.cyc 5; Formalism.ConjugateSelfDual.UnramAt 3; Formalism.ConjugateSelfDual.IsPlaceOver 2
+src/Formalism/CorankShare	2	30	219	37497	1	0	GlobalTheory.Top.link_gl 219
+src/Formalism/CyclotomicNorms	2	73	1186	136120	14	0	Formalism.MainNotions.AdmissibleThreePrime.residual_irreducible_of_theorem_three_prime_alt 1118; Formalism.CyclotomicNorms.Sqf.monicOf_coeffs 17; UpperTheory.Top.supplyChi 12
+src/Formalism/DefsOC.lean	2	2	8	367	2	0	Formalism.mellinSgen 7; Formalism.Sa 1
+src/Formalism/DegreeFormula	2	56	414	58820	27	0	Formalism.DegreeFormula.flagDegFormula_statement 173; GlobalTheory.CovTop.PublishedHodgeBundleTheorems.toClassicalTheorems 85; Formalism.DegreeFormula.PPowSum.slice 77
+src/Formalism/DirichletDensity	2	23	413	50597	9	0	UpperTheory.V.Z.Kato.Joint.kato_global_unit_law_of_smoothed_classes 155; GlobalTheory.T.expSt_of_base_change_and_crystalline_lattices 145; Formalism.HF.P.quadDiscr_ne_one 75
+src/Formalism/DistinguishedUnitIdeals	2	945	10597	2115746	25	0	GlobalTheory.T.theoremE_corollaryA_closing_all_data 10095; Formalism.ExponentWindows.E.lattice_filtration_second_form 204; Formalism.ExponentWindows.E.completion_holds 160
+src/Formalism/DivisorInequality	2	19	424	82886	2	0	Formalism.L2.DIV.closed_linkDIVt_of_closed_bridge_kernel 401; GlobalTheory.Top.wire_sel_alt 23
+src/Formalism/DoubleCosetMeasures	2	234	2094	300534	127	0	GlobalTheory.CarrierGap.theoremS_leaves_of_carrierG 439; GlobalTheory.Mem.Top.Closing.memberE_closing_alt_alt 227; Formalism.DoubleCosetMeasures.P.intTwoSided 112
+src/Formalism/DropLevelBounds	2	17	73	4780	2	0	GlobalTheory.BigOn.geoSt_of_pageSt_alt 71; Formalism.UnitaryBoundIntegral.thl 2
+src/Formalism/EisensteinCokernelLengths	2	58	844	200917	4	0	GlobalTheory.T.star_ad_and_bb_le_of_joint_cond 528; GlobalTheory.T.theoremE_corollaryA_closing_all_data 231; GlobalTheory.T.embedding_jumps_aux2_of_setup 73
+src/Formalism/EllipticTorsion	2	394	4565	997028	122	0	ReciprocityTheory.ChartRestriction.L1.cm4 1311; Formalism.L2.Th1.A.bridgeCurve3 552; Formalism.ELL.formal_group_points_no_prime_to_p_torsion 400
+src/Formalism/FilteredPoleLength	2	100	1719	256579	7	0	GlobalTheory.FinalJoin.inputs4_of_net 895; GlobalTheory.T.norm_prod_sum_theta_le_exp_torus 618; GlobalTheory.T.exists_indexBoundHypothesesWithNet_allValuedPoints 124
+src/Formalism/FlagUnipotentLattices	2	842	12371	2170414	219	0	GlobalTheory.LoopRowsByName.loopRows_of_rowsFinDim_alt 765; Formalism.HermitianLatticeCounting.Final.S6.normalForm 713; GlobalTheory.T.count_terms_gramClass_over_sublattice 683
+src/Formalism/FockGram	2	20	262	37207	5	0	Formalism.E.hermDual 224; Formalism.E.covolumeEqSqrtDetGram 27; Formalism.E.orthSum 5
+src/Formalism/FormalDegreeBessel	2	459	3536	718340	291	0	Formalism.QuantumDeterminants.gNonneg 316; Formalism.QuantumDeterminants.big_cell_mem_holds 130; Formalism.QuantumDeterminants.group_gram_holds 115
+src/Formalism/FormalGroupLog	2	39	292	46527	27	0	Formalism.InvariantFactorPaths.G7.FormalGroupLaws.lgF_subst_inj 98; Formalism.G.LogCR.pderiv_subst 72; Formalism.G.LogCR.Agree.subst 21
+src/Formalism/FormalGroupWitt	2	117	1277	155585	55	0	Formalism.FG.funEqHomV 410; Formalism.FG.inverse_integral_vector 379; Formalism.FG.subst_injective_vector 58
+src/Formalism/FrobeniusBaseCase	2	14	88	11831	1	0	GlobalTheory.BigOn.geoSt_of_pageSt_alt 88
+src/Formalism/FrobeniusContraction	2	20	223	25826	6	0	GlobalTheory.T.localConstants_from_admitted_local_Galois_statements 71; GlobalTheory.T.embedding_jumps_aux2_of_setup 50; Formalism.WachCohomologyFacts.PLenBound.length_quot_pow_le 45
+src/Formalism/FrobeniusOrbits	2	386	5304	871887	161	0	GlobalTheory.T.expSt_of_base_change_and_crystalline_lattices 1525; Formalism.FrobeniusOrbits.Final.host_field 468; Formalism.FrobeniusOrbits.hostDecomp 380
+src/Formalism/GL3MeanSquares	2	2837	44487	8724502	674	0	UpperTheory.Top.supplyChi 14994; Formalism.HermitianLattices.Ext.L3.liStat 8592; Formalism.HermitianLattices.Ext.L3.massConst_succ 5646
+src/Formalism/GaloisCohomology	2	81	180	57982	47	0	Formalism.GaloisCohomology.above_finite 14; Formalism.GaloisCohomology.LData 12; Formalism.GaloisCohomology.chi_exists 11
+src/Formalism/GaloisIrreducibility	2	70	962	109640	6	0	Formalism.MainNotions.AdmissibleThreePrime.residual_irreducible_of_theorem_three_prime_alt 828; Formalism.IrreducibleCountingLemmas.GaloisIrreducibility.property_W_of_estimates 117; Formalism.GaloisIrreducibility.rr_charpoly_compl 13
+src/Formalism/GammaFactorNonvanishing	2	4	83	11526	2	0	rhOfAll 62; LFunction_eq_zero_re_of_isPrimitive 21
+src/Formalism/GaussIdealIdentity	2	8	46	6156	7	0	Formalism.MainNotions.Gaps.EtaleWeightGaps.Op.isDVR 17; Formalism.MainNotions.Gaps.EtaleWeightGaps.Op.isLocalHom 10; Formalism.DV.GaussP.gaussIdeal_isPrime 6
+src/Formalism/GaussJetBounds	2	494	7116	899350	135	0	Formalism.MainNotions.DIV.Bridge.DworkPowerSeriesWeights.split_bound_eleven_one 4322; Formalism.DworkPowerSeriesWeights.lemmaS 1427; Formalism.DworkPowerSeriesWeights.generalized_log_weight 173
+src/Formalism/GaussValuationBounds	2	47	606	90093	6	0	GlobalTheory.T.theoremE_corollaryA_closing_all_data 339; Formalism.MainNotions.LiftingTheory.tr_trunc_int 144; GlobalTheory.T.star_ad_and_bb_le_of_joint_cond 55
+src/Formalism/GelfandTransference	2	5	27	992	4	0	GlobalTheory.FinalJoin.inputs4_of_net 20; UpperTheory.V.Z.GSp4Splitting.coreG 3; Formalism.HadamardInequality.Hadamard 2
+src/Formalism/GradedWeylDivisibility	2	618	6231	799977	282	0	Formalism.GradedWeylDivisibility.leadInterlaced 1020; Formalism.GradedWeylDivisibility.sSYTExists 332; GlobalTheory.T.weil_unitary_entries' 205
+src/Formalism/GrowthSums	2	38	478	115296	14	0	Formalism.L2.G.linkG_concrete5 137; Formalism.MainNotions.G.TopChoiceBounds.master_orbit_lemma_holds 83; Formalism.GrowthSums.Top.topCount 82
+src/Formalism/HarderNarasimhan	2	465	7967	1438208	158	0	GlobalTheory.Top.link_gl 854; Formalism.HN.DualPolygon.key_lemma 750; Formalism.HN.slope_inequality_mean 633
+src/Formalism/HermitianCurvature	2	32211	316058	72336497	7563	0	GlobalTheory.CarrierGap.carrierP 54876; Formalism.L2.SG.TheoremSConclusion.theoremS_of_conj 28293; Formalism.FourierDecayAlt.P.CutSE.actual_compact_theorem 16620
+src/Formalism/HermitianLattices	2	329	4566	779680	173	0	Formalism.HermitianLatticesTheory.classSetFinite_core 665; Formalism.MainNotions.BridgeLemma₂.plane_mass_bound_parameters 356; Formalism.HermitianLatticesTheory.unimodUnramUnique_main 259
+src/Formalism/HyperbolicPlaceProducts	2	56	814	95354	14	0	Formalism.SLP.Final.submoduleIndexCountO 482; GlobalTheory.rowsPos_typeP 121; Formalism.SLP.P.card_submodules_le_of_dedekind 99
+src/Formalism/IncomingBounds	2	115	985	138840	35	0	Formalism.IncomingBounds.FlowLoadBounds.strong 240; GlobalTheory.BigOn.geoSt_of_pageSt_alt 185; Formalism.MainNotions.DIV.Bridge.DworkPowerSeriesWeights.split_bound_eleven_one 142
+src/Formalism/JacquetSubsetSums	2	7	28	2118	2	0	GlobalTheory.T.twisted_multiplicity_one 19; Formalism.PacketSums.IwahoriNewton 9
+src/Formalism/JumpKernelCokernel	2	138	1384	282197	1	0	GlobalTheory.T.star_ad_and_bb_le_of_joint_cond 1384
+src/Formalism/LFunctionBounds	2	43	614	62917	17	0	Formalism.FX.rectangle_residue 176; Formalism.FX.LFunctionPartialSum.norm_tail_le 124; Formalism.FX.LFunctionPartialSum.LFunction_eq_G 93
+src/Formalism/LagrangeIdealLifts	2	89	859	242465	12	0	GlobalTheory.T.localConstants_from_admitted_local_Galois_statements 500; Formalism.RepresentationBoundsCohomology.N2.unit_lemma_case_b_holds 204; Formalism.LIFT.lagrangian_ideal_holds 76
+src/Formalism/LandauZeroFreeBounds	2	309	5571	1056982	43	0	Formalism.ZeroFreeDirichlet.psiChiBound 1523; Formalism.ZeroFreeDirichlet.zFRDirichlet 1369; Formalism.ZeroFreeDirichlet.siegelLower 1096
+src/Formalism/LatticeRigidity	2	24	571	68051	5	0	Formalism.SA.P.smoothedSumBound 398; PositivityTheory.RgHf.harishChandraFinite 99; Formalism.SA.P.card_le_of_separated 61
+src/Formalism/LatticeSlopes	2	101	1648	203879	55	0	Formalism.HN.hnSum 324; Formalism.F.degree_quotient 224; Formalism.F.gram_det_le 174
+src/Formalism/LatticeTheta	2	69	668	84751	15	0	Formalism.H.lattice_fourier_series 267; Formalism.H.poisson_periodization 118; GlobalTheory.idealCharacter_LSeries_continuation 91
+src/Formalism/LocalRingCardinality	2	2053	14457	2817530	1067	0	GlobalTheory.T.expSt_of_base_change_and_crystalline_lattices 3497; Formalism.L2.G.linkG_concrete5 447; Formalism.BasicNotions.Examples₂.CD.Chart.exists_density' 340
+src/Formalism/LocalToGlobal	2	61043	560368	130836580	17288	0	GlobalTheory.CarrierGap.theoremS_leaves_of_carrierG 66356; GlobalTheory.BigOn.geoSt_of_pageSt_alt 24913; GlobalTheory.T.bundle_bothParts_of_standardKernel_and_six_hypotheses 20684
+src/Formalism/LogFactorialBounds	2	4	104	6098	1	0	Formalism.LogFactorialBounds.sum_primesLE_log_div_le 104
+src/Formalism/LogFactorialIndices	2	49	549	82823	6	0	GlobalTheory.FinalJoin.inputs4_of_net 409; GlobalTheory.Top.wire_sel_alt 70; Formalism.LatticeIndexTer.LatticeIndexDeterminant.len_span 65
+src/Formalism/LogVandermondeBounds	2	95	1668	287613	19	0	Formalism.MainNotions.StandardLattice.division_level_prime_family 471; GlobalTheory.EX.WinLow.window_lower 345; Formalism.LogVandermondeBounds.StandardLattice.VandPlace_holds 275
+src/Formalism/MahlerMeasure	2	1288	12661	2136775	89	0	Formalism.MainNotions.G.GramWindowAlt.theorem_A_closed_form_holds 11651; Formalism.GM.DimensionMonotonicity.cas_lt 119; Formalism.GM.DimensionMonotonicity.GlW.dom_of_hwmod 103
+src/Formalism/MeanHeightDescent	2	80	1411	285638	18	0	GlobalTheory.T.covolX_of_truncation_badSet_lambda_lowBound 385; GlobalTheory.TwistIdeal.deg_add_le_deg_of_ideal_smul_le 238; GlobalTheory.T.liftLowBound_of_cover_estimates 215
+src/Formalism/MirabolicMackeyTheory	2	228	2487	394407	66	0	GlobalTheory.BigOn.ontoX_of_twist_shares_exp_alt 1297; Formalism.EigenvalueLevelCeiling.three_forms 360; Formalism.EigenvalueLevelCeiling.mirabolic_is_mackey 196
+src/Formalism/MoebiusJetDuality	2	3	6	558	3	0	Formalism.MJ.moeb 3; Formalism.MJ.hcDom 2; Formalism.MJ.vecOf 1
+src/Formalism/MonomialMeanResidues	2	44	614	76771	1	0	Formalism.L2.GlobalTheoryTheory.TraceIntegrality.q_lattice_slope 614
+src/Formalism/NormUnitaryBounds	2	3	198	18783	1	0	GlobalTheory.T.cusp_weight_integrable_on_fundamental_set 198
+src/Formalism/PadicSubsetSums	2	508	7226	1064500	65	0	Formalism.IrreducibleCountingLemmas.GaloisIrreducibility.property_W_of_estimates 3933; Formalism.L2.SG.Closed.GelfandGraevMultOne_holds 901; Formalism.IrreducibleCountingLemmas.Z.brauer_nesbitt 534
+src/Formalism/PairingDivisors	2	33	243	32098	13	0	GlobalTheory.BigTop.Fun.Close.fourier_coefficient_fit_of_join_alt 166; Formalism.PairingDivisionLocalBalance.weight_sum' 30; Formalism.PairingDivisionLocalBalance.sum_valuation_nat 23
+src/Formalism/PeriodIntegrals	2	28294	276058	54869716	3551	0	Formalism.L2.SG.Pf.NcAllC.ncTieC_of_closed 32364; GlobalTheory.Mem.Top.Closing.memberE_closing_alt_alt 9038; Formalism.L2.DIV.BrJ.branching_interlacing_pairs 8110
+src/Formalism/PieriBlockIdeals	2	1822	18339	3177231	51	0	GlobalTheory.T.expSt_of_base_change_and_crystalline_lattices 16558; Formalism.CohomologicalDescent.E.exIntervalLt_of_exCut 724; Formalism.CohomologicalDescent.LR.coefficient_word 455
+src/Formalism/PolynomialDimension	2	779	9002	1602643	24	0	Formalism.MainNotions.G.GramWindowAlt.theorem_A_closed_form_holds 5355; Formalism.MainNotions.flipOneThree.Pf.theorem_I_closed_form_holds 2225; Formalism.L2.G.linkG_concrete5 1135
+src/Formalism/PrimeAboveExistence	2	5	60	9812	1	0	UpperTheory.V.Z.J.free_at_of_unlinked_of_automorphic_cyclotomic_twist 60
+src/Formalism/QuotientMetricDivisors	2	689	8822	1432557	161	0	Formalism.L2.DIV.closed_linkDIVt_of_closed_bridge_kernel 3377; Formalism.L2.DIV.RecNums.ofNum 902; GlobalTheory.Top.wire_sel_alt 644
+src/Formalism/RankGapBounds	2	87	688	113147	24	0	GlobalTheory.Top.link_gl 400; UpperTheory.Top.zeroFreeAll_of_topG 144; GlobalTheory.T.expSt_of_base_change_and_crystalline_lattices 41
+src/Formalism/RealPlaceAnalysis	2	943	7736	1113413	459	0	ReciprocityTheory.ChartRestriction.DS.r0bG 1533; Formalism.REAL.nPos 493; Formalism.REAL.arr_module_facts 205
+src/Formalism/ResultantValuation	2	36	332	41167	2	0	GlobalTheory.weylNumerator_laplace 241; GlobalTheory.T.localConstants_from_admitted_local_Galois_statements 91
+src/Formalism/SatakeDualWeyl	2	1022	10472	2060802	568	0	Formalism.UG.P.fIwasawa_upper 606; Formalism.UG.P.wlocal_main 255; Formalism.UG.P.UG_stabilizer_finite 225
+src/Formalism/SelfDualUnimodular	2	56	661	174119	11	0	Formalism.L2.SG.Pf.LatDictZ.Z0.SGC.semi_genus_local 439; Formalism.L2.SG.Pf.latSurj 99; Formalism.L2.SG.Pf.LatDictZ.Z0.BR.gl_of_isom 37
+src/Formalism/SharpRestriction	2	40740	427434	117220768	9559	0	Formalism.L2.G.linkG_concrete5 67922; GlobalTheory.T.star_ad_and_bb_le_of_joint_cond 55771; GlobalTheory.T.embedding_jumps_aux2_of_setup 18139
+src/Formalism/SizeWindowBrackets	2	679	6393	1200931	119	0	GlobalTheory.Top.link_gl 3319; UpperTheory.Top.zeroFreeAll_of_topG 1407; Formalism.LFunctionChainParameters.LLcv.card_pLen 161
+src/Formalism/SmithDeterminants	2	6	104	12335	2	0	Formalism.MainNotions.G.GramWindowAlt.theorem_A_closed_form_holds 103; Formalism.A.mfact 1
+src/Formalism/Statement.lean	2	1	1	63	1	0	GlobalTheory.BadWOn.badWSt_of_greenCuspidal_of_modelSt 1
+src/Formalism/StatementOC.lean	2	2	4	166	2	0	Formalism.Sz 3; Formalism.Gz 1
+src/Formalism/StatementU.lean	2	2	2	135	1	0	UpperTheory.Top.zeroFreeAll_of_topG 2
+src/Formalism/SubspaceCounting	2	114	1674	276209	23	0	Formalism.L2.G.linkG_concrete5 1193; Formalism.G0.countAboveRangeCodimFormula 231; Formalism.G0.countSubspacesEq 116
+src/Formalism/SuccessiveMinima	2	52	1028	135286	1	0	Formalism.HermitianLatticesTheory.shortVectors 1028
+src/Formalism/TameInertiaTowers	2	96	1129	182440	41	0	Formalism.TwoAdicCyclotomicDecomposition.layerGalois 266; Formalism.TwoAdicCyclotomicDecomposition.efg_L 157; Formalism.TwoAdicCyclotomicDecomposition.layerInertiaTame 137
+src/Formalism/ThetaLiftIndependence	2	26	193	41878	12	0	Formalism.ThetaLiftIndependence.classRepsDefinite 93; Formalism.ThetaLiftIndependence.latLiftIndep 46; Formalism.ThetaLiftIndependence.LatticeLiftIndependence.latWt_gmap 22
+src/Formalism/ThetaLogCoordinates	2	3083	35046	5551878	437	0	Formalism.MainNotions.G.GramWindowAlt.theorem_A_closed_form_holds 11829; Formalism.L2.G.linkG_concrete5 2520; Formalism.MainNotions.G.first_theorem_threshold_functions 2223
+src/Formalism/ThetaSupremumBounds	2	69	841	84742	12	0	Formalism.DimensionVariation.gaussianCoeffIntegral 290; GlobalTheory.T.weil_unitary_entries' 280; Formalism.L2.DIV.closed_linkDIVt_of_closed_bridge_kernel 226
+src/Formalism/ThickAverageLoss	2	31	129	13558	9	0	UpperTheory.Top.zeroFreeAll_of_topG 121; Formalism.D5.E0 1; Formalism.D5.instDecidablePredInPhi 1
+src/Formalism/TorsionNormIteration	2	88	834	106135	21	0	Formalism.LT.funEqSubst 230; Formalism.LT.InvIntegralOfClass_proof 124; Formalism.LT.PowCongr_valid 120
+src/Formalism/TowerValuationBounds	2	19	309	54059	1	0	GlobalTheory.BigTop.Fun.Close.fourier_coefficient_fit_of_join_alt 309
+src/Formalism/TruncatedSeriesCounting	2	157	2563	557247	10	0	GlobalTheory.T.star_ad_and_bb_le_of_joint_cond 1611; Formalism.TruncatedSeriesCounting.TruncatedSeriesCountingIdentities.det_poly_statement 388; GlobalTheory.T.theoremE_corollaryA_closing_all_data 362
+src/Formalism/UnipotentAdelicQuotients	2	414	3349	492339	130	0	ZetaZeros.D.EllReg.elliptic_regularity_of_parts 2882; GlobalTheory.Mem.Top.Closing.memberE_closing_alt_alt 47; HeckeCharacterZeroLocus.SiegelWeilU.SiegelDensities 23
+src/Formalism/WachLatticeTwists	2	727	9116	3067120	42	0	GlobalTheory.T.globalLatticeIndexTheorem_of_lengthBoundAtPlaces 6083; GlobalTheory.T.localConstants_from_admitted_local_Galois_statements 1777; GlobalTheory.T.exists_const_tieChi_bound_of_facts 376
+src/Formalism/WeaklyAdmissibleFiltrations	2	165	913	399943	85	0	Formalism.MainNotions.LiftingTheory.gen_one_crys 316; Formalism.WeaklyAdmissibleFiltrations.trivialIsCrystalline_holds 85; GlobalTheory.T.exists_const_tieChi_bound_of_facts 47
+src/Formalism/WeightedDeltaMeans	2	4	5	523	1	0	GlobalTheory.T.test_polynomial_shift_total 5
+src/Formalism/WindowSums	2	41	555	66748	14	0	Formalism.WindowSums.valuation_zpow_sub_one 121; Formalism.WindowSums.arc_WindowSum 113; GlobalTheory.T.star_ad_and_bb_le_of_joint_cond 83
+src/Formalism/YangianSpanCharacter	2	48	396	165334	21	0	Formalism.FourierDecayAlt.P.minus_letter_maps_frames 251; Formalism.YangianSpanCharacter.P.rttRelation 31; Formalism.YangianSpanCharacter.Final.T_PlaneWave 24
+src/Formalism/ZeroFreeRegion	2	149	2679	413821	42	0	Formalism.ZeroFreeDirichlet.psiChiBound 952; Formalism.ZF.logDerivRegion 260; Formalism.ZF.zeroFreeRegion 256
+src/Formalism/ZetaNonvanishing	2	31	501	63680	5	0	Formalism.mellinSgen 260; UpperTheory.Top.zeroFreeAll_of_topG 208; Formalism.Sa_eq_tsum 18
+src/GroundTheory/ArithmeticGeometry	2	2658	21385	5736010	874	0	GroundTheory.Arith.SchemeCoh.finite_H_of_isProper 6616; GroundTheory.Arith.Abelian.Isogeny.ramIdx_mul_card_ker 750; _private.GroundTheory.ArithmeticGeometry.AbelianVarieties.DivisionPoints.0.GroundTheory.Arith.Abelian.good 629
+src/GroundTheory/AutomorphicForms	2	8796	94319	19000050	3499	0	UpperTheory.V.Z.Inf.genFE 6769; GroundTheory.Automorphic.IsExpLieAlgebra.exists_kernel_eq_conv_of_aeval_laplacian 3530; GroundTheory.Automorphic.ContragredientTranspose.rank_whittaker_le_one 3456
+src/GroundTheory/Brauer	2	44	409	137296	13	0	UpperTheory.Gal.LocalSmoothExtension.ksHodge_of_geo 193; GroundTheory.Brauer.exists_one_tmul_mem_of_ne_bot 93; GroundTheory.Brauer.finrank_mul_finrank_end 44
+src/GroundTheory/FunctionField	2	188	1989	403166	89	0	GroundTheory.FunctionField.Place.sum_ord_mul_deg_le 446; UpperTheory.LiteratureTheorems.semi_abelian_lie_seminegative_of_literature 282; UpperTheory.Et.e4 189
+src/GroundTheory/GlobalFields	2	5346	47962	9112849	2543	0	GroundTheory.Global.Elliptic.main_theorem_complexMultiplication 2273; GroundTheory.Global.index_range_ideleClassNorm 1885; GroundTheory.Global.ideleSymbol_diagonal_and_ker_le 1272
+src/GroundTheory/HeightsAndTheta	2	25156	330670	56393864	4293	0	PositivityTheory.Pf1.HilbertSamuelMoriwaki.hsChain 46599; GlobalTheory.T.model_on_hodge_from_family 26392; GlobalTheory.CompanionTheory.Ar.Branch.branchProperAtPoint 16893
+src/GroundTheory/IdeleRoots	2	60	646	138023	30	0	GroundTheory.BlockD.siegelSetsSL2Adelic_holds 250; PositivityTheory.RgEis.Hd.dict 121; PositivityTheory.jumpWindows.cuspidalMultiplicityOne 39
+src/GroundTheory/LocalFields	2	2639	23750	5214838	1210	0	GroundTheory.LocalField.reciprocity_lubinTate 2330; UpperTheory.V.Z.Bc.seedIIs_alt 1293; GroundTheory.LocalField.cycHerbrand_units_eq_finrank 888
+src/GroundTheory/PAdicHodge	2	1929	15729	4005586	676	0	GroundTheory.PAdicHodge.ACris.IsACrisFraction.exists_norm_eq_zpow 2022; GroundTheory.PAdicHodge.ACris.senTateCharacters 2020; GroundTheory.PAdicHodge.cpTwistRep_invariants_eq_bot 1144
+src/GroundTheory/PowerSubgroups	2	41	738	110066	14	0	GroundTheory.Automorphic.ContragredientTranspose.rank_whittaker_le_one 153; GlobalTheory.CompanionTheory.Ar.Giv.lineOfLargeDegree_of_use 111; GroundTheory.PAdicHodge.EigenWitt.fpbarToPreTilt 67
+src/GroundTheory/ProfiniteCohomology	2	6683	57602	15465513	2065	0	PositivityTheory.Lit1.GEN.globalEulerChar_full 12651; GroundTheory.ProfCoh.gsBaseCase 5378; GroundTheory.ProfCoh.card_cohomology_mul_div_eq 3169
+src/GroundTheory/TateCohomology	2	755	5510	1375922	230	0	PositivityTheory.Lit1.GEN.globalEulerChar_full 1422; GroundTheory.GroupCoh.cohTrivial_of_forall_subgroup 683; GroundTheory.ProfCoh.eq_zero_of_forall_sylow_map_eq_zero 194
+src/Lemmata/AddValuationProducts	2	2	50	5895	1	0	Formalism.NG.lenKer 50
+src/Lemmata/B110	2	2	49	2648	1	0	PI.UnitaryCorollaryDerivatives.DjC.hasDerivAt_det_of_one 49
+src/Lemmata/B1959r	2	1	32	2147	1	0	PositivityTheory.ThKR.theoremK_head2 32
+src/Lemmata/B1962s	2	3	36	2784	1	0	Formalism.MainNotions.G.GramWindowAlt.theorem_A_closed_form_holds 36
+src/Lemmata/Cancellation	2	2	98	8046	1	0	PI.StrongApproxE.DedekindLFunctions.sa 98
+src/Lemmata/CharacterDirections	2	4	105	13282	1	0	ReciprocityTheory.ChartRestriction.G.AR.taylor_expansion_local_coordinates 105
+src/Lemmata/ClearingDenominators	2	3	194	8105	1	0	Formalism.MainNotions.G.GLWeightTheory.nabla_delta_comparison_field 194
+src/Lemmata/ComplementLifts	2	2	67	9969	1	0	Formalism.L2.G.linkG_concrete5 67
+src/Lemmata/CurryModusPonens	2	2	47	1550	1	0	ReciprocityTheory.ChartRestriction.DS.volU_density 47
+src/Lemmata/Denominators	2	2	45	8042	1	0	Formalism.L2.SG.Pf.latSurj 45
+src/Lemmata/DetMonotoneStarMulSelf	2	4	69	7429	1	0	ReciprocityTheory.L2DbarEstimates.I.maDet 69
+src/Lemmata/DetNormLeProdRows	2	2	32	3215	1	0	Formalism.HadamardInequality.P.hadamard_inequality_holds 32
+src/Lemmata/DiscreteValuationQuotients	2	4	68	7458	1	0	Formalism.LatticeIndexTer.LatticeIndexDeterminant.len_span 68
+src/Lemmata/DualWeylPullback	2	8	150	25601	1	0	Formalism.MainNotions.flipOneThree.Pf.theorem_I_closed_form_holds 150
+src/Lemmata/FiberEquations	2	2	33	2582	1	0	GlobalTheory.CarrierGap.carrierP 33
+src/Lemmata/FirstBlockLemmaA	2	1	17	2006	1	0	ReciprocityTheory.ChartRestriction.G.Geo.exists_eval_cons_one_ne_zero 17
+src/Lemmata/FirstBlockLemmaB	2	1	16	782	1	0	ReciprocityTheory.ChartRestriction.G.AI.I1.cyc_dim_add_one_le 16
+src/Lemmata/FirstBlockLemmaC	2	1	6	502	1	0	ReciprocityTheory.DiscreteGroups.LocalClassField.UnramifiedExtensions.norm_eq_one_of_pow 6
+src/Lemmata/FirstBlockLemmaD	2	1	7	459	1	0	ReciprocityTheory.DiscreteGroups.LocalClassField.UnramifiedExtensions.norm_sub_le_max' 7
+src/Lemmata/FirstBlockLemmaE	2	1	15	1720	1	0	Formalism.TwoAdicCyclotomicDecomposition.exists_int_quad 15
+src/Lemmata/FirstBlockLemmaF	2	1	8	593	1	0	Formalism.L2.G.Pend.nsub 8
+src/Lemmata/FirstBlockLemmaG	2	1	11	510	1	0	UpperTheory.ConvolutionTheory.T.tyEx 11
+src/Lemmata/FirstBlockLemmaH	2	1	41	4441	1	0	GlobalTheory.T.compatibleSystem_weightOne_saturated 41
+src/Lemmata/FirstBlockLemmaI	2	1	10	768	1	0	GlobalTheory.T.theoremE_corollaryA_closing_all_data 10
+src/Lemmata/FirstBlockLemmaJ	2	1	32	2011	1	0	ReciprocityTheory.ChartRestriction.G.PullbackSections.Pf.eq_zero_of_eventually 32
+src/Lemmata/FirstBlockLemmaK	2	1	22	1943	1	0	ReciprocityTheory.ChartRestriction.G.Chart.isUnit_of_aug 22
+src/Lemmata/FunctionAtZero	2	2	45	1950	1	0	PI.VolStabS.Assembly.sdUniq_closed 45
+src/Lemmata/GeneralBFactAltForm	2	1	30	4721	1	0	ReciprocityTheory.ChartRestriction.G.FD.HermitianTraceFormVanishing.exists_smul_mem 30
+src/Lemmata/GeneralBFactBis	2	1	19	1169	1	0	ReciprocityTheory.ChartRestriction.G.AI.I1.cyc_withBot_eq_of_add_one 19
+src/Lemmata/GeneralBFactBisAlt	2	1	34	4457	1	0	ReciprocityTheory.MultiplicativeHeights.DegAdd.relIndex_ne_zero_of_fg 34
+src/Lemmata/GeneralBFactBisForm	2	1	51	3228	1	0	GlobalTheory.T.exists_indexBoundHypothesesWithNet_allValuedPoints 51
+src/Lemmata/GeneralBFactForm	2	1	68	2831	1	0	ReciprocityTheory.ChartRestriction.G.AR.Up.MI.lintegral_flat 68
+src/Lemmata/GeneralBFactFurther	2	1	24	4236	1	0	ReciprocityTheory.ChartRestriction.G.Geo.Tor.GlobalFunctionsDvrGeneric.bij_of_generic 24
+src/Lemmata/GeneralBFactLeft	2	1	54	13401	1	0	Formalism.L2.SG.Pf.NcAllC.ncTieC_of_closed 54
+src/Lemmata/GeneralBFactLeftAlt	2	1	18	2587	1	0	PI.PairCorankPos.W.frame_mem_UUE 18
+src/Lemmata/GeneralBFactLeftAltForm	2	1	175	4720	1	0	Formalism.MainNotions.G.GLWeightTheory.isotypic_projector_theorem_field 175
+src/Lemmata/GeneralBFactLeftBis	2	1	34	5083	1	0	split_pair_generation 34
+src/Lemmata/GeneralBFactLeftBisAlt	2	1	34	4350	1	0	Formalism.MainNotions.Lnk.mramSpan 34
+src/Lemmata/GeneralBFactLeftBisForm	2	1	30	4149	1	0	Formalism.MainNotions.G.GramWindowAlt.theorem_A_closed_form_holds 30
+src/Lemmata/GeneralBFactLeftExtra	2	1	10	659	1	0	ReciprocityTheory.MultiplicativeHeights.finite_place_sum_le 10
+src/Lemmata/GeneralBFactLeftForm	2	1	25	1780	1	0	GlobalTheory.Top.link_gl 25
+src/Lemmata/GeneralBFactLeftFurther	2	1	28	1719	1	0	Formalism.MainNotions.LemmaBAlt.B2.colH_spec 28
+src/Lemmata/GeneralBFactLeftLast	2	2	28	8735	1	0	Formalism.L2.NCov.exists_finset_pts 28
+src/Lemmata/GeneralBFactLeftMore	2	1	16	2782	1	0	ReciprocityTheory.AnForm.R.JacobianCriterionAlt.sub_C_mem_span_lin 16
+src/Lemmata/GeneralBFactLeftRest	2	1	13	1188	1	0	Formalism.HermitianLattices.Ext.L3.liStat 13
+src/Lemmata/GeneralBFactLeftSide	2	2	72	4905	1	0	Formalism.L2.G.RelativeIndexFlags.Core.prodSpan 72
+src/Lemmata/GeneralBFactLeftTail	2	1	17	1349	1	0	Formalism.L2.G.Triv.exists_place 17
+src/Lemmata/GeneralBFactLeftTer	2	1	24	2008	1	0	PI.UnitaryGroupMassFormula.UnitDetRoot.norm_le_one_of_root 24
+src/Lemmata/GeneralBFactLeftTerForm	2	1	31	4856	1	0	Formalism.MainNotions.G.GramWindowAlt.theorem_A_closed_form_holds 31
+src/Lemmata/GeneralBFactLeftVariant	2	1	59	4429	1	0	weylForK_closed 59
+src/Lemmata/GeneralBFactLeftVersion	2	1	175	4366	1	0	Formalism.MainNotions.G.tool_statements_hold 175
+src/Lemmata/GeneralBFactMore	2	3	37	1880	1	0	ReciprocityTheory.ChartRestriction.G.Geo.subst_monomial 37
+src/Lemmata/GeneralBFactRest	2	1	70	6821	1	0	ReciprocityTheory.CA.IsCMMod.ringKrullDim_quotient_eq_supportDim 70
+src/Lemmata/GeneralBFactRight	2	1	9	1491	1	0	Formalism.L2.DIV.BrJ.branching_interlacing_pairs 9
+src/Lemmata/GeneralBFactRightAlt	2	1	12	2616	1	0	Formalism.L2.G.RelativeIndexFlags.oddFact_pf 12
+src/Lemmata/GeneralBFactRightAltForm	2	1	34	4734	1	0	Formalism.MainNotions.BridgeLemma.l_retr 34
+src/Lemmata/GeneralBFactRightBis	2	1	10	1041	1	0	Formalism.MainNotions.UnusedSlot33.division_rational_lattice 10
+src/Lemmata/GeneralBFactRightBisAlt	2	1	14	639	1	0	GlobalTheory.CarrierGap.theoremS_leaves_of_carrierG 14
+src/Lemmata/GeneralBFactRightBisForm	2	2	60	4203	1	0	GlobalTheory.Mem.Top.Bl.TrueLocal.exists_trueVolumeStage_columnChoiceStep 60
+src/Lemmata/GeneralBFactRightExtra	2	1	25	2331	1	0	GlobalTheory.T.bundle_bothParts_of_standardKernel_and_six_hypotheses 25
+src/Lemmata/GeneralBFactRightForm	2	1	46	4593	1	0	GlobalTheory.T.theoremE_corollaryA_closing_all_data 46
+src/Lemmata/GeneralBFactRightFurther	2	1	20	1894	1	0	Formalism.InvariantFactorPaths.GelfandTsetlinBases.fact_break 20
+src/Lemmata/GeneralBFactRightMore	2	1	31	2058	1	0	GlobalTheory.Mem.R3.OkVals.large_coefficientField_contains_twist_values 31
+src/Lemmata/GeneralBFactRightRest	2	2	23	1138	1	0	Formalism.IrreducibleCountingLemmas.GaloisIrreducibility.property_W_of_estimates 23
+src/Lemmata/GeneralBFactRightSide	2	1	22	1003	1	0	GlobalTheory.CarrierGap.carrierP 22
+src/Lemmata/GeneralBFactRightTer	2	1	9	644	1	0	unitary_approximation_finite 9
+src/Lemmata/GeneralBFactRightTerForm	2	1	281	10552	1	0	Formalism.TwoAdicCyclotomicDecomposition.stab_fix 281
+src/Lemmata/GeneralBFactRightVariant	2	1	29	3562	1	0	Formalism.MainNotions.KudlaSiegelWeil.inert_conditions_hold 29
+src/Lemmata/GeneralBFactRightVersion	2	1	19	3396	1	0	Formalism.MainNotions.N.KillingConditions.WildPf.wildProP 19
+src/Lemmata/GeneralBFactSecond	2	1	32	4352	1	0	ReciprocityTheory.MultiplicativeHeights.Closed.semistable 32
+src/Lemmata/GeneralBFactSecondAlt	2	1	31	4921	1	0	ReciprocityTheory.MultiplicativeHeights.Closed.semiPoint 31
+src/Lemmata/GeneralBFactSecondAltForm	2	1	141	10026	1	0	Formalism.FourierDecayAlt.P.CutMP.Gauge.GC.lie_weight_at_most_holds 141
+src/Lemmata/GeneralBFactSecondBis	2	1	41	4118	1	0	Formalism.MainNotions.AdmissibleThreePrime.residual_irreducible_of_theorem_three_prime_alt 41
+src/Lemmata/GeneralBFactSecondBisAlt	2	1	36	4392	1	0	Formalism.L2.DIV.lc_exists_smul_mem 36
+src/Lemmata/GeneralBFactSecondBisForm	2	1	57	4293	1	0	Formalism.FourierDecayAlt.P.germ_rate 57
+src/Lemmata/GeneralBFactSecondExtra	2	2	52	5399	1	0	GlobalTheory.FinalJoin.inputs4_of_net 52
+src/Lemmata/GeneralBFactSecondForm	2	1	34	4107	1	0	Formalism.HermitianLattices.Ext.L3.StabilizerLattices.exists_smul_mem 34
+src/Lemmata/GeneralBFactSecondFurther	2	1	30	4593	1	0	GlobalTheory.FinalJoin.inputs4_of_net 30
+src/Lemmata/GeneralBFactSecondLast	2	1	28	2679	1	0	Formalism.FrobeniusOrbits.hostThickExists 28
+src/Lemmata/GeneralBFactSecondMore	2	1	32	3910	1	0	GlobalTheory.Mem.R3.OkVals.large_coefficientField_contains_twist_values 32
+src/Lemmata/GeneralBFactSecondRest	2	2	40	4605	1	0	Formalism.L2.SG.TermOp.Vanish.rational_cocompact_holds 40
+src/Lemmata/GeneralBFactSecondSide	2	1	37	4221	1	0	Formalism.HermitianLatticesTheory.traceReal_mult 37
+src/Lemmata/GeneralBFactSecondTail	2	1	34	5161	1	0	Formalism.HN.sizeIneq_rk 34
+src/Lemmata/GeneralBFactSecondTer	2	1	26	1732	1	0	Formalism.MainNotions.G.first_theorem_threshold_functions 26
+src/Lemmata/GeneralBFactSecondTerForm	2	2	53	4120	1	0	Formalism.FourierDecayAlt.P.capelli_independence 53
+src/Lemmata/GeneralBFactSecondVersion	2	1	46	4380	1	0	Formalism.IrreducibleCountingLemmas.Z.brauer_nesbitt 46
+src/Lemmata/GeneralBFactSide	2	1	30	1895	1	0	ReciprocityTheory.CA.ModDepthGE.quotSMulTop 30
+src/Lemmata/GeneralBFactTail	2	1	31	2593	1	0	ReciprocityTheory.MultiplicativeHeights.det_subtype_comp_associated_prod 31
+src/Lemmata/GeneralBFactTer	2	1	54	2524	1	0	ReciprocityTheory.ChartRestriction.G.AR.Up.FundSetPf.cpt_uniq 54
+src/Lemmata/GeneralBFactTerForm	2	1	25	500	1	0	ReciprocityTheory.ChartRestriction.G.Geo.withBot_eq_of_add_one 25
+src/Lemmata/GeneralBFactThird	2	1	26	2911	1	0	Formalism.L2.G.Pend.norm_phi_le 26
+src/Lemmata/GeneralBFactThirdAltForm	2	1	31	4093	1	0	Formalism.L2.SG.Pf.Cnt.DualityBasisChange.gaPlusDiag_of 31
+src/Lemmata/GeneralBFactThirdBis	2	1	60	7961	1	0	Formalism.L2.Ker.Cd.IntegralLatticeDensity.hermitian_form_integral_values 60
+src/Lemmata/GeneralBFactThirdBisAlt	2	1	29	3889	1	0	latLocGlob 29
+src/Lemmata/GeneralBFactThirdBisForm	2	1	32	1544	1	0	Formalism.L2.SG.NGCut.SplitEmbedding.pi_measure_eq_prod_absNorm_mul_sqrt_discr 32
+src/Lemmata/GeneralBFactThirdExtra	2	1	36	5269	1	0	automorphism_lattice_finite 36
+src/Lemmata/GeneralBFactThirdForm	2	1	34	3812	1	0	Formalism.L2.SG.Pf.exists_smul_mem 34
+src/Lemmata/GeneralBFactThirdFurther	2	2	72	5140	1	0	Formalism.L2.SG.Pf.NcAllC.ncTieC_of_closed 72
+src/Lemmata/GeneralBFactThirdMore	2	2	40	5586	1	0	PI.WAU.Cpt.isCompact_Kset 40
+src/Lemmata/GeneralBFactThirdRest	2	1	32	4778	1	0	PI.UnitaryGroupMassFormula.BetaLUniq.exists_smul_mem 32
+src/Lemmata/GeneralBFactThirdSide	2	1	32	4151	1	0	PI.UnitaryGroupMassFormula.BetaModX.Iota.exists_smul_mem 32
+src/Lemmata/GeneralBFactThirdTail	2	1	32	3976	1	0	Formalism.L2.SG.TermTieOf.termTieOf 32
+src/Lemmata/GeneralBFactThirdTer	2	1	34	4038	1	0	Formalism.L2.Ker.exists_smul_le 34
+src/Lemmata/GeneralBFactThirdTerForm	2	2	42	5106	1	0	Formalism.L2.SG.Pf.latSurj 42
+src/Lemmata/GeneralBFactThirdVariant	2	1	41	2454	1	0	GlobalTheory.T.compatibleSystem_weightOne_saturated 41
+src/Lemmata/GeneralBFactThirdVersion	2	1	148	5091	1	0	GlobalTheory.CarrierGap.theoremS_leaves_of_carrierG 148
+src/Lemmata/GeneralBFactUpper	2	1	18	2136	1	0	Formalism.L2.Th1.D.frobenius_square 18
+src/Lemmata/GeneralBFactUpperAltForm	2	1	17	3439	1	0	automorphism_lattice_finite 17
+src/Lemmata/GeneralBFactUpperBis	2	1	160	22000	1	0	Formalism.L2.G.linkG_concrete5 160
+src/Lemmata/GeneralBFactUpperForm	2	1	21	2280	1	0	Formalism.MainNotions.N.JsetEmb.de_rham_filtration_eq_iSup_embeddings 21
+src/Lemmata/GeneralBFactUpperTerForm	2	2	17	859	1	0	ReciprocityTheory.DiscreteGroups.LocalClassField.norm_Kn 17
+src/Lemmata/GeneralBFactUpperVariant	2	1	22	3846	1	0	Formalism.MainNotions.N.JsetEmb.de_rham_filtration_eq_iSup_embeddings 22
+src/Lemmata/GeneralBFactUpperVersion	2	1	16	1847	1	0	Formalism.L2.SG.KappaOffDiagonal.JPosC_holds 16
+src/Lemmata/GeneralBFactVariant	2	1	52	2233	1	0	ReciprocityTheory.ChartRestriction.G.AR.Up.KU.cpt_inj 52
+src/Lemmata/GeneralBFactVersion	2	1	20	1381	1	0	ReciprocityTheory.ChartRestriction.G.AR.Up.PoinPf.differentiableOn_tsum_loc 20
+src/Lemmata/HermitianSesquilinear	2	2	36	4953	1	0	Formalism.FourierDecayAlt.P.PBF.dk_radial 36
+src/Lemmata/IdempotentTraceVanishing	2	4	66	11510	1	0	PI.SSAscent.UnitaryGroupMassFormula.trace_nilpotent_ascent 66
+src/Lemmata/IntegerMulIntegral	2	2	34	5366	1	0	Formalism.L2.SG.Closed.ClassFin_holds 34
+src/Lemmata/IterateZero	2	2	56	5320	1	0	GlobalTheory.T.definite_cuspForms_finite_regularRepresentation 56
+src/Lemmata/MiscLemmasA	2	1	154	14600	1	0	UpperTheory.ConvolutionTheory.T.tyEx 154
+src/Lemmata/MiscLemmasB	2	1	68	6612	1	0	Formalism.IndefR.Eqv.G5.fdom_exists_all 68
+src/Lemmata/MiscLemmasC	2	1	23	2737	1	0	Formalism.IndefR.Fin.placeModelAt_of 23
+src/Lemmata/MiscLemmasD	2	1	22	4134	1	0	GlobalTheory.Mem.Top.Closing.memberE_closing_alt_alt 22
+src/Lemmata/MiscLemmasE	2	1	25	1323	1	0	Formalism.MainNotions.G.Joints.restriction_dimension_holds 25
+src/Lemmata/MiscLemmasF	2	1	53	4784	1	0	ReciprocityTheory.L2DbarEstimates.C.holoWeak 53
+src/Lemmata/MiscLemmasH	2	1	22	3830	1	0	GlobalTheory.BigOn.geoSt_of_pageSt_alt 22
+src/Lemmata/MiscLemmasI	2	1	6	512	1	0	Formalism.L2.SG.Pf.NcAllC.ncTieC_of_closed 6
+src/Lemmata/MiscLemmasJ	2	1	33	4595	1	0	GlobalTheory.T.exists_indexBoundHypothesesWithNet_allValuedPoints 33
+src/Lemmata/MiscLemmasL	2	1	28	3909	1	0	GlobalTheory.T.involutive_algebra_product_identity 28
+src/Lemmata/MiscLemmasM	2	1	30	5882	1	0	PI.HeckeProdW.exists_strictHenselian_absolutely_closed_local_ring 30
+src/Lemmata/MiscLemmasN	2	1	25	4817	1	0	GlobalTheory.T.hyps_e_third_layer_ser_n_of_geometric_galois 25
+src/Lemmata/MiscLemmasO	2	1	30	4666	1	0	GlobalTheory.FinalJoin.inputs4_of_net 30
+src/Lemmata/MiscLemmasP	2	1	2	186	1	0	Bl.ThirdBlockLemmaA.goal1 2
+src/Lemmata/MiscLemmasQ	2	6	11	4968	1	0	ReciprocityTheory.ChartRestriction.G.Chart.dualMapS 11
+src/Lemmata/MiscLemmasR	2	1	17	2997	1	0	ReciprocityTheory.MultiplicativeHeights.SemiDegIdx.split_norm 17
+src/Lemmata/MovedPointExistence	2	2	45	2804	1	0	ReciprocityTheory.ChartRestriction.DS.HW.twist_hasDerivAt_det_exp 45
+src/Lemmata/MultivariateIntegrals	2	5	80	6657	1	0	Formalism.FG.funEqHomV 80
+src/Lemmata/NatMulIsIntegral	2	2	38	6896	1	0	PI.WAU.B.exists_nat_vec 38
+src/Lemmata/NearbyExistence	2	2	53	6796	1	0	Formalism.UG.P.glint_exists_approx 53
+src/Lemmata/PaddedFamilies	2	2	111	16187	1	0	PI.SelfDualLoc.W.locBasis 111
+src/Lemmata/PadicNatCastNorm	2	2	39	3086	1	0	ReciprocityTheory.DiscreteGroups.LocalClassField.UnramifiedExtensions.norm_sub_eq_one_of_pow_eq_one 39
+src/Lemmata/PartialDerivativeDegree	2	2	33	3289	1	0	PI.UnitaryGroupMassFormula.UsCompose.degDP 33
+src/Lemmata/PeriodicFunctions	2	2	15	1808	1	0	Formalism.L2.Col.unfoldingNonvanishingDoubleCoset_holds 15
+src/Lemmata/PlaneOverMembership	2	2	22	1784	1	0	GlobalTheory.BigTop.Fun.Close.fourier_coefficient_fit_of_join_alt 22
+src/Lemmata/PosDefOfRealQuadratic	2	4	72	4326	1	0	ReciprocityTheory.ChartRestriction.G.AR.Up.ExhB.posDef_eventually 72
+src/Lemmata/PowMulVecEigen	2	2	16	3295	1	0	GlobalTheory.BigOn.geoSt_of_pageSt_alt 16
+src/Lemmata/PowerApplication	2	2	12	3132	1	0	ReciprocityTheory.ChartRestriction.DS.dc_aeval_eigen 12
+src/Lemmata/PowerMembership	2	2	22	2597	1	0	GlobalTheory.T.embedding_jumps_aux2_of_setup 22
+src/Lemmata/RankOneOrbitForms	2	5	158	26431	1	0	Formalism.L2.RowDataTransport.packageOfPrimitiveLinks 158
+src/Lemmata/ScalarExtension	2	2	45	4866	1	0	Formalism.IrreducibleCountingLemmas.Z.brauer_nesbitt 45
+src/Lemmata/SecondBlockLemmaA	2	1	14	733	1	0	Formalism.NG.IdempotentNormalFormsLenFacts.addVal_prod 14
+src/Lemmata/SimultaneousEigenvectors	2	3	76	9567	1	0	ReciprocityTheory.ChartRestriction.DS.exists_khw 76
+src/Lemmata/SmulListSum	2	2	38	3068	1	0	ReciprocityTheory.ChartRestriction.DS.Lap.LemK.vc_eq_zero_of_mem_span 38
+src/Lemmata/TwistedIdempotents	2	3	148	13200	1	0	Formalism.L2.SG.Closed.GelfandGraevMultOne_holds 148
+src/Main.lean	2	5	5	24	5	0	riemannHypothesis 1; riemannZeta_eq_zero_re 1; LFunction_ne_zero_of_half_lt_re 1
+src/PositivityTheory/AutomorphicForms	2	3224	32193	7285350	155	0	UpperTheory.V.Z.Bc.seedIIs_alt 22792; UpperTheory.V.Hi.nonempty_unitaryHeckeData 4340; UpperTheory.V.Z.Bc.cycC_holds 879
+src/PositivityTheory/PublishedTheorems	2	4	94	13416	1	0	UpperTheory.LiteratureTheorems.published_results_arithmetic 94
+src/PositivityTheory/Representations	2	1	40	3924	1	0	PositivityTheory.RgBcC.LfSt.kChain_holds 40
+src/ReciprocityTheory/AdeleApproximation	2	7	152	20150	4	0	Formalism.IndefR.Fin.latSelfDual 76; ReciprocityTheory.UG.AdeleIntA.exists_approx 69; ReciprocityTheory.UG.AdeleIntA.val_R 5
+src/ReciprocityTheory/AdicCompleteness	2	6	88	15283	3	0	ReciprocityTheory.P1.isAdicComplete_comap_constantCoeff 67; ReciprocityTheory.P1.map_C_sup_span_X 13; ReciprocityTheory.P1.isAdicComplete_ps 8
+src/ReciprocityTheory/AnalyticForms	2	1637	20207	2595238	646	0	ReciprocityTheory.AnForm.A.log_norm_integral_at_coordinate 1131; ReciprocityTheory.AnForm.M.poincareLelong 981; ReciprocityTheory.AnForm.A.pshExtension_thm 919
+src/ReciprocityTheory/Automorphisms	2	60	340	76088	42	0	ReciprocityTheory.Aut.adic_exists_approx 73; MassDataIdxSteps.stResZ_holds 25; ReciprocityTheory.Aut.Umax 21
+src/ReciprocityTheory/BasicDefinitions	2	18	30	16560	8	0	GlobalTheory.T.eventually_congBound_of_facts 8; ReciprocityTheory.Def.C1 5; ReciprocityTheory.Def.C2 5
+src/ReciprocityTheory/BurnsideSurjectivity	2	3	168	26262	1	0	DiscreteGroups.sglob.LConv.localConverseGL 168
+src/ReciprocityTheory/Chebotarev	2	12	202	18526	8	0	GlobalTheory.T.expSt_of_base_change_and_crystalline_lattices 62; ReciprocityTheory.Cheb.sum_le_idealZetaR 52; ReciprocityTheory.Cheb.natCast_notMem_sq_of_isUnramifiedAt 38
+src/ReciprocityTheory/ClassFieldTheory	2	1048	8758	2594349	178	0	UpperTheory.LiteratureTheorems.published_results_first 6704; GlobalTheory.T.globalLatticeIndexTheorem_of_lengthBoundAtPlaces 113; ReciprocityTheory.DiscreteGroups.LocalClassField.eq_Kn_of_norm 102
+src/ReciprocityTheory/CommutativeAlgebra	2	136	2370	221501	59	0	ReciprocityTheory.ChartRestriction.G.Geo.DimF.height_eq_height_add_of_isRegularRing 440; ReciprocityTheory.CA.isCM_localization_mvPolynomial 195; ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.isDomain 152
+src/ReciprocityTheory/DualLattices	2	1421	18726	3429068	371	0	GlobalTheory.ChF.unramified_companion_chart_characters 3936; GlobalTheory.ChF.colength_bound_split_place_chart 2519; GlobalTheory.T.exists_periodTowerDatum_of_abelianScheme_symmetricBundle 1749
+src/ReciprocityTheory/EigenFrames	2	8	108	14680	1	0	GlobalTheory.Fc.row_aAtG_at_built_alt 108
+src/ReciprocityTheory/GaloisValuations	2	170	1166	578187	131	0	ReciprocityTheory.Gal.exists_isPlaceOver 73; ReciprocityTheory.Gal.exists_frob_over 73; ReciprocityTheory.Gal.exists_den 60
+src/ReciprocityTheory/GeneralLinearIntegers	2	5	16	817	5	0	ReciprocityTheory.GeneralLinearIntegers.GeneralLinearIntegersOpenCompact.isOpen_integers 5; PI.VolStabS.MassDataS.volStabXS_of 4; ReciprocityTheory.GeneralLinearIntegers.GeneralLinearIntegersOpenCompact.isCompact_integers 3
+src/ReciprocityTheory/GeometryOfNumbers	2	242	2828	404431	36	0	PositivityTheory.Pf1.HilbertSamuelMoriwaki.hsChain 1451; GlobalTheory.CountRowByName.row_counts_of_labels_alt 740; ReciprocityTheory.GeometryOfNumbersTheory.arakelovDegree_eq_degreeOfFamily 216
+src/ReciprocityTheory/GroupCohomology	2	537	4919	1494951	88	0	UpperTheory.LiteratureTheorems.published_results_first 2400; UpperTheory.V.Loc.tateRat 843; ReciprocityTheory.Coh.fiveTerm_holds 702
+src/ReciprocityTheory/Hypotheses	2	84	201	85224	39	0	ReciprocityTheory.Gal.UnramifiedOrthogonality 22; ReciprocityTheory.Gal.GreenbergWiles 21; ReciprocityTheory.Gal.LocalTateDuality 18
+src/ReciprocityTheory/L2DbarEstimates	2	1270	18541	2347952	267	0	ReciprocityTheory.L2DbarEstimates.hormander 7028; UpperTheory.LiteratureTheorems.published_results_arithmetic 2196; GlobalTheory.T.exists_indexBoundHypothesesWithNet_allValuedPoints 1756
+src/ReciprocityTheory/NeutralLocalFields	2	254	2385	441386	113	0	ReciprocityTheory.Neutral.Cmp.exists_res_eq 285; GlobalTheory.CompanionTheory.Hypotheses₂.localFiniteness 217; ReciprocityTheory.Neutral.Cmp.denseRange 163
+src/ReciprocityTheory/ReducedBases	2	83	1025	159929	36	0	ReciprocityTheory.ReducedBases.T2.exists_red_of 443; ReciprocityTheory.ReducedBases.T2.hlow_of 141; GlobalTheory.exists_reduced_basis_pairing_coord 78
+src/ReciprocityTheory/ReductiveGroups	2	25568	299621	57396083	7294	0	GlobalTheory.T.exists_indexBoundHypothesesWithNet_allValuedPoints 40860; ReciprocityTheory.ChartRestriction.DS.Lap.TopClosed.besselNVG 21345; ReciprocityTheory.ChartRestriction.DS.Xi.xiExists 10371
+src/ReciprocityTheory/ResidueCardinality	2	1	138	15809	1	0	ReciprocityTheory.Bridge.ResidueFieldCardinality.card_residue 138
+src/ReciprocityTheory/SemistableReduction	2	853	11592	1625713	185	0	ReciprocityTheory.MultiplicativeHeights.Closed.semiPoint 2323; GlobalTheory.T.exists_indexBoundHypothesesWithNet_allValuedPoints 1773; ReciprocityTheory.MultiplicativeHeights.Closed.approx 960
+src/ReciprocityTheory/ThetaQuasiPeriods	2	65	553	69535	36	0	GlobalTheory.T.final_theorem_of_inputs_left 231; ReciprocityTheory.PTheta.thetaTranslTau_holds 87; ReciprocityTheory.ChartRestriction.G.Key.Chi.chi_of 63
+src/ReciprocityTheory/ThetaSummability	2	41	178	17673	2	0	PositivityTheory.ThKR.theoremK_head2 145; GlobalTheory.T.theta_series_summable 33
+src/Statements.lean	2	5	11	508	4	0	LFunction_ne_zero_of_half_lt_re 3; LFunction_eq_zero_re 3; LFunction_eq_zero_re_of_isPrimitive 3
+src/Supplements/Kernels	2	4	7	260	3	1	LFunction_eq_zero_re_of_isPrimitive 3; LFunction_eq_zero_re 2; rhOfAll 1

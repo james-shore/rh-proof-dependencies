@@ -1,0 +1,18 @@
+# Unused hypotheses: tools/structure relevance on solution.ndjson (unpacked sha256 5ea74b91...244e); export only, independent of the dataset version.
+meta: {"exporter":{"name":"lean4export","version":"3.1.0"},"format":{"version":"3.1.0"},"lean":{"githash":"819816b2e0a3bf405af45ae5c7af2491d8f5bee6","version":"4.33.1"}}
+project constants: 1270184
+=== variant binders ===
+analysed 1188277 project defs/theorems with binders (10624622 binders; 8185 projection-like skipped)
+binders used nowhere: 121033; of these Prop: 102204, sort unknown: 0; removable positions: 101663 in 67238 constants
+relevant loose-bvar sets: 179324428 wide nodes
+kernel cone (plain closure from 5 roots): 1484729 constants
+relevance-pruned cone: 1483317 constants (1268776 project); kernel cone project constants: 1270184; pruned-but-not-kernel: 0
+irrelevant argument sites in the pruned cone: 729596; distinct (callee, argument): 279099
+dropped constants: 1412; callees with seeds in the dropped set: 57463; exact closures for top 3000
+=== variant deadlet ===
+analysed 1188277 project defs/theorems with binders (10624622 binders; 8185 projection-like skipped)
+binders used nowhere: 121594; of these Prop: 102750, sort unknown: 0; removable positions: 102208 in 67554 constants
+relevant loose-bvar sets: 178935825 wide nodes
+relevance-pruned cone: 1480257 constants (1265781 project); kernel cone project constants: 1270184; pruned-but-not-kernel: 0
+irrelevant argument sites in the pruned cone: 728588; distinct (callee, argument): 279096
+dropped constants: 4472; callees with seeds in the dropped set: 57619; exact closures for top 3000

@@ -1,0 +1,45 @@
+step	constant	kind	instantiation	max_sort
+0	LFunction_ne_zero_of_half_lt_re	theorem		0
+1	allChi	theorem		0
+2	UpperTheory.FinalTheorems.everyCharacter	theorem		0
+3	UpperTheory.FinalTheorems.everyCharacter_of_row	theorem		1
+4	UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin	theorem		0
+5	UpperTheory.LiteratureTheorems.grothendieck_deformation_of_literature	theorem		0
+6	UpperTheory.LiteratureTheorems.abelian_de_rham_of_literature	theorem		0
+7	PositivityTheory.DualRT.abelianDeRham	theorem		0
+8	GlobalTheory.abelianDeRhamStructure_toFree	theorem		0
+9	GlobalTheory.abelianDeRhamFree_toFree	theorem		1
+10	GlobalTheory.allPrim_of_abelianDeRhamFree	theorem		1
+11	Module.rankAtStalk_prod	theorem	0,1,1	2
+12	Module.finrank_prod	theorem	0,1,1	2
+13	rank_prod	theorem	0,1,1	2
+14	Module.Free.rank_eq_card_chooseBasisIndex	theorem	0,1	2
+15	Module.Basis.mk_eq_rank''	theorem	0,1	2
+16	linearIndependent_le_basis	theorem	0,1,1	2
+17	linearIndependent_le_infinite_basis	theorem	0,1,1	2
+18	Cardinal.exists_infinite_fiber'	theorem	1	2
+19	Cardinal.exists_infinite_fiber	theorem	1	2
+20	Cardinal.infinite_pigeonhole_card	theorem	1	2
+21	Cardinal.infinite_pigeonhole	theorem	1	2
+22	Cardinal.iSup_lt_of_lt_cof_ord	theorem	1	2
+23	Ordinal.iSup_lt_of_lt_cof	theorem	1	2
+24	Ordinal.lift_iSup_lt_of_lt_cof	theorem	1,1	2
+25	Ordinal.lift_iSup_add_one_lt_of_lt_cof	theorem	1,1	2
+26	Ordinal.sSup_add_one_lt_of_lt_cof	theorem	1	4
+27	Order.cof	def	3	4
+28	Cardinal.instConditionallyCompleteLinearOrderBot	def	3	0
+29	Cardinal.instWellFoundedLT	theorem	3	0
+30	Cardinal.lt_wf	theorem	3	5
+31	Function.Embedding.min_injective	theorem	4,3	5
+32	Maximal.eq_of_subset	theorem	4	5
+33	BooleanAlgebra.toBiheytingAlgebra	def	4	5
+34	GeneralizedBooleanAlgebra.toGeneralizedCoheytingAlgebra	def	4	5
+35	GeneralizedBooleanAlgebra.toGeneralizedCoheytingAlgebra._proof_8	theorem	4	5
+36	_private.Mathlib.Order.BooleanAlgebra.Basic.0.sdiff_sup_self'	theorem	4	5
+37	Lean.Data.AC.Context.eq_of_norm	theorem	5	5
+38	Lean.Data.AC.instContextInformationContext	def	5	5
+39	Lean.Data.AC.Context.var	def	5	5
+40	List.length	def	5	6
+41	List.brecOn	def	1,5	6
+42	List.below	def	1,5	6
+43	List.rec	recursor	7,5	7

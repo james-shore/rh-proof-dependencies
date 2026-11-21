@@ -1,0 +1,12 @@
+part	detail	lines
+inside used declarations		10737754
+inside unused declarations		2693805
+inside commands with no kernel constant	example, notation, macros, run_cmd	19710
+outside any declaration	blank	1752631
+outside any declaration	import	909822
+outside any declaration	namespace / section / end	522750
+outside any declaration	open	467581
+outside any declaration	variable / universe / include / omit	131650
+outside any declaration	set_option / attribute / export	81406
+outside any declaration	other	57106
+total		17374215
