@@ -12,7 +12,6 @@ RESULT_PREFIX.json (counts).
 import json, os, sys
 import numpy as np
 from common import *
-from report import load_dom
 
 
 def bfs(off, adj, n, starts, blocked):

@@ -310,6 +310,8 @@ clean clone on 2026-11-21 produced all ten v0.1.3 table files byte for byte iden
 compiled files runs the proof's code, so every step runs in a container with no network, no capabilities and read-only
 mounts. A run against our own build on 2026-11-21 produced every v0.2 table file (`constants`, `decls`, `directories`,
 `why-parents`, `decl_edges`, the keep list and both name lists) byte for byte identical to the release assets.
+A run of `tools/analyses.sh` on v0.2 on the same day reproduced the dominator, statement-cone, unused-hypothesis and
+duplicate tables byte for byte, and the same figures for the statements labelled as published results.
 
 `tools/test.sh` runs the tests.
 

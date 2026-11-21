@@ -96,3 +96,14 @@ def subtree_sums(parent, order, w):
         if p >= 0 and p != v:
             s[p] += s[v]
     return s
+
+
+def load_dom(con, out):
+    q = con.execute(f"""select * from read_csv('{out}/dominators.tsv.gz', delim='\\t', header=true, quote='', escape='',
+        sample_size=-1) order by node""").fetchnumpy()
+    for k in list(q):
+        if isinstance(q[k], np.ma.MaskedArray):
+            q[k] = q[k].filled('' if q[k].dtype == object else 0)
+    n = len(q['node'])
+    assert (q['node'] == np.arange(n)).all()
+    return q
