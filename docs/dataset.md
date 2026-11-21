@@ -1,4 +1,4 @@
-# Dataset v0.1.2
+# Dataset v0.1.3
 
 Tables in Parquet (zstd) and gzip CSV. Names are Lean names with their raw components joined by `.`: numeric
 components appear as digits and `«»` is not used, e.g. `_private.Foo.Bar.0.baz`. A tab or newline inside a component is
@@ -100,3 +100,9 @@ Node ids are stable only within one release. Join on `decl` + `file` + `start_li
 One row per constant reached with at least one concrete instantiation. Columns: `constant`, `kind`, `max_sort` (the
 largest `Sort` level in its instantiated type and value; `Sort 0` = `Prop`, `Sort 1` = `Type`), `max_level_arg` (the
 largest universe argument it is instantiated with), `n_instantiations`.
+
+## `cone-constants`, `cone-decls`: plain name lists
+
+One name per line, sorted by code point. `cone-constants` has the 1,484,729 kernel constants in the five theorems'
+closure. `cone-decls` has the 804,910 distinct names of the used project declarations (one unnamed instance's generated
+name occurs in two files). `zgrep -x NAME cone-constants.txt.gz` checks a name.

@@ -220,7 +220,7 @@ for name, (rid, rule, note) in first.items():
         continue
     need[name] = ('.'.join(comps[:j + 1]), comps[j + 1:], '.'.join(comps[:j]), m.group(2) if m else None)
 pairs = []
-for base, ns, mod in {(v[0], v[2], v[3]) for v in need.values()}:
+for base, ns, mod in sorted({(v[0], v[2], v[3]) for v in need.values()}, key=lambda t: (t[0], t[1], t[2] or '')):
     nsc = ns.split('.') if ns else []
     cands = []
     for k in range(len(nsc), -1, -1):
@@ -233,7 +233,7 @@ for base, ns, mod in {(v[0], v[2], v[3]) for v in need.values()}:
         g = toks((C(rows[c], 'full_name').split('.')[-1])[4:])
         score = len(bt & st) / max(1, len(bt)) + 0.5 * len(bt & g) / max(1, len(bt | g))
         pairs.append((score, base, c))
-pairs.sort(key=lambda x: -x[0])
+pairs.sort(key=lambda x: (-x[0], x[1], x[2]))  # deterministic tie-break (set order depends on PYTHONHASHSEED)
 inst_assign = {}
 taken = set()
 for score, base, c in pairs:

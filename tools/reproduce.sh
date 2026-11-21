@@ -12,7 +12,7 @@ W=$(realpath -m "${1:?usage: reproduce.sh WORKDIR}")
 CPUS=${CPUS:-8}
 MEM=${MEM:-250g}
 N=${NAME:-rhpd}
-V=v0.1.2
+V=v0.1.3
 IMG=${IMG:-rhpd-tools:0.1}
 SOL_SHA=61a8938ad5f5e57397c1c0e3b954916af546d9004ade01c3555744a681b05381
 UNPACKED_SHA=5ea74b912147c5c93cc2b6d70cc727cf908df2f62ac6a20480a3fa02f6be244e
@@ -73,7 +73,7 @@ run --name "$N-fold" "$IMG" bash -c "set -e
   cd /work/fold-v0 && gzip -6 -kf constants-mapped.tsv decls.tsv" > "$W/work/fold.log" 2>&1
 log "dataset tables and why-parents"
 run --name "$N-dataset" "$IMG" bash -c "set -e
-  python dataset.py /work /out/$V; python why.py /out/$V /out/$V/why; python content_hash.py /out/$V" > "$W/work/dataset.log" 2>&1
+  python dataset.py /work /out/$V; python why.py /out/$V /out/$V/why; python content_hash.py /out/$V; python name_lists.py /out/$V" > "$W/work/dataset.log" 2>&1
 
 if [ -z "${SKIP_STRUCTURE:-}" ]; then
   log "dominator tree and statement cone"

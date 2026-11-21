@@ -14,9 +14,10 @@
 
 ## Check against the compiled environment
 
-- `Main`'s environment was loaded in an offline container from the compiled `.olean` files published by
-  [proofsandreasons.io](https://proofsandreasons.io/rh-oleans.html). Every file matched their `SHA256SUMS`, and the
-  76,968 files whose bytes contain no build path also matched Sutherland's `project-oleans.sha256`.
+- `Main`'s environment was loaded in an offline container from three independently built sets of compiled `.olean`
+  files: our own build (175,187 of 175,187 modules, with `Main.olean` identical to Sutherland's), the set published by
+  [proofsandreasons.io](https://proofsandreasons.io/rh-oleans.html) (every file matched their `SHA256SUMS`), and Jack
+  McCarthy's. All three give byte-identical constants, references and declaration ranges.
 - The environment has 2,701,132 constants. The closure of the five theorems in it is the same 1,484,729 constants as in
   the export, with none on only one side.
 - Its declaration ranges show that the text index misplaced 53 of the 804,911 used declarations: 49 in the wrong file

@@ -5147,7 +5147,7 @@ Reformulated.AutPerF.BcrisPlus.frob	def	src/Development/AutomorphicArithmetic/In
 Reformulated.AutPerF.Bcris.lift	theorem	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/ExistsFactorialMulEqPow.lean	333	8	2
 Reformulated.AutPerF.AinfInv	def	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/SpanNatCastLeComap.lean	90	8	1
 Reformulated.AutPerF.Ainf.map	def	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/SpanNatCastLeComap.lean	147	8	1
-Reformulated.AutPerF.AinfInv.instAlgebraℚ_AinfInv	def	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/SpanNatCastLeComap.lean	271	8	1
+Reformulated.AutPerF.AinfInv.instAlgebraℚAinfInv	def	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/SpanNatCastLeComap.lean	274	8	1
 Reformulated.AutPerF.AinfInv.theta	def	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/SpanNatCastLeComap.lean	302	8	1
 Reformulated.AutPerF.adicLog	theorem	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/TruncLogEqOfPowEqZero.lean	72	8	2
 Reformulated.AutPerF.AinfInv.kerTheta	theorem	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/TruncLogEqOfPowEqZero.lean	88	8	2
@@ -6031,7 +6031,7 @@ Reformulated.AutPerF.Acris.frob	def	src/Development/AutomorphicArithmetic/Integr
 Reformulated.AutPerF.BcrisPlus.lift	theorem	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/ExistsFactorialMulEqPow.lean	269	9	2
 Reformulated.AutPerF.Tilt.map	theorem	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/SpanNatCastLeComap.lean	96	9	3
 Reformulated.AutPerF.Ainf.instAlgebraℤ_Ainf	def	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/SpanNatCastLeComap.lean	154	9	1
-Reformulated.AutPerF.AinfInv.instAlgebraℚAinfInv	def	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/SpanNatCastLeComap.lean	274	9	1
+Reformulated.AutPerF.AinfInv.instAlgebraℚ_AinfInv	def	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/SpanNatCastLeComap.lean	271	9	1
 Reformulated.AutPerF.adicMk	theorem	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/TruncLogEqOfPowEqZero.lean	17	9	5
 Reformulated.AutPerF.truncLog	def	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/TruncLogEqOfPowEqZero.lean	57	9	1
 Reformulated.AutPerF.BdRPlus.eval	theorem	src/Development/AutomorphicArithmetic/IntegralCasts/CrystallinePeriods/TruncLogEqOfPowEqZero.lean	111	9	2

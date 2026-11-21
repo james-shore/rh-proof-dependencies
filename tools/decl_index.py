@@ -8,7 +8,7 @@ modifiers, `in` prefixes, mutual blocks, fields, constructors and `where` auxili
 
 usage: decl_index.py MIRROR_ROOT OUT.tsv.gz [--jobs N] [--summary OUT.md]
 """
-import gzip, os, re, sys, time, collections
+import gzip, io, os, re, sys, time, collections
 from multiprocessing import Pool
 
 COLS = ['full_name', 'kernel_name', 'private', 'kind', 'module', 'file', 'start_line', 'decl_line',
@@ -580,7 +580,7 @@ def main():
             allrows.extend(rows); stats.update(st); total_lines += nl; warns.extend(w)
     with open(re.sub(r'\.tsv\.gz$', '', out) + '-warnings.txt', 'w') as h:
         h.write('\n'.join(warns) + '\n')
-    with gzip.open(out, 'wt', encoding='utf-8', compresslevel=6) as h:
+    with io.TextIOWrapper(gzip.GzipFile(out, 'wb', compresslevel=6, mtime=0), encoding='utf-8') as h:  # mtime=0: byte-deterministic
         h.write('\t'.join(COLS) + '\n')
         for r in allrows:
             h.write('\t'.join(str(x).replace('\t', ' ') for x in r) + '\n')

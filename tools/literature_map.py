@@ -21,10 +21,10 @@ print('published statements found / in cone:', con.execute("SELECT count(id), co
 # each literature theorem: which Published statement its type concludes, and what its value uses
 con.execute("""CREATE TABLE lmap AS
   SELECT l.name AS lit_thm, l.in_cone AS lit_in_cone, l.start_line AS lit_line,
-         string_agg(DISTINCT CASE WHEN e.via = 'type' AND t.name LIKE 'GlobalTheory.Published.%' THEN t.name END, ',') AS published,
+         string_agg(DISTINCT CASE WHEN e.via = 'type' AND t.name LIKE 'GlobalTheory.Published.%' THEN t.name END, ',' ORDER BY t.name) AS published,
          string_agg(DISTINCT CASE WHEN e.via = 'value' AND t.origin = 'project' AND t.name NOT LIKE 'GlobalTheory.Published.%'
-                                       AND t.file <> l.file AND NOT t.shared_aux THEN t.name END, ',') AS proof_refs,
-         string_agg(DISTINCT CASE WHEN e.via = 'value' AND t.file = l.file AND t.name <> l.name AND NOT t.shared_aux THEN t.name END, ',') AS same_file_refs
+                                       AND t.file <> l.file AND NOT t.shared_aux THEN t.name END, ',' ORDER BY t.name) AS proof_refs,
+         string_agg(DISTINCT CASE WHEN e.via = 'value' AND t.file = l.file AND t.name <> l.name AND NOT t.shared_aux THEN t.name END, ',' ORDER BY t.name) AS same_file_refs
   FROM lit l LEFT JOIN e ON e.src_id = l.id LEFT JOIN c t ON t.id = e.dst_id
   WHERE l.kind = 'theorem' GROUP BY 1, 2, 3""")
 con.execute(f"COPY (SELECT * FROM lmap ORDER BY lit_line) TO '{OUT}/literature-theorems.tsv' (FORMAT csv, DELIMITER '\t', HEADER)")

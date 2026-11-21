@@ -5,7 +5,7 @@ A study of which declarations the Lean 4 proof of the Riemann Hypothesis and GRH
 `src/Main.lean` (`riemannHypothesis`, `riemannZeta_eq_zero_re`, `LFunction_ne_zero_of_half_lt_re`,
 `LFunction_eq_zero_re`, `LFunction_eq_zero_re_of_isPrimitive`).
 
-Dataset v0.1.2. The list of used declarations comes from Andrew Sutherland's kernel export of the proof. Each
+Dataset v0.1.3. The list of used declarations comes from Andrew Sutherland's kernel export of the proof. Each
 declaration's location (file and line number) is found by matching its name against the source text. That match is
 approximate in a small number of cases, mostly the 1,279 unnamed instances. A later version will take locations from
 Lean itself.
@@ -63,8 +63,9 @@ origin. A constant is used when one of the five theorems depends on it, directly
   constructors, the five theorems use 1,478,243 constants, or 1,478,219 for `riemannHypothesis` alone (1,265,256 of
   them the project's). The difference is exactly 6,486 recursors that no term refers to.
 - The used Mathlib constants come from 5,081 of Mathlib's 8,173 modules that declare a constant.
-- Reading Main's compiled environment instead (2,701,132 constants) gives the same closure of the five theorems, 1,484,729
-  constants, with no differences.
+- Loading Main's compiled environment from three independently built sets of oleans (ours, proofsandreasons.io and
+  Jack McCarthy's) gives byte-identical references and declaration ranges, and the same closure, 1,484,729 constants,
+  as the kernel export.
 
 ### Project declarations
 
@@ -163,6 +164,8 @@ used only through A. Sizes are given in nodes and in lines inside declarations.
 - `everyCharacter` is the immediate dominator of 53,864 nodes, which several branches share.
 - `data/spine.tsv` and `data/top-subtrees.tsv` give file and line for each root and the 200 largest subtrees. The
   whole tree is the `dominators` asset.
+- [Explorer](https://james-shore.github.io/rh-proof-dependencies/explorer.html): treemaps of directories and dominator
+  subtrees.
 
 ### Statements labelled as published results
 
@@ -231,6 +234,8 @@ The large tables are release assets of tag `v0.1`. [docs/dataset.md](docs/datase
 | `keep-list` | 804,911 | `keep-list.tsv.gz` 12.7 MB | the used declarations with their spans |
 | `dominators` | 886,172 | `dominators.tsv.gz` 42.6 MB | the dominator tree, with immediate dominator and subtree sums per node |
 | `universes` | 1,478,243 | `universes.tsv.gz` 10.6 MB | per constant, the largest universe level in its instantiated type and value |
+| `cone-constants` | 1,484,729 | `cone-constants.txt.gz` 8.9 MB | names of the kernel constants in the five theorems' closure, one per line |
+| `cone-decls` | 804,910 | `cone-decls.txt.gz` 5.8 MB | names of the used project declarations, one per line |
 
 Small tables are in `data/`.
 
@@ -277,11 +282,11 @@ tools/reproduce.sh ./work
 
 Stage 1 downloads the inputs and checks their sha256. Stage 2 runs every step in containers with no network. No code
 from the proof runs; the export and the source are only read as data. The script writes the dataset to
-`./work/out/v0.1.2`, with an order-independent content hash for each table (`tools/content_hash.py`), and then the
+`./work/out/v0.1.3`, with an order-independent content hash for each table (`tools/content_hash.py`), and then the
 dominator tree, the unused-hypothesis and duplicate tables, the shares of labelled statements and the universe levels.
-A run of the script from a clean clone on 2026-11-21 produced `edges` and `directories` files identical to the release
-assets. Its `constants`, `decls` and `why-parents` files differ from the release by a few bytes, and the cause is being
-checked.
+A run of the script from a clean clone on 2026-11-21 produced all ten table files (`constants`, `edges`, `decls`,
+`directories` and `why-parents`, as Parquet and csv.gz) byte for byte identical to the release assets. The fold,
+dataset and why-parents steps were rerun after fixing a tie-break in `tools/fold.py`.
 `tools/test.sh` runs the tests.
 
 ## Inputs
@@ -290,7 +295,7 @@ checked.
 |---|---|
 | Kernel export | A. Sutherland's `solution.ndjson.zst` from [math.mit.edu/~drew/grh](https://math.mit.edu/~drew/grh/), sha256 `61a8938ad5f5e57397c1c0e3b954916af546d9004ade01c3555744a681b05381`; unpacked `5ea74b912147c5c93cc2b6d70cc727cf908df2f62ac6a20480a3fa02f6be244e`. `lean4export` v4.33.0 on Lean 4.33.1 |
 | Source | [leanprover-community/riemann-hypothesis](https://github.com/leanprover-community/riemann-hypothesis) at `8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116`, identical to the archive from [alpo.ge](https://alpo.ge) (sha256 `9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc`) in every proof file |
-| Compiled `.olean` files (check only) | [proofsandreasons.io](https://proofsandreasons.io/rh-oleans.html) `alp-oleans-357309b5dd12` |
+| Compiled `.olean` files (check only) | [proofsandreasons.io](https://proofsandreasons.io/rh-oleans.html) `alp-oleans-357309b5dd12`; [Jack McCarthy's build](https://huggingface.co/datasets/JackMcCarthy/riemann-hypothesis-build) |
 | Lean, Mathlib | Lean v4.33.1 (`819816b2`), Mathlib `0df444a360eaa60ab8c11dca51a86af692955474` |
 | Text maps | cadamcat/riemann-hypothesis-exposition `595de571`, jae-63/rh-alpoge-blueprint `0434143d` |
 | Counts cited | nanoda's 1,484,729 from [Infatoshi/rh-verification-receipts](https://github.com/Infatoshi/rh-verification-receipts); con-leche's 1,468,418 records from the export page |

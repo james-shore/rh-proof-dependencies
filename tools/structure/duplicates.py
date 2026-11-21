@@ -106,7 +106,7 @@ def main():
     # direct reuse candidates: source-level project constants with an identical Mathlib/core constant
     mm = con.execute("""select s.name, s.kind, s.file, s.start_line, s.lines, d.name, d.origin, d.module
         from s join d on d.exact_class = s.exact_class and d.origin <> 'project' and d.kind = s.kind
-        order by s.kind, s.lines desc, s.name""").fetchall()
+        order by s.kind, s.lines desc, s.name, d.name""").fetchall()
     write_tsv(os.path.join(data, 'duplicates-mathlib.tsv'),
               ['decl', 'kind', 'file', 'start_line', 'lines', 'twin', 'twin_origin', 'twin_module'], mm)
     S['mathlib_twins_exact'] = {k: v for k, v in con.execute("""select s.kind, count(distinct s.id) from s join d
