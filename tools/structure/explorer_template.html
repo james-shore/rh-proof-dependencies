@@ -1,0 +1,401 @@
+<title>Cone Atlas</title>
+<style>
+/* Layout: one working column — header facts, a treemap workspace with its own toolbar and detail panel, then the
+   statement-cone table. Ink-and-slate neutrals with one teal accent; library colours are the only categorical hues. */
+:root {
+  --bg: #f6f7f8; --surface: #ffffff; --fg: #17202a; --muted: #5b6672; --line: #d9dee3; --accent: #0f766e;
+  --accent-soft: #d5ece9; --tile-fg: #0d1419; --focus: #0f766e;
+  --c0: #8fb8de; --c1: #e6a97e; --c2: #9fcf9a; --c3: #d9a0c4; --c4: #c9b77c; --c5: #8ccfc8; --c6: #b7a7e0;
+  --c7: #e39a9a; --c8: #a9c27a; --c9: #a8b4c0; --c10: #e7c27a; --c11: #9ec3a9;
+  --heat0: #eef1f4; --heat1: #0f766e; --cother: #c7ccd1;
+  --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161b; --surface: #182027; --fg: #e3e8ec; --muted: #98a4af; --line: #2b3640; --accent: #5ec4b8;
+    --accent-soft: #1d3a37; --tile-fg: #0b1014; --focus: #5ec4b8;
+    --c0: #6f9cc6; --c1: #c98d63; --c2: #7fb27a; --c3: #bb82a6; --c4: #ab9a5f; --c5: #6db3ab; --c6: #998ac4;
+    --c7: #c57c7c; --c8: #8ba55d; --c9: #8a96a2; --c10: #c9a45d; --c11: #80a68b;
+    --heat0: #26313a; --heat1: #5ec4b8; --cother: #4a545d; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161b; --surface: #182027; --fg: #e3e8ec; --muted: #98a4af; --line: #2b3640; --accent: #5ec4b8;
+  --accent-soft: #1d3a37; --tile-fg: #0b1014; --focus: #5ec4b8;
+  --c0: #6f9cc6; --c1: #c98d63; --c2: #7fb27a; --c3: #bb82a6; --c4: #ab9a5f; --c5: #6db3ab; --c6: #998ac4;
+  --c7: #c57c7c; --c8: #8ba55d; --c9: #8a96a2; --c10: #c9a45d; --c11: #80a68b;
+  --heat0: #26313a; --heat1: #5ec4b8; --cother: #4a545d; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-ui); font-size: 14px; line-height: 1.45; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 24px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 28px; }
+h1 { font-size: 1.6rem; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font-size: 1.15rem; margin: 0; text-wrap: balance; }
+p { margin: 0; max-width: 72ch; }
+.muted { color: var(--muted); }
+code, .mono { font-family: var(--font-mono); font-size: 0.92em; }
+header { display: flex; flex-direction: column; gap: 10px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 6px; }
+.fact { display: flex; flex-direction: column; min-width: 0; }
+.fact b { font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+.fact span { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.03em; text-transform: uppercase; }
+section { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
+.seg button { font: inherit; border: 0; background: transparent; color: var(--fg); padding: 5px 11px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--fg); font-weight: 600; }
+.seg-label { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.03em; text-transform: uppercase; }
+button:focus-visible, [tabindex]:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; font-family: var(--font-mono); font-size: 0.85rem; min-width: 0; }
+.crumbs button { font: inherit; background: none; border: 0; color: var(--accent); cursor: pointer; padding: 2px 3px; border-radius: 4px; overflow-wrap: anywhere; text-align: left; }
+.crumbs button[aria-current="true"] { color: var(--fg); cursor: default; font-weight: 600; }
+.crumbs .sep { color: var(--muted); }
+.workspace { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
+@media (max-width: 860px) { .workspace { grid-template-columns: minmax(0, 1fr); } }
+.map { position: relative; width: 100%; height: min(64vh, 620px); min-height: 320px; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.tile { position: absolute; overflow: hidden; border: 1px solid var(--bg); color: var(--tile-fg); padding: 3px 5px;
+  font-size: 11.5px; line-height: 1.25; cursor: pointer; }
+.tile.lump { cursor: default; background-image: repeating-linear-gradient(45deg, transparent 0 6px, rgba(127,127,127,.18) 6px 7px); }
+.tile:hover { filter: brightness(1.07); }
+.tile .t { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile .v { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile .v { font-variant-numeric: tabular-nums; opacity: 0.8; }
+.grp { display: inline-flex; align-items: center; gap: 8px; flex-wrap: nowrap; }
+p code, .notes code { overflow-wrap: anywhere; }
+td.brk { white-space: normal; overflow-wrap: anywhere; min-width: 16ch; }
+.outline { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 8px 4px; overflow-x: auto; }
+.orow { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; align-items: center; gap: 6px; padding: 3px 8px; border-radius: 4px; }
+.orow:hover { background: var(--accent-soft); }
+.otog { font: inherit; width: 22px; height: 22px; border: 0; background: none; color: var(--muted); cursor: pointer; border-radius: 4px; }
+.otog[disabled] { cursor: default; opacity: .35; }
+.oname { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.oname .n { font-family: var(--font-mono); font-size: .82rem; overflow-wrap: anywhere; }
+.oname .f { font-family: var(--font-mono); font-size: .72rem; color: var(--muted); overflow-wrap: anywhere; }
+.obar { height: 6px; border-radius: 3px; background: var(--accent); opacity: .75; margin-top: 3px; max-width: 100%; }
+.onum { font-variant-numeric: tabular-nums; font-size: .8rem; color: var(--muted); text-align: right; white-space: nowrap; }
+.okids { margin-left: 14px; border-left: 1px solid var(--line); padding-left: 4px; }
+.omore { font: inherit; font-size: .8rem; margin: 4px 0 4px 34px; padding: 3px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--accent); cursor: pointer; }
+@media (max-width: 600px) {
+  #s-table thead { display: none; }
+  #s-table tr { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; padding: 7px 10px; border-bottom: 1px solid var(--line); }
+  #s-table, #s-table tbody { display: block; }
+  #s-table td { display: block; border: 0; padding: 0; white-space: normal; min-width: 0; text-align: left; }
+  #s-table td:nth-child(1), #s-table td:nth-child(4) { grid-column: 1 / -1; }
+  #s-table td:nth-child(3)::before { content: "depth "; color: var(--muted); }
+  #s-table td:nth-child(4) { color: var(--muted); font-size: .74rem; }
+  .okids { margin-left: 6px; padding-left: 2px; }
+  .orow { padding: 3px 4px; gap: 4px; }
+  .oname .n { font-size: .76rem; }
+  .oname .f { font-size: .66rem; }
+}
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px; display: flex;
+  flex-direction: column; gap: 10px; min-width: 0; }
+.panel h3 { margin: 0; font-size: 0.95rem; font-family: var(--font-mono); overflow-wrap: anywhere; }
+.kv { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 3px 12px; font-size: 0.85rem; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 0.8rem; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.heatbar { width: 160px; height: 10px; border-radius: 2px; background: linear-gradient(90deg, var(--heat0), var(--heat1)); display: inline-block; vertical-align: -1px; margin: 0 6px; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); max-height: 520px; overflow-y: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.85rem; }
+th, td { text-align: left; padding: 5px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { position: sticky; top: 0; background: var(--surface); color: var(--muted); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.03em; text-transform: uppercase; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+input[type="search"] { font: inherit; padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--fg); min-width: 0; width: 280px; max-width: 100%; }
+.notes { font-size: 0.85rem; color: var(--muted); display: flex; flex-direction: column; gap: 6px; }
+@media (prefers-reduced-motion: no-preference) { .tile { transition: filter .12s; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Cone Atlas</h1>
+    <p>Built from kernel proof terms (Sutherland's export)</p>
+    <div class="facts" id="facts"></div>
+  </header>
+
+  <section aria-labelledby="h-map">
+    <h2 id="h-map">Treemap</h2>
+    <div class="toolbar">
+      <span class="grp"><span class="seg-label">View</span>
+      <span class="seg" role="group" aria-label="View">
+        <button id="v-dir" aria-pressed="true">By directory</button>
+        <button id="v-dom" aria-pressed="false">By dominator subtree</button>
+      </span></span>
+      <span class="grp"><span class="seg-label">Size</span>
+      <span class="seg" role="group" aria-label="Size" id="sizes"></span></span>
+      <span class="grp"><span class="seg-label" id="colour-label">Colour</span>
+      <span class="seg" role="group" aria-label="Colour" id="colours"></span></span>
+    </div>
+    <nav class="crumbs" id="crumbs" aria-label="Path"></nav>
+    <div class="workspace">
+      <div class="map" id="map" role="list" aria-label="Treemap"></div>
+      <aside class="panel" id="panel" aria-live="polite"></aside>
+    </div>
+    <div class="legend" id="legend"></div>
+    <p class="muted" id="viewnote"></p>
+  </section>
+
+  <section aria-labelledby="h-tree">
+    <h2 id="h-tree">Dominator tree</h2>
+    <p>The same tree as above, just in a different format</p>
+    <div class="outline" id="outline" role="tree" aria-label="Dominator tree"></div>
+  </section>
+
+  <section aria-labelledby="h-stmt">
+    <h2 id="h-stmt">Statement cone</h2>
+    <p id="stmt-intro"></p>
+    <div class="toolbar">
+      <span class="seg" role="group" aria-label="Closure">
+        <button id="s-strict" aria-pressed="true">Statements only</button>
+        <button id="s-defs" aria-pressed="false">With definitions</button>
+      </span>
+      <input type="search" id="s-filter" placeholder="Filter by name or path" aria-label="Filter the statement cone">
+      <span class="muted" id="s-count"></span>
+    </div>
+    <div class="tablewrap"><table id="s-table"><thead><tr><th>Declaration</th><th>Kind</th><th>Depth</th><th>File and line</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section aria-labelledby="h-notes">
+    <h2 id="h-notes">What the numbers count</h2>
+    <div class="notes" id="notes"></div>
+  </section>
+</div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function () {
+  const DATA = JSON.parse(document.getElementById('data').textContent);
+  const $ = (id) => document.getElementById(id);
+  const nf = new Intl.NumberFormat('en-US');
+  const fmt = (x) => nf.format(Math.round(x));
+  const LIBS = DATA.libs;
+  const libColour = (i) => `var(--c${i % 12})`;
+  const state = { view: 'dir', size: 'l', colour: 'lib', path: { dir: [], dom: [] }, sel: null, stmt: 'strict' };
+
+  // facts
+  const m = DATA.meta;
+  $('facts').innerHTML = m.facts.map(([v, k]) => `<div class="fact"><b>${v}</b><span>${k}</span></div>`).join('');
+  $('notes').innerHTML = m.notes.map((t) => `<p>${t}</p>`).join('');
+
+  const VIEWS = {
+    dir: { root: DATA.dir, sizes: [['l', 'Lines in cone'], ['d', 'Decls in cone'], ['L', 'All lines']],
+           colours: [['lib', 'Library'], ['use', 'Share used']],
+           note: 'Each rectangle is a directory or file under src/. Click to open it. Hatched rectangles group the smallest entries.' },
+    dom: { root: DATA.dom, sizes: [['l', 'Lines'], ['d', 'Nodes'], ['k', 'Kernel DAG']], colours: [['lib', 'Main directory']],
+           note: 'Each rectangle is a declaration and everything used only through it (its dominator subtree). Runs of wrapper declarations that each keep at least 90% of the lines are merged into one rectangle; the panel lists them. Hatched rectangles group the declarations themselves and the smallest subtrees.' },
+  };
+
+  function nodeAt(view) {
+    let n = VIEWS[view].root;
+    for (const i of state.path[view]) n = n.c[i];
+    return n;
+  }
+
+  function setPressed(groupEl, val) {
+    for (const b of groupEl.querySelectorAll('button')) b.setAttribute('aria-pressed', String(b.dataset.v === val));
+  }
+
+  function buildToggles() {
+    const v = VIEWS[state.view];
+    if (!v.sizes.some(([k]) => k === state.size)) state.size = 'l';
+    if (!v.colours.some(([k]) => k === state.colour)) state.colour = 'lib';
+    $('sizes').innerHTML = v.sizes.map(([k, t]) => `<button data-v="${k}">${t}</button>`).join('');
+    $('colours').innerHTML = v.colours.map(([k, t]) => `<button data-v="${k}">${t}</button>`).join('');
+    setPressed($('sizes'), state.size); setPressed($('colours'), state.colour);
+    $('viewnote').textContent = v.note;
+    setPressed(document.querySelector('[aria-label="View"]'), state.view);
+  }
+  $('v-dir').dataset.v = 'dir'; $('v-dom').dataset.v = 'dom';
+  document.querySelector('[aria-label="View"]').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    state.view = b.dataset.v; state.sel = null; buildToggles(); render();
+  });
+  $('sizes').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; state.size = b.dataset.v; setPressed($('sizes'), state.size); render(); });
+  $('colours').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; state.colour = b.dataset.v; setPressed($('colours'), state.colour); render(); });
+
+  // squarified treemap (Bruls, Huizing, van Wijk)
+  function squarify(items, x, y, w, h) {
+    const out = [];
+    const total = items.reduce((a, it) => a + it.v, 0);
+    if (total <= 0) return out;
+    const scale = (w * h) / total;
+    let rest = items.map((it) => ({ it, a: it.v * scale })).filter((r) => r.a > 0);
+    while (rest.length) {
+      const short = Math.min(w, h);
+      let row = [], best = Infinity, i = 0;
+      while (i < rest.length) {
+        const cand = row.concat([rest[i]]);
+        const s = cand.reduce((a, r) => a + r.a, 0);
+        const mx = Math.max(...cand.map((r) => r.a)), mn = Math.min(...cand.map((r) => r.a));
+        const worst = Math.max((short * short * mx) / (s * s), (s * s) / (short * short * mn));
+        if (worst > best) break;
+        best = worst; row = cand; i++;
+      }
+      rest = rest.slice(row.length);
+      const s = row.reduce((a, r) => a + r.a, 0);
+      if (w >= h) {
+        const cw = s / h; let cy = y;
+        for (const r of row) { const ch = r.a / cw; out.push({ it: r.it, x, y: cy, w: cw, h: ch }); cy += ch; }
+        x += cw; w -= cw;
+      } else {
+        const ch = s / w; let cx = x;
+        for (const r of row) { const cw2 = r.a / ch; out.push({ it: r.it, x: cx, y, w: cw2, h: ch }); cx += cw2; }
+        y += ch; h -= ch;
+      }
+    }
+    return out;
+  }
+
+  function sizeOf(n) { return n[state.size] || 0; }
+  function heat(f) {
+    const p = Math.max(0, Math.min(1, f)) * 100;
+    return `color-mix(in oklab, var(--heat1) ${p.toFixed(0)}%, var(--heat0))`;
+  }
+  function fill(n) {
+    if (state.colour === 'use') return heat(n.L ? n.l / n.L : 0);
+    if (state.view === 'dom') return n.x2 >= 0 ? libColour(n.x2) : 'var(--cother)';
+    return n.lib >= 0 ? libColour(n.lib) : 'var(--cother)';
+  }
+
+  function render() {
+    const view = state.view, node = nodeAt(view), map = $('map');
+    const kids = (node.c || []).map((c, i) => ({ c, i, v: sizeOf(c) })).filter((r) => r.v > 0).sort((a, b) => b.v - a.v);
+    const W = map.clientWidth, H = map.clientHeight;
+    const rects = squarify(kids, 0, 0, W, H);
+    map.innerHTML = '';
+    for (const r of rects) {
+      const c = r.it.c, el = document.createElement('div');
+      el.className = 'tile' + (c.lump ? ' lump' : '');
+      el.style.left = r.x + 'px'; el.style.top = r.y + 'px'; el.style.width = Math.max(0, r.w) + 'px'; el.style.height = Math.max(0, r.h) + 'px';
+      el.style.background = c.lump ? 'var(--heat0)' : fill(c);
+      if (c.lump) el.style.color = 'var(--fg)';
+      el.setAttribute('role', 'listitem');
+      el.tabIndex = 0;
+      const label = c.n;
+      el.title = `${label}\n${fmt(sizeOf(c))} ${sizeLabel()}`;
+      if (r.w > 64 && r.h > 20) el.innerHTML = `<div class="t">${esc(short(label, r.w))}</div>` + (r.h > 34 ? `<div class="v">${fmt(sizeOf(c))}</div>` : '');
+      const open = () => { if (c.c && c.c.length) { state.path[view].push(r.it.i); state.sel = null; render(); } else { state.sel = c; panel(node); } };
+      el.addEventListener('click', open);
+      el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+      el.addEventListener('mouseenter', () => { state.sel = c; panel(node); });
+      el.addEventListener('focus', () => { state.sel = c; panel(node); });
+      map.appendChild(el);
+    }
+    crumbs(); panel(node); legend();
+  }
+  function sizeLabel() { return VIEWS[state.view].sizes.find(([k]) => k === state.size)[1].toLowerCase(); }
+  function short(s, w) {
+    const max = Math.max(4, Math.floor(w / 6.6));
+    if (state.view === 'dom') { const p = s.split('.'); s = p.length > 2 ? '…' + p.slice(-2).join('.') : s; }
+    return s.length > max ? s.slice(0, max - 1) + '…' : s;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch])); }
+
+  function crumbs() {
+    const view = state.view, el = $('crumbs');
+    let n = VIEWS[view].root; const parts = [[n.n, 0]];
+    state.path[view].forEach((i, k) => { n = n.c[i]; parts.push([n.n, k + 1]); });
+    el.innerHTML = parts.map(([t, k], j) => (j ? '<span class="sep">›</span>' : '') +
+      `<button data-k="${k}" ${j === parts.length - 1 ? 'aria-current="true"' : ''}>${esc(view === 'dom' && j ? t : t)}</button>`).join('');
+    el.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => {
+      state.path[view] = state.path[view].slice(0, +b.dataset.k); state.sel = null; render();
+    }));
+  }
+
+  function kv(rows) { return '<dl class="kv">' + rows.filter((r) => r[1] !== undefined && r[1] !== '').map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('') + '</dl>'; }
+  function panel(node) {
+    const n = state.sel || node, el = $('panel'), view = state.view;
+    const tot = VIEWS[view].root;
+    let html = `<h3>${esc(n.n)}</h3>`;
+    if (view === 'dir') {
+      html += kv([['Lines in cone', fmt(n.l) + ` (${pct(n.l, n.L)} of ${fmt(n.L)})`], ['Decls in cone', fmt(n.d) + ` (${pct(n.d, n.D)} of ${fmt(n.D)})`],
+        ['Share of cone lines', pct(n.l, tot.l)], ['Path', n.p ? `<code>${esc(n.p)}</code>` : ''],
+        ['Entries', n.c ? fmt(n.c.length) : '']]);
+    } else {
+      html += kv([['Nodes dominated', fmt(n.d)], ['Lines dominated', fmt(n.l) + ` (${pct(n.l, tot.l)} of the cone)`], ['Kernel DAG', fmt(n.k || 0)],
+        ['File', n.f ? `<code>${esc(n.f)}${n.s ? ':' + n.s : ''}</code>` : ''], ['Main directory', n.x ? `<code>${esc(n.x)}</code>` : ''],
+        ['Prerequisites', n.q !== undefined ? fmt(n.q) + ' project decls outside, referenced directly' : '']]);
+      if (n.chain && n.chain.length) html += `<div class="muted" style="font-size:.82rem">Merged chain (${n.chain.length} below the top):</div><div class="mono" style="font-size:.78rem;overflow-wrap:anywhere">${n.chain.slice(0, 12).map(esc).join('<br>')}${n.chain.length > 12 ? '<br>…' : ''}</div>`;
+    }
+    if (n.lump) html += '<p class="muted" style="font-size:.82rem">A group of smaller entries, shown together.</p>';
+    else if (n.c && n.c.length && n !== node) html += '<p class="muted" style="font-size:.82rem">Click to open.</p>';
+    el.innerHTML = html;
+  }
+  function pct(a, b) { return b ? (100 * a / b).toFixed(1) + '%' : 'n/a'; }
+
+  function legend() {
+    const el = $('legend');
+    if (state.colour === 'use') { el.innerHTML = `<span>0% used<span class="heatbar"></span>100% of the lines inside the cone</span>`; return; }
+    const names = state.view === 'dom' ? DATA.dirs2 : LIBS;
+    el.innerHTML = names.map((l, i) => `<span><i style="background:${libColour(i)}"></i>${esc(l)}</span>`).join('') +
+      (state.view === 'dom' ? '<span><i style="background:var(--cother)"></i>other directories</span>' : '');
+  }
+
+  // outline of the dominator tree, rendered lazily
+  const TOT = DATA.dom.l;
+  function orow(n) {
+    const wrap = document.createElement('div');
+    wrap.setAttribute('role', 'treeitem');
+    const row = document.createElement('div'); row.className = 'orow';
+    const kids = (n.c || []).filter((c) => !c.lump || c.l > 0);
+    const tog = document.createElement('button'); tog.className = 'otog'; tog.textContent = n.c && n.c.length ? '▸' : '·';
+    if (!(n.c && n.c.length)) tog.disabled = true;
+    tog.setAttribute('aria-label', 'Open ' + n.n);
+    const name = document.createElement('div'); name.className = 'oname';
+    const share = TOT ? n.l / TOT : 0;
+    name.innerHTML = `<span class="n">${esc(n.n)}</span>` + (n.f ? `<span class="f">${esc(n.f)}:${n.s}</span>` : '') +
+      `<span class="obar" style="width:max(3px, ${(share * 100).toFixed(2)}%)"></span>`;
+    const num = document.createElement('div'); num.className = 'onum';
+    num.innerHTML = `${fmt(n.l)} lines<br>${fmt(n.d)} nodes`;
+    row.append(tog, name, num); wrap.append(row);
+    let box = null;
+    tog.addEventListener('click', () => {
+      if (!n.c) return;
+      if (box) { box.hidden = !box.hidden; tog.textContent = box.hidden ? '▸' : '▾'; wrap.setAttribute('aria-expanded', String(!box.hidden)); return; }
+      box = document.createElement('div'); box.className = 'okids'; box.setAttribute('role', 'group');
+      const sorted = kids.slice().sort((a, b) => b.l - a.l);
+      const FIRST = 25;
+      sorted.slice(0, FIRST).forEach((c) => box.append(orow(c)));
+      if (sorted.length > FIRST) {
+        const more = document.createElement('button'); more.className = 'omore';
+        more.textContent = `Show ${fmt(sorted.length - FIRST)} more`;
+        more.addEventListener('click', () => { more.remove(); sorted.slice(FIRST).forEach((c) => box.append(orow(c))); });
+        box.append(more);
+      }
+      wrap.append(box); tog.textContent = '▾'; wrap.setAttribute('aria-expanded', 'true');
+    });
+    return wrap;
+  }
+  const oroot = orow(DATA.dom);
+  $('outline').append(oroot);
+  oroot.querySelector('.otog').click();
+
+  // statement cone table
+  const S = DATA.stmt;
+  $('stmt-intro').innerHTML = S.intro;
+  function stmtRender() {
+    const rows = S[state.stmt] || [], q = $('s-filter').value.trim().toLowerCase();
+    const hit = q ? rows.filter((r) => r[0].toLowerCase().includes(q) || r[2].toLowerCase().includes(q)) : rows;
+    const shown = hit.slice(0, 1500);
+    $('s-table').tBodies[0].innerHTML = shown.map((r) => `<tr><td class="mono brk">${esc(r[0])}</td><td>${esc(r[1])}</td><td class="num">${r[4]}</td><td class="mono brk">${esc(r[2])}:${r[3]}</td></tr>`).join('');
+    const total = S.counts[state.stmt];
+    $('s-count').textContent = `${fmt(hit.length)} shown of ${fmt(rows.length)}` + (total > rows.length ? ` (the page carries the first ${fmt(rows.length)} of ${fmt(total)}; the full list is in data/)` : '') + (hit.length > shown.length ? `; first ${fmt(shown.length)} displayed` : '');
+  }
+  document.querySelector('[aria-label="Closure"]').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    state.stmt = b.id === 's-defs' ? 'defs' : 'strict';
+    $('s-strict').setAttribute('aria-pressed', String(state.stmt === 'strict')); $('s-defs').setAttribute('aria-pressed', String(state.stmt === 'defs'));
+    stmtRender();
+  });
+  $('s-filter').addEventListener('input', stmtRender);
+
+  buildToggles(); render(); stmtRender();
+  let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(render, 120); });
+})();
+</script>

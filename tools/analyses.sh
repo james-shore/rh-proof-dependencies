@@ -1,5 +1,6 @@
 #!/bin/bash
-# Dominator tree, statement cone, unused hypotheses, duplicates and labelled-statement shares for one dataset.
+# Dominator tree, statement cone, unused hypotheses, duplicates, labelled-statement shares and the reader page
+# (explorer.html) for one dataset.
 #   tools/analyses.sh WORKDIR DATASET      (DATASET = v0.1.3 after reproduce.sh, or v0.2 after reproduce-compiled.sh)
 # Writes WORKDIR/out/DATASET/analyses/. Every step runs in a container with no network.
 # Env: CPUS (default 8), MEM (default 250g), NAME, IMG, SOLUTION (default WORKDIR/dl/solution.ndjson.zst),
@@ -39,4 +40,6 @@ run --name "$N-literature" "$IMG" bash -c "set -e; L=$O/literature; mkdir -p \$L
   python literature_groups.py \$L/literature.tsv \$L
   for g in published jae-known jae-crux; do python structure/ownership.py /out/$D $O \$L/L-\$g.txt \$L/own-\$g; done" \
   > "$W/work/$D/literature.log" 2>&1
+log "$D: reader page (explorer)"
+run --name "$N-explorer" "$IMG" python structure/explorer.py /out/$D $O $O/explorer.html > "$W/work/$D/explorer.log" 2>&1
 log "$D: done, $W/out/$D/analyses"
