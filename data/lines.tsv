@@ -1,7 +1,7 @@
 part	detail	lines
-inside used declarations		10737690
-inside unused declarations		2692533
-inside duplicate copies of theorems	135 commands, same name and statement as a theorem in another file	1340
+inside used declarations		10737728
+inside unused declarations		2692541
+inside duplicate copies of theorems	135 commands, same name and statement as a theorem in another file	1294
 inside commands with no kernel constant	example, notation, notation3, macro, infixl, elab, run_cmd, unif_hint	19710
 outside any declaration	blank	1752637
 outside any declaration	import	909822

@@ -1,6 +1,14 @@
 name = "routeb"
-defaultTargets = ["routeb"]
+defaultTargets = ["routeb", "dups", "dupranges"]
 
 [[lean_exe]]
 name = "routeb"
 root = "RouteB"
+
+[[lean_exe]]
+name = "dups"
+root = "Dups"
+
+[[lean_exe]]
+name = "dupranges"
+root = "DupRanges"

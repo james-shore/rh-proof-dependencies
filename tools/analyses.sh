@@ -1,7 +1,7 @@
 #!/bin/bash
 # Dominator tree, statement cone, unused hypotheses, duplicates, labelled-statement shares and the reader page
 # (explorer.html) for one dataset.
-#   tools/analyses.sh WORKDIR DATASET      (DATASET = v0.1.3 after reproduce.sh, or v0.2 after reproduce-compiled.sh)
+#   tools/analyses.sh WORKDIR DATASET      (DATASET = v0.1.3 after reproduce.sh, or v0.2.1 after reproduce-compiled.sh)
 # Writes WORKDIR/out/DATASET/analyses/. Every step runs in a container with no network.
 # Env: CPUS (default 8), MEM (default 250g), NAME, IMG, SOLUTION (default WORKDIR/dl/solution.ndjson.zst),
 # SKIP_RELEVANCE=1, SKIP_DUPES=1.

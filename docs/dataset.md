@@ -1,4 +1,4 @@
-# Dataset v0.2
+# Dataset v0.2.1
 
 Tables in Parquet (zstd) and gzip CSV. Names are Lean names with their raw components joined by `.`: numeric
 components appear as digits and `«»` is not used, e.g. `_private.Foo.Bar.0.baz`. A tab or newline inside a component is
@@ -93,6 +93,9 @@ chain; `tools/why_path.py` prints it.
 ## `dominators`: the dominator tree (886,186 rows, one per node plus the root)
 
 Rows in breadth-first order of the tree. Node 0 is the virtual root over the five theorems.
+
+Different zlib builds compress the same table to slightly different `.gz` files. The decompressed table has sha256
+`958df7d816ae94d198c23dc21f578abe6c3e82c65090be688290dd0823048c0d` (`gzip -dc dominators.tsv.gz | sha256sum`).
 
 | column | meaning |
 |---|---|

@@ -5,7 +5,7 @@ A study of which declarations the Lean 4 proof of the Riemann Hypothesis and GRH
 `src/Main.lean` (`riemannHypothesis`, `riemannZeta_eq_zero_re`, `LFunction_ne_zero_of_half_lt_re`,
 `LFunction_eq_zero_re`, `LFunction_eq_zero_re_of_isPrimitive`).
 
-Dataset v0.2. The list of used declarations comes from Andrew Sutherland's kernel export of the proof. Declarations,
+Dataset v0.2.1. The list of used declarations comes from Andrew Sutherland's kernel export of the proof. Declarations,
 files and lines come from Lean's own declaration ranges in a full build of the proof.
 
 "Used" means referenced, directly or through other constants, by the kernel proof terms. Some unused declarations may
@@ -16,8 +16,8 @@ still be needed to compile (notation, tactics, `simp` lemmas and instances that 
 | | Used by the proof | Total | % used |
 |---|---|---|---|
 | Project declarations | 804,912 | 1,061,400 | 75.8 |
-| Project files with a used declaration | 146,292 | 175,187 | 83.5 |
-| Lines of Lean source inside used declarations | 10,737,690 | 17,374,215 | 61.8 |
+| Project files with a used declaration | 146,287 | 175,187 | 83.5 |
+| Lines of Lean source inside used declarations | 10,737,728 | 17,374,215 | 61.8 |
 
 Kernel constants used by the proof:
 
@@ -34,14 +34,14 @@ Categorization of the Lean source code in the proof:
 
 | | Lines | % |
 |---|---|---|
-| Inside used declarations | 10,737,690 | 61.8 |
-| Inside unused declarations | 2,692,533 | 15.5 |
-| Inside duplicate copies of theorems (same name and statement as a theorem in another file) | 1,340 | <0.1 |
+| Inside used declarations | 10,737,728 | 61.8 |
+| Inside unused declarations | 2,692,541 | 15.5 |
+| Inside duplicate copies of theorems (same name and statement as a theorem in another file) | 1,294 | <0.1 |
 | Outside any declaration (blank lines, `import`, `namespace`, `open`, `variable`, …) | 3,922,942 | 22.6 |
 | Inside commands with no kernel constant (`example`, notation, macros, `run_cmd`) | 19,710 | 0.1 |
 | **Total** | **17,374,215** | **100** |
 
-- Theorems that repeat the statement of another used theorem account for at most 606,437 more lines (5.6%).
+- Theorems that repeat the statement of another used theorem account for at most 606,362 more lines (5.6%).
 - Removing the hypotheses that the proofs never use frees at most 5,659 more lines (0.1%), or 27,255 (0.3%) if unused
   `let`/`have` values go too.
 - The five theorems share almost everything. Each one alone uses at least 804,889 of the 804,912 used declarations.
@@ -94,18 +94,18 @@ directory.
 
 | Directory | Files with a used declaration / files | Used declarations / declarations | % | Lines in used declarations / lines |
 |---|---|---|---|---|
-| `src/Development` | 119,001 / 141,928 | 544,145 / 692,950 | 78.5 | 7,659,541 / 12,232,663 |
-| `src/Formalism` | 14,901 / 18,254 | 167,706 / 240,150 | 69.8 | 1,900,618 / 3,200,748 |
+| `src/Development` | 119,001 / 141,928 | 544,156 / 692,952 | 78.5 | 7,659,708 / 12,232,663 |
+| `src/Formalism` | 14,898 / 18,254 | 167,705 / 240,149 | 69.8 | 1,900,674 / 3,200,748 |
 | `src/GroundTheory` | 6,558 / 8,507 | 48,530 / 75,101 | 64.6 | 600,712 / 1,119,138 |
-| `src/ReciprocityTheory` | 3,449 / 3,845 | 30,735 / 36,425 | 84.4 | 394,311 / 563,016 |
-| `src/CompanionTheory` | 1,881 / 2,027 | 10,567 / 11,765 | 89.8 | 143,158 / 194,218 |
-| `src/PositivityTheory` | 342 / 449 | 2,983 / 4,746 | 62.9 | 32,395 / 55,130 |
-| `src/Lemmata` | 157 / 167 | 233 / 250 | 93.2 | 6,932 / 9,232 |
+| `src/ReciprocityTheory` | 3,450 / 3,845 | 30,735 / 36,425 | 84.4 | 394,315 / 563,016 |
+| `src/CompanionTheory` | 1,881 / 2,027 | 10,561 / 11,768 | 89.7 | 143,098 / 194,218 |
+| `src/PositivityTheory` | 341 / 449 | 2,981 / 4,744 | 62.8 | 32,327 / 55,130 |
+| `src/Lemmata` | 155 / 167 | 231 / 248 | 93.1 | 6,871 / 9,232 |
 | `src/Statements.lean` | 1 / 1 | 4 / 4 | 100.0 | 11 / 16 |
 | `src/Supplements` | 1 / 3 | 4 / 4 | 100.0 | 7 / 22 |
 | `src/Main.lean` | 1 / 1 | 5 / 5 | 100.0 | 5 / 12 |
 | `src/BuildAid` | 0 / 5 | 0 / 0 |  | 0 / 20 |
-| **Total** | **146,292 / 175,187** | **804,912 / 1,061,400** | **75.8** | **10,737,690 / 17,374,215** |
+| **Total** | **146,287 / 175,187** | **804,912 / 1,061,400** | **75.8** | **10,737,728 / 17,374,215** |
 
 The next level of subdirectories is in `data/directories.tsv`.
 
@@ -114,7 +114,7 @@ The next level of subdirectories is in `data/directories.tsv`.
 - `src/GroundTheory/ArithmeticGeometry`: 2,335 of 3,770 declarations used (61.9%). SchemeCohomology 1,675 / 2,089;
   AbelianVarieties 626 / 1,277; EtaleCompletion 24 / 46; ToricVarieties 7 / 115; ModularCurves 3 / 222;
   IwasawaModules 0 / 16; SelmerPairing 0 / 5.
-- `src/Development/AbelianVarietyTheory`: 337,439 of 457,028 declarations used (73.8%). Its subdirectories are in
+- `src/Development/AbelianVarietyTheory`: 337,436 of 457,030 declarations used (73.8%). Its subdirectories are in
   `data/dirs-level3.tsv`.
 - Mathlib `AlgebraicGeometry`: 6,820 of 10,573 constants used (64.5%), from 125 of its 139 modules.
 - `GeneralHyps`, `GeneralHypU`, `GeneralHypV` (`GlobalTheory.Fc.S0.*`): not used. No constant with these names, or under
@@ -154,17 +154,17 @@ used only through A. Sizes are given in nodes and in lines inside declarations.
 
 | Root | Immediate dominator | Nodes | Lines | % of lines |
 |---|---|---|---|---|
-| `allChi` | (root) | 886,156 | 10,737,488 | 100.0 |
-| `UpperTheory.FinalTheorems.everyCharacter` | `allChi` | 886,155 | 10,737,487 | 100.0 |
-| `UpperTheory.FinalTheorems.everyCharacter_of_row` | `…everyCharacter` | 670,692 | 8,307,953 | 77.4 |
-| `UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin` | `…everyCharacter_of_row` | 587,596 | 7,172,360 | 66.8 |
-| `UpperTheory.Lit.every_character_of_theta_integrals_local_matching` | `…every_character_of_literature_of_vWin` | 366,417 | 4,245,359 | 39.5 |
-| `UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound` | `…every_character_of_theta_integrals_local_matching` | 305,572 | 3,576,651 | 33.3 |
-| `GlobalTheory.Fc.S0.StageU.hypotheses_nonempty_of_unramified_exponents_alt` | `…nonempty_hyps_definite_side_of_closed_bound` | 102,963 | 1,217,054 | 11.3 |
-| `UpperTheory.One.vwin_of_row` | `…everyCharacter_of_row` | 61,730 | 914,527 | 8.5 |
-| `SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt` | `…every_character_of_literature_of_vWin` | 58,036 | 824,934 | 7.7 |
-| `UpperTheory.Gal.Int.galoisLocalGlobalStrong_recParameter` | `…everyCharacter` | 64,176 | 689,239 | 6.4 |
-| `UpperTheory.Gal.Int.Geo.geoOne_holds` | `UpperTheory.Gal.Int.galoisRepresentations_of_thetaLift` | 54,856 | 568,275 | 5.3 |
+| `allChi` | (root) | 886,156 | 10,737,526 | 100.0 |
+| `UpperTheory.FinalTheorems.everyCharacter` | `allChi` | 886,155 | 10,737,525 | 100.0 |
+| `UpperTheory.FinalTheorems.everyCharacter_of_row` | `…everyCharacter` | 670,692 | 8,308,005 | 77.4 |
+| `UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin` | `…everyCharacter_of_row` | 587,596 | 7,172,414 | 66.8 |
+| `UpperTheory.Lit.every_character_of_theta_integrals_local_matching` | `…every_character_of_literature_of_vWin` | 366,417 | 4,245,419 | 39.5 |
+| `UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound` | `…every_character_of_theta_integrals_local_matching` | 305,572 | 3,576,707 | 33.3 |
+| `GlobalTheory.Fc.S0.StageU.hypotheses_nonempty_of_unramified_exponents_alt` | `…nonempty_hyps_definite_side_of_closed_bound` | 102,963 | 1,217,085 | 11.3 |
+| `UpperTheory.One.vwin_of_row` | `…everyCharacter_of_row` | 61,730 | 914,524 | 8.5 |
+| `SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt` | `…every_character_of_literature_of_vWin` | 58,036 | 824,935 | 7.7 |
+| `UpperTheory.Gal.Int.galoisLocalGlobalStrong_recParameter` | `…everyCharacter` | 64,176 | 689,213 | 6.4 |
+| `UpperTheory.Gal.Int.Geo.geoOne_holds` | `UpperTheory.Gal.Int.galoisRepresentations_of_thetaLift` | 54,856 | 568,278 | 5.3 |
 
 - `allChi` dominates all but 29 nodes. Declarations used by only one theorem: 0, 1, 1, 12 and 4, in the order above.
 - `everyCharacter` is the immediate dominator of 53,864 nodes, which several branches share.
@@ -176,13 +176,13 @@ used only through A. Sizes are given in nodes and in lines inside declarations.
 ### Statements labelled as published results
 
 Owned lines become unused once those proofs are removed. Used lines are everything those proofs use. Percentages are of
-the 10,737,690 lines inside used declarations.
+the 10,737,728 lines inside used declarations.
 
 | Label | Labelled in | Proofs | Owned lines | Used lines |
 |---|---|---|---|---|
-| Published result (151 statements) | [keithadler/rh-trim `docs/LITERATURE.md`](https://github.com/keithadler/rh-trim/blob/4339aac/docs/LITERATURE.md) `4339aac` | 285 | 884,307 (8.2%) | 2,961,613 (27.6%) |
-| Known theorem | [jae-63/rh-alpoge-blueprint `BLUEPRINT.md` §3](https://github.com/jae-63/rh-alpoge-blueprint/blob/0434143d/BLUEPRINT.md) `0434143d` | 5 | 617,553 (5.8%) | 1,714,669 (16.0%) |
-| Crux | the same | 11 | 4,959,472 (46.2%) | 7,906,086 (73.6%) |
+| Published result (151 statements) | [keithadler/rh-trim `docs/LITERATURE.md`](https://github.com/keithadler/rh-trim/blob/4339aac/docs/LITERATURE.md) `4339aac` | 285 | 884,308 (8.2%) | 2,961,601 (27.6%) |
+| Known theorem | [jae-63/rh-alpoge-blueprint `BLUEPRINT.md` §3](https://github.com/jae-63/rh-alpoge-blueprint/blob/0434143d/BLUEPRINT.md) `0434143d` | 5 | 617,556 (5.8%) | 1,714,595 (16.0%) |
+| Crux | the same | 11 | 4,959,529 (46.2%) | 7,906,144 (73.6%) |
 
 The labels come from those repositories and haven't been checked by a mathematician.
 
@@ -190,9 +190,9 @@ The labels come from those repositories and haven't been checked by a mathematic
 
 | | Declarations | Groups | Redundant lines (% of used lines) |
 |---|---|---|---|
-| Theorems with identical statements | 167,248 | 69,708 | 606,437 (5.6%) |
+| Theorems with identical statements | 167,248 | 69,708 | 606,362 (5.6%) |
 | Definitions identical in type and value | 6,694 | 2,599 | 10,240 (0.1%) |
-| Theorems with the same statement up to renaming of constants | 179,919 | 74,542 | 678,033 (6.3%) |
+| Theorems with the same statement up to renaming of constants | 179,919 | 74,542 | 677,963 (6.3%) |
 | Definitions identical up to renaming of constants | 14,705 | 5,939 | 49,310 (0.5%) |
 | Restating a Mathlib or core constant, exactly or up to renaming | 171 theorems, 12 definitions | | 648 |
 | … of which the Mathlib or core constant is not used by the proof | 26 | | 98 |
@@ -226,25 +226,28 @@ use.
 The highest levels come from Mathlib's cardinal and ordinal lemmas and from core's encoding of structural recursion.
 These are the levels that occur in the elaborated terms, not a set-theoretic bound.
 
-## Changes in v0.2
+## Changes
 
-| | v0.1.3 | v0.2 |
-|---|---|---|
-| Declarations | 1,061,531 | 1,061,400 |
-| Used | 804,911 | 804,912 |
-| Unused | 256,620 | 256,488 |
-| Files with a used declaration | 146,290 | 146,292 |
-| Lines inside used declarations | 10,737,754 | 10,737,690 |
-| Redundant lines in theorems with identical statements | 606,568 | 606,437 |
+| | v0.1.3 | v0.2 | v0.2.1 |
+|---|---|---|---|
+| Declarations | 1,061,531 | 1,061,400 | 1,061,400 |
+| Used | 804,911 | 804,912 | 804,912 |
+| Unused | 256,620 | 256,488 | 256,488 |
+| Files with a used declaration | 146,290 | 146,292 | 146,287 |
+| Lines inside used declarations | 10,737,754 | 10,737,690 | 10,737,728 |
+| Redundant lines in theorems with identical statements | 606,568 | 606,437 | 606,362 |
+
+v0.2.1 takes file and line for names declared in several modules from the copy the environment holds, the one
+imported last.
 
 ## Data
 
-The large tables are release assets of tag `v0.2`. [docs/dataset.md](docs/dataset.md) describes every column, and
+The large tables are release assets of tag `v0.2.1`. [docs/dataset.md](docs/dataset.md) describes every column, and
 `SHA256SUMS` has their checksums.
 
 | Asset | Rows | Files and sizes | Contents |
 |---|---|---|---|
-| `constants` | 1,484,733 | `constants.csv.gz` 61.9 MB; `constants.parquet` 64.4 MB | every kernel constant in the export, with origin, module, declaration, file and line, sizes, depth and theorem mask |
+| `constants` | 1,484,733 | `constants.csv.gz` 61.9 MB; `constants.parquet` 64.5 MB | every kernel constant in the export, with origin, module, declaration, file and line, sizes, depth and theorem mask |
 | `edges` | 160,315,873 | `edges.csv.gz` 1.31 GB; `edges.parquet` 399.1 MB | direct references between constants (`type`, `value`, `lit`, `quot`) |
 | `decls` | 1,063,284 | `decls.csv.gz` 23.0 MB; `decls.parquet` 23.9 MB | every declaration, with its source command, compiled range, constants, used or not, and depth |
 | `directories` | 338 | `directories.csv.gz` 7 KB; `directories.parquet` 10 KB | used fraction per directory, levels 1–2 |
@@ -306,12 +309,14 @@ No code from the proof runs; the export and the source are only read as data. It
 from a text index) to `./work/out/v0.1.3`, the universe levels, and the analyses (`tools/analyses.sh`). A run from a
 clean clone on 2026-11-21 produced all ten v0.1.3 table files byte for byte identical to the v0.1 release.
 
-`tools/reproduce-compiled.sh` adds dataset v0.2 and its analyses. It needs a full build of the proof. Loading the
+`tools/reproduce-compiled.sh` adds dataset v0.2.1 and its analyses. It needs a full build of the proof. Loading the
 compiled files runs the proof's code, so every step runs in a container with no network, no capabilities and read-only
-mounts. A run against our own build on 2026-11-21 produced every v0.2 table file (`constants`, `decls`, `directories`,
-`why-parents`, `decl_edges`, the keep list and both name lists) byte for byte identical to the release assets.
-A run of `tools/analyses.sh` on v0.2 on the same day reproduced the dominator, statement-cone, unused-hypothesis and
-duplicate tables byte for byte, and the same figures for the statements labelled as published results.
+mounts. A run against our own build on 2026-11-21 produced every v0.2.1 table file (`constants`, `decls`,
+`directories`, `why-parents`, `decl_edges`, the keep list, both name lists and the directory and auxiliary-only tables
+in `data/`) byte for byte identical to the release.
+A run of `tools/analyses.sh` on v0.2.1 on the same day reproduced the dominator, statement-cone, unused-hypothesis and
+duplicate tables in `data/` and `docs/explorer.html` byte for byte, and every computed column of `data/literature.tsv`.
+The decompressed `dominators.tsv.gz` is identical too (sha256 in [docs/dataset.md](docs/dataset.md)).
 
 `tools/test.sh` runs the tests.
 
@@ -321,7 +326,7 @@ duplicate tables byte for byte, and the same figures for the statements labelled
 |---|---|
 | Kernel export | A. Sutherland's `solution.ndjson.zst` from [math.mit.edu/~drew/grh](https://math.mit.edu/~drew/grh/), sha256 `61a8938ad5f5e57397c1c0e3b954916af546d9004ade01c3555744a681b05381`; unpacked `5ea74b912147c5c93cc2b6d70cc727cf908df2f62ac6a20480a3fa02f6be244e`. `lean4export` v4.33.0 on Lean 4.33.1 |
 | Source | [leanprover-community/riemann-hypothesis](https://github.com/leanprover-community/riemann-hypothesis) at `8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116`, identical to the archive from [alpo.ge](https://alpo.ge) (sha256 `9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc`) in every proof file |
-| Compiled `.olean` files | Our own build of the source (Lean 4.33.1, 175,187 of 175,187 modules, `Main.olean` identical to Sutherland's), for dataset v0.2. Cross-checked against [proofsandreasons.io](https://proofsandreasons.io/rh-oleans.html) `alp-oleans-357309b5dd12` and [Jack McCarthy's build](https://huggingface.co/datasets/JackMcCarthy/riemann-hypothesis-build) |
+| Compiled `.olean` files | Our own build of the source (Lean 4.33.1, 175,187 of 175,187 modules, `Main.olean` identical to Sutherland's), for dataset v0.2.1. Cross-checked against [proofsandreasons.io](https://proofsandreasons.io/rh-oleans.html) `alp-oleans-357309b5dd12` and [Jack McCarthy's build](https://huggingface.co/datasets/JackMcCarthy/riemann-hypothesis-build) |
 | Lean, Mathlib | Lean v4.33.1 (`819816b2`), Mathlib `0df444a360eaa60ab8c11dca51a86af692955474` |
 | Text maps | cadamcat/riemann-hypothesis-exposition `595de571`, jae-63/rh-alpoge-blueprint `0434143d` |
 | Counts cited | nanoda's 1,484,729 from [Infatoshi/rh-verification-receipts](https://github.com/Infatoshi/rh-verification-receipts); con-leche's 1,468,418 records from the export page |

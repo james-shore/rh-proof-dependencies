@@ -1,12 +1,12 @@
 #!/bin/bash
-# Optional stage after tools/reproduce.sh: declarations, files and lines from the compiled environment (dataset v0.2).
+# Optional stage after tools/reproduce.sh: declarations, files and lines from the compiled environment (dataset v0.2.1).
 #   OLEANS=/path/to/build/lib/lean tools/reproduce-compiled.sh WORKDIR
 # This loads the proof's compiled .olean files, which were produced by running the proof's code. Treat them as
 # untrusted. Every container runs with no network, as a non-root user, with no capabilities, a read-only root
 # filesystem and read-only mounts of the oleans, the toolchain and Mathlib.
 # Needs: OLEANS, a full build of the 175,187 project modules with Lean 4.33.1 against Mathlib 0df444a3 (Main.olean at
 # its top); WORKDIR, the directory tools/reproduce.sh filled. Env: CPUS (default 8), MEM (default 250g), NAME, IMG,
-# SOLUTION (as for reproduce.sh), SKIP_STRUCTURE=1 (skip tools/analyses.sh on v0.2).
+# SOLUTION (as for reproduce.sh), SKIP_STRUCTURE=1 (skip tools/analyses.sh on v0.2.1).
 set -euo pipefail
 trap 'echo "reproduce-compiled.sh failed at line $LINENO"' ERR
 here=$(cd "$(dirname "$0")" && pwd)
@@ -48,15 +48,24 @@ py closure-five python routeb_closure.py /work/main /out/v0.1.3 /work/five "$ROO
 py closure-targets python routeb_closure.py /work/main /out/v0.1.3 /work/targets "$TARGETS" | tee "$R/closure-targets.log"
 grep -q "only in B 0, only in A 0" "$R/closure-five.log" || { echo "compiled cone differs from the export"; exit 1; }
 
-log "map constants to declarations and compiled ranges"
-py map python routeb_map.py /work/main "$PROJ" /work/five/routeb-closure.tsv /work/map
+log "multiply-declared names: the environment's copy (the one imported last) and that copy's declaration range"
+sbx --name "$N-dupranges" -v "$OLEANS":/oleans:ro -v "$WS":/ws:ro -v "$TC":/tc:ro -v "$R/build/routeb/.lake/build/bin":/bin2:ro \
+  -v "$R/out":/work -w /work "$IMG" /bin2/dupranges /work/sp.txt /work/dupranges.tsv Main > "$R/dupranges.log" 2>&1
+mkdir -p "$R/out/w"
+py winners python routeb_winners.py /work/main /work/dupranges.tsv /work/w/main
 
-log "dataset v0.2, why-parents, name lists, declaration graph"
-py dataset bash -c "set -e; python dataset_v2.py /out/v0.1.3 /work/map/routeb-constants-mapped.tsv /w/decl-index.tsv.gz /mirror /out/v0.2
-  cp /out/v0.1.3/edges.parquet /out/v0.1.3/edges.csv.gz /out/v0.2/; python why.py /out/v0.2 /out/v0.2/why
-  python name_lists.py /out/v0.2; python decl_edges.py /work /out/v0.2"
-( cd "$W/out/v0.2" && sha256sum *.parquet *.csv.gz *.txt.gz keep-v2.tsv why/why-parents.parquet why/why-parents.csv.gz )
+log "map constants to declarations and compiled ranges"
+py map python routeb_map.py /work/w/main "$PROJ" /work/five/routeb-closure.tsv /work/w/map
+
+V=v0.2.1
+log "dataset $V, why-parents, name lists, declaration graph, small tables"
+py dataset bash -c "set -e; python dataset_v2.py /out/v0.1.3 /work/w/map/routeb-constants-mapped.tsv /w/decl-index.tsv.gz /mirror /out/$V
+  cp /out/v0.1.3/edges.parquet /out/v0.1.3/edges.csv.gz /out/$V/; python why.py /out/$V /out/$V/why
+  python name_lists.py /out/$V; python decl_edges.py /work/w /out/$V"
+sbx --name "$N-tables" -v "$W/out":/out -v "$here/../data/inputs":/inputs:ro "$IMG" bash -c "mkdir -p /out/$V/tables
+  python dataset_tables.py /out/$V /inputs/dirs-level3-asked.tsv /out/$V/tables $V" > "$R/tables.log" 2>&1
+( cd "$W/out/$V" && sha256sum *.parquet *.csv.gz *.txt.gz keep-v2.tsv why/why-parents.parquet why/why-parents.csv.gz tables/* )
 if [ -z "${SKIP_STRUCTURE:-}" ]; then
-  NAME="${NAME:-rhpd}" IMG="$IMG" CPUS="$CPUS" MEM="$MEM" bash "$here/analyses.sh" "$W" v0.2
+  NAME="${NAME:-rhpd}" IMG="$IMG" CPUS="$CPUS" MEM="$MEM" bash "$here/analyses.sh" "$W" "$V"
 fi
-log "done: $W/out/v0.2 (expected: 804,912 used declarations of 1,061,400; compiled cone 1,484,729 = export)"
+log "done: $W/out/$V (expected: 804,912 used declarations of 1,061,400; compiled cone 1,484,729 = export)"

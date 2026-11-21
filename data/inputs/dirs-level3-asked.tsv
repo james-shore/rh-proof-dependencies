@@ -1,0 +1,15 @@
+dir
+src/Development/AbelianVarietyTheory/Proofs
+src/Development/AbelianVarietyTheory/Definitions
+src/Development/AbelianVarietyTheory/BlockTheory
+src/Development/AbelianVarietyTheory/PublishedTheorems
+src/GroundTheory/ArithmeticGeometry/SchemeCohomology
+src/Development/AbelianVarietyTheory/Counterexamples
+src/GroundTheory/ArithmeticGeometry/AbelianVarieties
+src/Development/AbelianVarietyTheory/Statements
+src/Development/AbelianVarietyTheory/CrystallinePeriods
+src/GroundTheory/ArithmeticGeometry/ModularCurves
+src/GroundTheory/ArithmeticGeometry/ToricVarieties
+src/GroundTheory/ArithmeticGeometry/EtaleCompletion
+src/GroundTheory/ArithmeticGeometry/IwasawaModules
+src/GroundTheory/ArithmeticGeometry/SelmerPairing
