@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0 (adapted from keithadler/rh-trim tools/reach.py; see NOTICE)
 """Text index of every declaration in a Lean 4 source tree (reads text, runs nothing).
 
 Declaration matching and span/attribute handling adapted from keithadler/rh-trim tools/reach.py

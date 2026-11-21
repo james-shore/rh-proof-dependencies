@@ -21,7 +21,7 @@ still be needed to compile (notation, tactics, `simp` lemmas and instances that 
 | Project files with a used declaration | 146,290 | 175,187 | 83.5 |
 | Lines of Lean source inside used declarations | 10,737,754 | 17,374,215 | 61.8 |
 
-Kernel constants used by the proof, by where they are declared.
+Kernel constants used by the proof:
 
 | Origin | Used | Declared there | % used |
 |---|---|---|---|
@@ -32,7 +32,7 @@ Kernel constants used by the proof, by where they are declared.
 | Aesop | 3 | 6,504 | 0.05 |
 | **Total** | **1,484,729** | | |
 
-Breakdown of the 17,374,215 lines of Lean source in the proof.
+Categorization of the Lean source code in the proof:
 
 | | Lines | % |
 |---|---|---|
@@ -306,4 +306,5 @@ checked.
 
 ## Licence
 
-Apache-2.0 for everything ([LICENSE](LICENSE)). The proof's source is not included.
+Public domain under CC0 1.0 ([LICENSE](LICENSE)), code and data alike. Three files adapted or taken from Apache-2.0
+projects stay under the Apache License 2.0 ([NOTICE](NOTICE)). The proof's source is not included.

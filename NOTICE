@@ -1,0 +1,10 @@
+This repository is dedicated to the public domain under CC0 1.0 (LICENSE), except for these files, which are under the
+Apache License 2.0 (LICENSES/Apache-2.0.txt):
+
+- tools/decl_index.py: declaration matching and span/attribute handling adapted from keithadler/rh-trim
+  tools/reach.py (https://github.com/keithadler/rh-trim, Apache-2.0).
+- data/inputs/rhtrim-LITERATURE-4339aac-names.txt: names taken from keithadler/rh-trim docs/LITERATURE.md at 4339aac.
+- data/inputs/jae63-BLUEPRINT-0434143d-labels.tsv: labels and names taken from jae-63/rh-alpoge-blueprint BLUEPRINT.md
+  at 0434143d (https://github.com/jae-63/rh-alpoge-blueprint, Apache-2.0).
+
+The proof's source is not included and is not covered by any of these licences.
